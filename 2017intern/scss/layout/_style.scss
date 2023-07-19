@@ -1,0 +1,27 @@
+html, body {
+  color: $fontColor;
+  background: $backGroundColor;
+  font-family: $fontStyle;
+  font-size: $fontBase;
+  line-height: $lineHeightBase;
+  font-weight: 300;
+}
+a {
+	color: $linkColor;
+}
+a:hover {
+	color: lighten($linkColor, 20%);
+  text-decoration: none;
+}
+.icons-logo {
+    white-space: nowrap;
+    text-indent: -9999em; /*把文字用縮排推到寬度以外*/
+    overflow: hidden;
+    margin: 5px 0;
+}
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+.icons {
+	display: inline-block;
+}

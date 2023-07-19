@@ -1,0 +1,616 @@
+/*KappaChang Layout*/
+
+//susy
+$total-columns  : 12; //畫 12 條
+$column-width   : 80px; // 每條 80px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 20px; // 左右 padding 10px
+
+$desktop: 980px 12; // min-width 980px draw 12 total-columns
+$pad: 768px 8 979px; //min-width 768px max-width 979px draw 8 total-columns
+$mobile: 4 767px; //min-width 480px max-width 767px draw 4 total-columns
+$small-mobile: 4 479px; //max-width 479px draw 4 total-columns
+
+$MUZIKColor: #111111;
+
+header, #MAIN, footer {
+	width: 100%;
+}
+footer {
+	background: $MUZIKColor;
+	padding: 50px 0;
+	color: $white40;
+	font-size: $fontSize14;
+	text-align: center;
+	
+	.logo-group {
+		display: inline-block;
+		margin: 0 auto;
+	}
+	.logo {
+		max-width: 147px;
+		float: left;
+		margin-right: 50px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+		@include at-breakpoint($mobile) {
+			margin-right: 0;
+			margin-bottom: 10px;
+			float: none;
+		}
+		@include at-breakpoint($small-mobile) {
+			margin-right: 0;
+			margin-bottom: 10px;
+			float: none;
+		}
+	}
+}
+img {
+	height: 100%;
+	width: 100%;
+}
+
+// ########     ###     ######  ####  ######
+// ##     ##   ## ##   ##    ##  ##  ##    ##
+// ##     ##  ##   ##  ##        ##  ##
+// ########  ##     ##  ######   ##  ##
+// ##     ## #########       ##  ##  ##
+// ##     ## ##     ## ##    ##  ##  ##    ##
+// ########  ##     ##  ######  ####  ######
+
+.grid {
+	@include container;
+	@include border-box-sizing;
+	height: 100%;
+	position: relative;
+	//@extend %clerfix;
+
+	@include at-breakpoint($small-mobile) {
+		//@include susy-grid-background;
+	}
+	@include at-breakpoint($mobile) {
+		//@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		//@include susy-grid-background;
+	}
+	@include at-breakpoint($pad) {
+
+		//@include susy-grid-background;
+	}
+	@include at-breakpoint($desktop) {
+		@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		//@include susy-grid-background;
+	}
+}
+
+
+
+// ##     ## ####  ######  ##     ##    ###    ##
+// ##     ##  ##  ##    ## ##     ##   ## ##   ##
+// ##     ##  ##  ##       ##     ##  ##   ##  ##
+// ##     ##  ##   ######  ##     ## ##     ## ##
+//  ##   ##   ##        ## ##     ## ######### ##
+//   ## ##    ##  ##    ## ##     ## ##     ## ##
+//    ###    ####  ######   #######  ##     ## ########
+
+#visual {
+	width: 100%;
+	height: 560px;
+}
+.visual-image {
+	background: url("../images/visual.jpg")no-repeat center 70%;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.full {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50, 70, 75, 0.55);
+	color: $white;
+	padding-top: 150px;
+
+	@include border-box-sizing;
+}
+.title {
+	line-height: 1em;
+	font-size: 4.5em;
+	margin-bottom: 10px;
+	text-align: center;
+	margin-top: 5%;
+	display: block;
+
+	@include text-shadow(0 0 30px $black);
+	@include at-breakpoint($mobile) {
+		font-size: 3.5em;
+	}
+	@include at-breakpoint($small-mobile) {
+		font-size: 2.5em;
+	}
+}
+.title-en {
+	display: block;
+	font-size: 2.2em;
+	text-align: center;
+	line-height: 1em;
+	margin-top: 20px;
+
+	@include text-shadow(0 0 30px $black);
+	@include at-breakpoint($mobile) {
+		font-size: 1.6em;
+	}
+	@include at-breakpoint($small-mobile) {
+		font-size: 1em;
+	}
+}
+
+
+//  ######   #######  ##    ## ######## ######## ##    ## ########
+// ##    ## ##     ## ###   ##    ##    ##       ###   ##    ##
+// ##       ##     ## ####  ##    ##    ##       ####  ##    ##
+// ##       ##     ## ## ## ##    ##    ######   ## ## ##    ##
+// ##       ##     ## ##  ####    ##    ##       ##  ####    ##
+// ##    ## ##     ## ##   ###    ##    ##       ##   ###    ##
+//  ######   #######  ##    ##    ##    ######## ##    ##    ##
+
+//    ###    ########   #######  ##     ## ########
+//   ## ##   ##     ## ##     ## ##     ##    ##
+//  ##   ##  ##     ## ##     ## ##     ##    ##
+// ##     ## ########  ##     ## ##     ##    ##
+// ######### ##     ## ##     ## ##     ##    ##
+// ##     ## ##     ## ##     ## ##     ##    ##
+// ##     ## ########   #######   #######     ##
+
+#about, #intern, #review, #singup {
+	width: 100%;
+	background: $white;
+	padding: 80px 5% 0;
+	position: relative;
+
+	@include border-box-sizing;
+}
+#about {
+	//background: $MUZIKColor;
+
+	.sub-title {
+		//color: $white;
+		text-align: center;
+
+		@include at-breakpoint($desktop) {
+			text-align: left;
+		}
+		@include at-breakpoint($pad) {
+			text-align: left;
+		}
+	}
+	.desc {
+		//color: $white30;
+		margin-bottom: 0;
+	}
+}
+#review {
+	background: lighten($white20, 8%);
+	padding: 80px 5%;
+
+	.desc {
+		color: $black20;
+	}
+}
+#singup {
+	padding: 60px 0;
+	background: $MUZIKColor;
+	text-align: center;
+
+	.full {
+		padding-top: 65px;
+		text-align: center;
+	}
+	.sub-title {
+		color: $white;
+	}
+	.desc {
+		color: $white30;
+
+		@include at-breakpoint($small-mobile) {
+			font-size: $fontSize18;
+		}
+	}
+}
+.percent50 {
+	width: 50%;
+	float: left;
+	padding: 0 2%;
+
+	@include border-box-sizing;
+	@include at-breakpoint($mobile) {
+		width: 100%;
+		margin: 30px 0;
+	}
+}
+.sub-title {
+	font-size: 3em;
+	line-height: 1.2em;
+	margin-bottom: 20px;
+	text-align: center;
+	color: $MUZIKColor;
+}
+.desc {
+	font-size: $fontSize18;
+	margin-bottom: 65px;
+}
+.center {
+	text-align: center;
+}
+.about-img {
+	max-width: 480px;
+}
+.red {
+	color: $red;
+}
+
+// #### ##    ## ######## ######## ########  ##    ##
+//  ##  ###   ##    ##    ##       ##     ## ###   ##
+//  ##  ####  ##    ##    ##       ##     ## ####  ##
+//  ##  ## ## ##    ##    ######   ########  ## ## ##
+//  ##  ##  ####    ##    ##       ##   ##   ##  ####
+//  ##  ##   ###    ##    ##       ##    ##  ##   ###
+// #### ##    ##    ##    ######## ##     ## ##    ##
+
+.timeline {
+	width: 100%;
+	max-width: 1140px;
+	margin-bottom: 80px;
+	display: block;
+
+	@include at-breakpoint($mobile) {
+		display: none
+	}
+	@include at-breakpoint($small-mobile) {
+		display: none
+	}
+}
+.timeline-medium {
+	width: 100%;
+	max-width: 560px;
+	margin: 0 auto 65px;
+	display: none;
+
+
+	@include at-breakpoint($mobile) {
+		display: block;
+	}
+	@include at-breakpoint($small-mobile) {
+		display: none;
+	}
+}
+.timeline-small {
+	width: 100%;
+	max-width: 320px;
+	margin: 0 auto 65px;
+	display: none;
+
+	@include at-breakpoint($small-mobile) {
+		display: block;
+	}
+
+}
+.marketing {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto 80px;
+	display: block;
+
+	@include at-breakpoint($mobile) {
+		display: none;
+	}
+	@include at-breakpoint($small-mobile) {
+		display: nene;
+	}
+}
+.marketing-medium {
+	width: 100%;
+	max-width: 400x;
+	margin: 0 auto 80px;
+	display: none;
+
+	@include at-breakpoint($mobile) {
+		display: block;
+	}
+	@include at-breakpoint($small-mobile) {
+		display: block;
+	}
+}
+.intern-group {
+	width: 100%;
+	display: block;
+	padding: 0 30px;
+	margin-bottom: 30px;
+	@extend %clearfix;
+	@include border-box-sizing;
+
+	@include at-breakpoint($pad) {
+		padding: 0;
+	}
+	@include at-breakpoint($mobile) {
+		margin-bottom: 30px;
+		padding: 0 60px;
+	}
+	@include at-breakpoint($small-mobile) {
+		padding: 0 5%;
+	}
+
+	li {
+		font-size: $fontSize18;
+		width: 16%;
+		padding: 0 2%;
+		text-align: center;
+		float: left;
+		display: block;
+		margin-bottom: 50px;
+		@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+
+		@include at-breakpoint($pad) {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		@include at-breakpoint($mobile) {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		@include at-breakpoint($small-mobile) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+}
+.intern-title {
+	font-size: 2em;
+	color: $MUZIKColor;
+	text-align: center;
+	margin-bottom: 30px;
+
+	&:after {
+		border-bottom: 4px solid $blue;
+		content: '';
+		display: block;
+		width: 144px;
+		margin: 0 auto;
+	}
+}
+.intern-desc {
+	display: block;
+	font-size: $fontSize18;
+	width: 100%;
+	margin: 30px auto;
+	//text-align: justify;
+	text-justify: auto;
+}
+.class-group {
+	width: 100%;
+	display: block;
+	@extend %clearfix;
+	@include border-box-sizing;
+
+	@include at-breakpoint($mobile) {
+		margin-bottom: 30px;
+	}
+
+	li {
+		width: 29.3%;
+		padding: 0 2%;
+		float: left;
+		display: block;
+		margin-bottom: 50px;
+		@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+
+		@include at-breakpoint($mobile) {
+			width: 96%;
+			margin-bottom: 50px;
+		}
+		@include at-breakpoint($pad) {
+			width: 46%;
+			margin-bottom: 30px;
+		}
+
+	}
+}
+.class-img {
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+
+// ########  ######## ##     ## #### ######## ##      ##
+// ##     ## ##       ##     ##  ##  ##       ##  ##  ##
+// ##     ## ##       ##     ##  ##  ##       ##  ##  ##
+// ########  ######   ##     ##  ##  ######   ##  ##  ##
+// ##   ##   ##        ##   ##   ##  ##       ##  ##  ##
+// ##    ##  ##         ## ##    ##  ##       ##  ##  ##
+// ##     ## ########    ###    #### ########  ###  ###
+
+.review-img-group {
+	width: 100%;
+	display: block;
+	@extend %clearfix;
+	@include border-box-sizing;
+	margin: 30px 0 60px;
+
+	li {
+		width: 18%;
+		padding: 0 1%;
+		float: left;
+		display: block;
+		margin-bottom: 15px;
+		@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+
+		@include at-breakpoint($mobile) {
+			width: 46%;
+		}
+		@include at-breakpoint($pad) {
+			width: 22%;
+		}
+
+	}
+}
+.review-img {
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+}
+.percent70 {
+	width: 70%;
+	float: left;
+	padding: 0 2%;
+
+	@include border-box-sizing;
+	@include at-breakpoint($mobile) {
+		width: 100%;
+		margin: 30px 0;
+	}
+}
+.percent30 {
+	width: 30%;
+	float: right;
+	padding: 0 2%;
+
+	@include border-box-sizing;
+	@include at-breakpoint($mobile) {
+		width: 100%;
+		//margin: 30px 0 0;
+	}
+}
+.review-intern-group {
+	width: 100%;
+	display: inline-block;
+}
+.review-intern-name {
+	font-size: $fontSize20;
+	font-weight: bold;
+	color: $black;
+}
+.review-intern-pic {
+	display: block;
+	max-width: 240px;
+	margin-top: 40px;
+
+	@include at-breakpoint($mobile) {
+		margin: 0 auto;
+	}
+}
+.review-title {
+	font-size: 2em;
+	color: $MUZIKColor;
+	//text-align: center;
+	margin-bottom: 10px;
+
+	// &:after {
+	// 	border-bottom: 4px solid $blue;
+	// 	content: '';
+	// 	display: block;
+	// 	width: 144px;
+	// 	//margin: 0 auto;
+	// }
+}
+
+//  ######    #######  ########  #######  ########
+// ##    ##  ##     ##    ##    ##     ## ##     ##
+// ##        ##     ##    ##    ##     ## ##     ##
+// ##   #### ##     ##    ##    ##     ## ########
+// ##    ##  ##     ##    ##    ##     ## ##
+// ##    ##  ##     ##    ##    ##     ## ##
+//  ######    #######     ##     #######  ##
+
+.go-top {
+	background: $black30;
+	opacity: 0.8;
+	color: $white;
+	width: 45px;
+	height: 30px;
+	border-radius: 2px;
+	text-align: center;
+	position: fixed;
+	padding-top: 15px;
+	bottom: 30px;
+	right: 30px;
+	z-index: 999;
+	cursor: pointer;
+	display: none;
+
+	&:hover {
+		background: lighten($black30, 10%);
+	}
+	.arrow-top {
+		@include arrow(6px, $white, top, $type: 1);
+		left: 16px;
+		top: 10px;
+	}
+}
+
+
+
+// ########  ##     ## ######## ########  #######  ##    ##
+// ##     ## ##     ##    ##       ##    ##     ## ###   ##
+// ##     ## ##     ##    ##       ##    ##     ## ####  ##
+// ########  ##     ##    ##       ##    ##     ## ## ## ##
+// ##     ## ##     ##    ##       ##    ##     ## ##  ####
+// ##     ## ##     ##    ##       ##    ##     ## ##   ###
+// ########   #######     ##       ##     #######  ##    ##
+
+.btn-singup {
+	width: 252px;
+	margin: 10px auto 60px;
+	font-size: $fontSize22;
+	font-weight: bold;
+	line-height: 60px;
+	color: $white;
+	cursor: pointer;
+	text-align: center;
+	background: #62BA78;
+	display: inline-block;
+
+	@include border-box-sizing;
+	@include border-radius(5px);
+
+	&:hover {
+		background: lighten(#62BA78, 10%)
+		//color: $black20;
+	}
+}
+.btn-singup-end {
+	width: 252px;
+	margin: 10px auto 60px;
+	font-size: $fontSize22;
+	font-weight: bold;
+	line-height: 60px;
+	color: $white;
+	cursor: pointer;
+	text-align: center;
+	background: #AAAAAA;
+	display: inline-block;
+	cursor: default;
+
+	@include border-box-sizing;
+	@include border-radius(5px);
+}
+
+
+//  ######  ##       #### ########  ######## ########
+// ##    ## ##        ##  ##     ## ##       ##     ##
+// ##       ##        ##  ##     ## ##       ##     ##
+//  ######  ##        ##  ##     ## ######   ########
+//       ## ##        ##  ##     ## ##       ##   ##
+// ##    ## ##        ##  ##     ## ##       ##    ##
+//  ######  ######## #### ########  ######## ##     ##
+
+.slider_wrapper {
+	width: 100%;
+	margin: 0 auto;
+
+	@include at-breakpoint($desktop) {
+		width: 85%;
+	}
+}
+.slider_block {
+	width: 100%;
+}

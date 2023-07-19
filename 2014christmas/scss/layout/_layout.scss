@@ -1,0 +1,895 @@
+/*KappaChang Layout*/
+
+//susy
+$total-columns  : 12; //畫 12 條
+$column-width   : 61.5px; // 每條 61.5px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 11px; // 左右 padding 11px
+
+$desktop: 980px 12; // min-width 980px draw 12 total-columns
+$pad: 768px 8 979px; //min-width 768px max-width 979px draw 8 total-columns
+$mobile: 4 767px; //max-width 767px draw 4 total-columns
+
+
+
+html, body {
+	height: 100%;
+}
+h2 {
+	@extend %title;
+	font-size: $fontSize28;
+	line-height: 30px;
+	margin-bottom: 20px;
+	color: $black;
+}
+
+// ##     ## ########    ###    ########  ######## ########  
+// ##     ## ##         ## ##   ##     ## ##       ##     ## 
+// ##     ## ##        ##   ##  ##     ## ##       ##     ## 
+// ######### ######   ##     ## ##     ## ######   ########  
+// ##     ## ##       ######### ##     ## ##       ##   ##   
+// ##     ## ##       ##     ## ##     ## ##       ##    ##  
+// ##     ## ######## ##     ## ########  ######## ##     ##
+
+header {
+	text-align: center;
+}
+.header-group {
+	position: absolute;
+	display: inline-block;
+	margin: 5%;
+	z-index: 3;
+
+	@include animation-name(header-group);
+	@include animation-duration(1s);
+	@include animation-iteration-count(infinite);
+	@include animation-direction(alternate);
+
+	@include at-breakpoint($mobile) {
+		display: none;
+	}
+	@media screen and (orientation: portrait) {
+		display: none;
+	}
+}
+
+.menu {
+	color: $white;
+	font-size: $fontSize16;
+	font-weight: bold;
+	margin-left: -10px;
+
+	
+
+	ul {
+		margin-top: 20px;
+	}
+
+	li {
+		line-height: 1.4;
+		margin-bottom: 20px;
+	}
+
+	a {
+		color: $white;
+	}
+	a:hover {
+		color: $white;
+	}
+	.app-download {
+		background: url("../images/app-download.png") no-repeat;
+		width: 159px;
+		//height: 100%;
+		height: 217px;
+	}
+}
+
+#menuMobile {
+	position: fixed;
+	width: 100%;
+	z-index: 7;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.6);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#6d000000', endColorstr='#6d000000'); /* IE shit */
+	text-align: center;
+	padding: 10px;
+	top: 0;
+	display: none;
+
+	ul {
+		display: none;
+
+		li {
+			height: 80px;
+			line-height: 80px;
+			width: 100%;
+			text-align: center;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			margin: 10px 0 -10px 0;
+			cursor: pointer;
+
+			&:first-child {
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+			}
+		}
+
+		a, a:hover {
+			color: white;
+			display: block;
+		}
+	}
+	.icons-icon-download {
+		margin: 0 5px -9px 0;
+	}
+
+	@include at-breakpoint($mobile) {
+		display: block;
+	}
+	@media screen and (orientation: portrait) {
+		display: block;
+	}
+}
+footer {
+	background: url("../images/bg-snow.png") center bottom repeat-x;
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+	min-height: 100px;
+	max-height: 200px;
+	position: fixed;
+	bottom: 0;
+
+	-ms-behavior: url("../backgroundsize.min.htc");
+	behavior: url("../backgroundsize.min.htc");
+
+	@include animation-name(footer);
+	@include animation-duration(1s);
+	@include animation-iteration-count(infinite);
+	@include animation-direction(alternate);
+}
+
+//  ######  ##     ##    ###    ########  ######## 
+// ##    ## ##     ##   ## ##   ##     ## ##       
+// ##       ##     ##  ##   ##  ##     ## ##       
+//  ######  ######### ##     ## ########  ######   
+//       ## ##     ## ######### ##   ##   ##       
+// ##    ## ##     ## ##     ## ##    ##  ##       
+//  ######  ##     ## ##     ## ##     ## ######## 
+
+.share-group {
+	position: absolute;
+	right: 0;
+	top: 3%;
+
+	@include at-breakpoint($mobile) {
+		position: fixed;
+		right: auto;
+		top: auto;
+		bottom: 0;
+		background: rgba(33, 33, 33, 0.4);
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#6d777777', endColorstr='#6d777777'); /* IE shit */
+		width: 100%;
+		padding: 5px 10px 2px 10px;
+		z-index: 6;
+	}
+	@media screen and (orientation: portrait) {
+		position: fixed;
+		right: auto;
+		top: auto;
+		bottom: 0;
+		background: rgba(33, 33, 33, 0.4);
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#6d777777', endColorstr='#6d777777'); /* IE shit */
+		width: 100%;
+		padding: 5px 10px 2px 10px;
+		z-index: 6;
+	}
+}
+.fb-share, .google-plus-share, .twitter-share {
+	float: left;
+	margin-right: 10px;
+	line-height: 20px;
+}
+.google-plus-share {
+	width: 60px;
+}
+
+
+//  ######   #######  ##    ## ######## ######## ##    ## ######## 
+// ##    ## ##     ## ###   ##    ##    ##       ###   ##    ##    
+// ##       ##     ## ####  ##    ##    ##       ####  ##    ##    
+// ##       ##     ## ## ## ##    ##    ######   ## ## ##    ##    
+// ##       ##     ## ##  ####    ##    ##       ##  ####    ##    
+// ##    ## ##     ## ##   ###    ##    ##       ##   ###    ##    
+//  ######   #######  ##    ##    ##    ######## ##    ##    ##    
+
+#MAIN {
+	//height: 100%;
+	min-height: 100%;
+	position: relative;
+	z-index: 1;
+	overflow: auto;
+
+	@include animation-name(MAIN);
+	@include animation-duration(1s);
+	@include animation-iteration-count(infinite);
+	@include animation-direction(alternate);
+
+}
+.bg-music {
+	background: url("../images/bg-music.png") repeat;
+	background-size: auto 100%;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	-ms-behavior: url("../backgroundsize.min.htc");
+	behavior: url("../backgroundsize.min.htc");
+}
+.bg-tree {
+	background: url("../images/bg-tree.png") no-repeat;
+	background-size: contain;
+	height: 100%;
+	width: 100%;
+	max-width: 145px;
+	max-height: 169px;
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+	z-index: 1;
+
+	-ms-behavior: url("../backgroundsize.min.htc");
+	behavior: url("../backgroundsize.min.htc");
+
+	@include animation-name(bg-tree);
+	@include animation-duration(1s);
+	@include animation-iteration-count(infinite);
+	@include animation-direction(alternate);
+	@include animation-delay(0.5s);
+
+	@include at-breakpoint($mobile) {
+		display: none;
+	}
+	@media screen and (orientation: portrait) {
+		display: none;
+	}
+}
+#socks-group {
+	width: 100%;
+	height: 80%;
+	margin: 0 auto;
+	position: relative;
+	display: block;
+
+	@media screen and (min-width: 480) and (min-height: 640) {
+		display: none;
+	}
+	@media screen and (orientation: portrait) {
+		display: none;
+	}
+}
+.socks {
+	background: url("../images/socks.png") center center no-repeat;
+	background-size: contain;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	z-index: 1;
+	-ms-behavior: url("../backgroundsize.min.htc");
+	behavior: url("../backgroundsize.min.htc");
+	
+	//opacity: 0.3;
+}
+.socks-txt {
+	background: url("../images/socks-txt.png?a=20141222-1") center center no-repeat;
+	background-size: contain;
+	height: 100%;
+	position: relative;
+	z-index: 2;
+	-ms-behavior: url("../backgroundsize.min.htc");
+	behavior: url("../backgroundsize.min.htc");
+}
+.socks-upright {
+	background: url("../images/socks-upright.png?a=20141222-1") top center no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	min-height: 500px;
+	margin: 100px 0 30px;
+	display: none;
+
+	@media screen and (min-width: 480) and (min-height: 640) {
+		display: block;
+	}
+	@media screen and (orientation: portrait) {
+		display: block;
+	}
+}
+.copyright {
+	font-size: $fontSize13;
+	color: $white30;
+	position: absolute;
+	bottom: 6px;
+	right: 10px;
+	z-index: 1;
+}
+.gift {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	-ms-behavior: url("../backgroundsize.min.htc");
+	behavior: url("../backgroundsize.min.htc");
+	
+	//動畫時間
+	@include animation-duration(1s);
+	//動畫執行的速度曲線
+	//@include animation-timing-function(linear);
+	//延遲播放時間
+	@include animation-delay(0s);
+	//無間斷重覆播放
+	@include animation-iteration-count(infinite);
+	//從頭到尾從尾到頭播放
+	@include animation-direction(alternate);
+}
+.gift-01 {
+	background: url("../images/gift-01.png") center center no-repeat;
+	background-size: contain;
+
+	//動畫名稱
+	@include animation-name(gift-01);	
+}
+.gift-02{
+	background: url("../images/gift-02.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-02);
+	@include animation-delay(1s);
+}
+.gift-03{
+	background: url("../images/gift-03.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-03);
+}
+.gift-04{
+	background: url("../images/gift-04.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-04);
+	@include animation-delay(0.8s);
+}
+.gift-05{
+	background: url("../images/gift-05.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-05);
+	@include animation-delay(0.5s);
+}
+.gift-06{
+	background: url("../images/gift-06.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-06);
+}
+.gift-07{
+	background: url("../images/gift-07.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-07);
+	@include animation-delay(0.5s);
+}
+.gift-08{
+	background: url("../images/gift-08.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-08);
+	@include animation-delay(0.3s);
+}
+.gift-09{
+	background: url("../images/gift-09.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-09);
+	@include animation-delay(0.1s);
+}
+.gift-10{
+	background: url("../images/gift-10.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-10);
+	@include animation-delay(0.4s);
+}
+.gift-11{
+	background: url("../images/gift-11.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-11);
+	@include animation-delay(0.2s);
+}
+.gift-12{
+	background: url("../images/gift-12.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-12);
+}
+.gift-13{
+	background: url("../images/gift-13.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-13);
+	@include animation-delay(0.3s);
+}
+.gift-14{
+	background: url("../images/gift-14.png") center center no-repeat;
+	background-size: contain;
+
+	@include animation-name(gift-14);
+	@include animation-delay(1s);
+}
+
+// ########   #######  ########  ##     ## ########  
+// ##     ## ##     ## ##     ## ##     ## ##     ## 
+// ##     ## ##     ## ##     ## ##     ## ##     ## 
+// ########  ##     ## ########  ##     ## ########  
+// ##        ##     ## ##        ##     ## ##        
+// ##        ##     ## ##        ##     ## ##        
+// ##         #######  ##         #######  ##        
+
+.popup {
+	width: 80%;
+	height: 80%;
+	max-width: 635px;
+	// top: 0;
+	// bottom: 0;
+	// margin-top: auto;
+	// margin-bottom: auto;
+	//margin: auto;
+	display: none;
+	background: $white;
+	padding: 50px 20px;
+
+	@include border-box-sizing;
+	@include border-radius(10px);
+
+	// @media screen and (max-width: 420px) {
+	// 	padding: 50px 10px 50px 20px;
+	// }
+	.inner-image {
+		background: url("../images/inner-image.png") no-repeat;
+		max-height: 770px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 90%;
+		background-size: contain;
+	}
+	.b-close {
+		width: 40px;
+		height: 40px;
+		background: $black;
+		border: 2px solid $white;
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		cursor: pointer;
+		
+		@include border-radius(25px);
+	}
+	.scrollbar {
+		height: 100%;
+	}
+	.inner {
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		position: relative;
+		z-index: 1;
+		padding: 0 5% 0 20%;
+		word-wrap: break-word;
+		word-break: break-all;
+		
+		@include border-box-sizing;
+
+		// @media screen and (max-width: 420px) {
+		// 	width: 80% !important;
+		// 	padding-right: 3% !important;
+		// 	margin-left: 15%;
+		// 	float: left;
+		// 	@include border-box-sizing;
+		// }
+		// @media screen and (orientation: portrait) {
+		// 	width: 80% !important;
+		// 	padding-right: 3% !important;
+		// 	margin-left: 15%;
+		// 	float: left;
+		// 	@include border-box-sizing;
+		// }
+	}
+}
+.desc {
+	margin: 20px 0;
+}
+.table {
+	margin: 20px 0 10px 0;
+
+	li {
+		margin-bottom: 10px;
+	}
+
+	span {
+		display: table-cell;
+
+		@include at-breakpoint($mobile) {
+			display: block;
+		}
+		@media screen and (orientation: portrait) {
+			display: block;
+		}
+	}
+}
+.desc-title {
+	color: $red;
+	font-weight: bold;
+	max-width: 85px; 
+	min-width: 85px;
+
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+	@media screen and (orientation: portrait) {
+		width: 100%;
+	}
+
+
+}
+.desc-title2 {
+	color: $red;
+	font-weight: bold;
+	width: 100%;
+}
+.prize {
+
+	text-align: center;
+	display: inline-block;
+	margin: 20px 0;
+	padding: 0;
+
+	li {
+		margin-bottom: 20px;
+
+	 	span {
+	 		display: block;
+	 	}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		@include at-breakpoint($mobile) {
+			@include isolate-grid(4); // 4條除4 一排1張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+
+		@include at-breakpoint($pad) {
+			@include isolate-grid(4); // 8條除4 一排2張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+
+		@include at-breakpoint($desktop) {
+			// @include span-columns(3); //圖片三條寬
+			// @include nth-omega(4n); // 每排4個
+			@include isolate-grid(4); // 12條除4 一排3張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+	}
+
+	.prize-img {
+		margin-bottom: 5px;
+	}
+	.prize-desc {
+		margin: 3px 0;
+	}
+}
+.precautions {
+	margin: 10px 0 20px;
+
+	li {
+		list-style: disc;
+		margin: 0 0 10px 20px;
+	}
+}
+.hoomia {
+	color: #8DBB1D;
+	margin-top: -18px;
+	line-height: 20px;
+}
+
+
+
+// ########  ##     ## ######## ########  #######  ##    ## 
+// ##     ## ##     ##    ##       ##    ##     ## ###   ## 
+// ##     ## ##     ##    ##       ##    ##     ## ####  ## 
+// ########  ##     ##    ##       ##    ##     ## ## ## ## 
+// ##     ## ##     ##    ##       ##    ##     ## ##  #### 
+// ##     ## ##     ##    ##       ##    ##     ## ##   ### 
+// ########   #######     ##       ##     #######  ##    ## 
+
+.btn {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 10%;
+	max-width: 200px;
+	width: 100%;
+	margin: auto;
+	display: none;
+	z-index: 3;
+
+	@include animation-name(btn);
+	@include animation-duration(1s);
+	@include animation-iteration-count(infinite);
+	@include animation-direction(alternate);
+
+	@media screen and (min-width: 480) and (min-height: 640) {
+		bottom: 15%;
+	}
+	@media screen and (orientation: portrait) {
+		bottom: 15%;
+	}
+}
+.btn-go-event {
+	@include buttons($yellow);
+}
+.btn-not-start {
+	@include buttons($white30);
+}
+
+//    ###    ##    ## #### ##     ##    ###    ######## ####  #######  ##    ## 
+//   ## ##   ###   ##  ##  ###   ###   ## ##      ##     ##  ##     ## ###   ## 
+//  ##   ##  ####  ##  ##  #### ####  ##   ##     ##     ##  ##     ## ####  ## 
+// ##     ## ## ## ##  ##  ## ### ## ##     ##    ##     ##  ##     ## ## ## ## 
+// ######### ##  ####  ##  ##     ## #########    ##     ##  ##     ## ##  #### 
+// ##     ## ##   ###  ##  ##     ## ##     ##    ##     ##  ##     ## ##   ### 
+// ##     ## ##    ## #### ##     ## ##     ##    ##    ####  #######  ##    ## 
+
+@include keyframes(header-group) {
+	0% {
+		transform: translateY(0px)
+	} 
+	100% {
+		transform: translateY(10px)
+	}
+}
+@include keyframes(footer) {
+	0% {
+		transform: translateY(0px)
+	} 
+	100% {
+		transform: translateY(10px)
+	}
+}
+@include keyframes(bg-tree) {
+	0% {
+		transform: translateY(0px)
+	} 
+	100% {
+		transform: translateY(10px)
+	}
+}
+@include keyframes(gift-01) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(-10px, -10px);
+	}
+}
+@include keyframes(gift-02) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(-5px, -10px);
+	}
+}
+@include keyframes(gift-03) {
+	0% {
+		transform: translate(0, 10px);
+	} 
+	100% {
+		transform: translate(0, -10px);
+	}
+}
+@include keyframes(gift-04) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(0, 10px);
+	}
+}
+@include keyframes(gift-05) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(0, 10px);
+	}
+}
+@include keyframes(gift-06) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(-5px, 10px);
+	}
+}
+@include keyframes(gift-07) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(0, 10px);
+	}
+}
+@include keyframes(gift-08) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(0, 5px);
+	}
+}
+@include keyframes(gift-09) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(0px, -10px);
+	}
+}
+@include keyframes(gift-10) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(-5px, 10px);
+	}
+}
+@include keyframes(gift-11) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(-5px, 10px);
+	}
+}
+@include keyframes(gift-12) {
+	0% {
+		transform: translate(0, -10px);
+	} 
+	100% {
+		transform: translate(0, 10px);
+	}
+}
+@include keyframes(gift-13) {
+	0% {
+		transform: translate(0, 0px);
+	} 
+	100% {
+		transform: translate(0, -10px);
+	}
+}
+@include keyframes(gift-14) {
+	0% {
+		transform: translate(0, 0);
+	} 
+	100% {
+		transform: translate(0, -5px);
+	}
+}
+@include keyframes(btn) {
+	0% {
+		transform: translateY(0px)
+	} 
+	100% {
+		transform: translateY(10px)
+	}
+}
+
+//    ###    ##      ##    ###    ########  ########  
+//   ## ##   ##  ##  ##   ## ##   ##     ## ##     ## 
+//  ##   ##  ##  ##  ##  ##   ##  ##     ## ##     ## 
+// ##     ## ##  ##  ## ##     ## ########  ##     ## 
+// ######### ##  ##  ## ######### ##   ##   ##     ## 
+// ##     ## ##  ##  ## ##     ## ##    ##  ##     ## 
+// ##     ##  ###  ###  ##     ## ##     ## ########  
+
+.step-group {
+	width: 100%;
+	max-width: 450px;
+	padding: 50px 30px;
+	text-align: center;
+	margin: 0 auto;
+	color: $black;
+	@include border-box-sizing;
+
+	img {
+		width: 100%;
+	}
+	.award-txt {
+		background: url("../images/award-txt.png?a=20141222-1") top center no-repeat;
+		background-size: contain;
+		min-height: 201px;
+		margin-bottom: 10px;
+
+		-ms-behavior: url("../backgroundsize.min.htc");
+		behavior: url("../backgroundsize.min.htc");
+	}
+	.award-image {
+		background: url("../images/award-image.png") top center no-repeat;
+		background-size: contain;
+		min-height: 240px;
+
+		-ms-behavior: url("../backgroundsize.min.htc");
+		behavior: url("../backgroundsize.min.htc");		
+	}
+	.award-xmas {
+		background: url("../images/award-xmas.png") top center no-repeat;
+		background-size: contain;
+		min-height: 205px;
+		margin: 0 auto 40px;
+
+		-ms-behavior: url("../backgroundsize.min.htc");
+		behavior: url("../backgroundsize.min.htc");
+	}
+	.prize-image {
+		margin: 20px auto; 
+	}
+	.table-award {
+		margin: -30px auto 0;
+		background: rgba(255,255,255, 0.8);
+		padding: 20px;
+		@include border-box-sizing;
+
+		.tr {
+			margin-bottom: 10px;
+		}
+		.td {
+			margin-right: 5px;
+		}
+		.note {
+			font-size: $fontSize14;
+			font-weight: bold;
+			color: $red;
+		}
+		input {
+			border: 1px solid $white10;
+			box-shadow: none;
+			width: 80%;
+			padding: 10px;
+
+			&:focus { 
+				border: 1px solid $yellow;
+			}
+		}
+	}
+	.done {
+		margin-bottom: 150px;
+	}
+}
+#STEP2, #STEP3 {
+	display: none;
+}
+.btn-award {
+	@include buttons($yellow);
+	
+	width: 100%;
+	margin: 30px auto 0;
+}

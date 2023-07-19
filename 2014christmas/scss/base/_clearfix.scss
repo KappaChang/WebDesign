@@ -1,0 +1,14 @@
+/*clear float*/
+%clearfix {
+  &::before {
+    content: "";
+    display: table;
+  }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  zoom: 1;
+  /*IE6, IE7*/
+}

@@ -1,0 +1,299 @@
+//default
+$fontStyle: "微軟正黑體", "LiHei Pro" ,"sans-serif";
+$fontBase: 16px;
+$backGroundColor: #51AFAA;
+$fontColor: #515151;
+$lineHeightBase: 1.65;
+$linkColor: #06F;
+
+//font
+$fontSize32: $fontBase * 2;
+$fontSize28: $fontBase * 1.75;
+$fontSize24: $fontBase * 1.5;
+$fontSize23: $fontBase * 1.438;
+$fontSize22: $fontBase * 1.375;
+$fontSize21: $fontBase * 1.313;
+$fontSize20: $fontBase * 1.25;
+$fontSize19: $fontBase * 1.188;
+$fontSize18: $fontBase * 1.125;
+$fontSize17: $fontBase * 1.063;
+$fontSize16: $fontBase * 1;
+$fontSize15: $fontBase * 0.938;
+$fontSize14: $fontBase * 0.875;
+$fontSize13: $fontBase * 0.813;
+$fontSize12: $fontBase * 0.75;
+$fontSize11: $fontBase * 0.688;
+$fontSize10: $fontBase * 0.625;
+$fontSize09: $fontBase * 0.563;
+$fontSize08: $fontBase * 0.5;
+$fontSize07: $fontBase * 0.438;
+$fontSize06: $fontBase * 0.375;
+
+// line-height
+$lineHeight12: $lineHeightBase * 0.75em;  //12px
+$lineHeight14: $lineHeightBase * 0.875em; //14px
+$lineHeight16: $lineHeightBase * 1;     //16px
+$lineHeight18: $lineHeightBase * 1.125; //18px
+$lineHeight20: $lineHeightBase * 1.25em;  //20px
+$lineHeight22: $lineHeightBase * 1.375em;  //22px
+$lineHeight24: $lineHeightBase * 1.5em;  //24px
+
+// color
+$black: black;
+$black5: lighten($black, 5%);
+$black10: lighten($black, 10%);
+$black15: lighten($black, 15%);
+$black20: lighten($black, 20%);
+$black25: lighten($black, 25%);
+$black30: lighten($black, 30%);
+$black35: lighten($black, 35%);
+$black40: lighten($black, 40%);
+$black45: lighten($black, 45%);
+$black50: lighten($black, 50%);
+
+$white: white;
+$white5: darken($white, 5%);
+$white10: darken($white, 10%);
+$white15: darken($white, 15%);
+$white20: darken($white, 20%);
+$white25: darken($white, 25%);
+$white30: darken($white, 30%);
+$white35: darken($white, 35%);
+$white40: darken($white, 40%);
+$white45: darken($white, 45%);
+$white50: darken($white, 50%);
+
+$gold: #fbc80e;
+$orange: #ef8200;
+$purple: #920683;
+$red: #FF0000;
+$fbColor: #2038E5;
+$yellow: #FFCA27;
+
+@mixin border-box-sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@mixin gradient($bgColor1, $bgColor2) {
+    background-color: $bgColor1;
+
+    @include background-image(linear-gradient($bgColor1, $bgColor2));
+}
+@mixin buttons($bgColor) {
+    @include gradient($bgColor, darken($bgColor, 5%));
+    @include border-box-sizing;
+    
+    //border-top: 1px solid lighten($bgColor, 15%);
+    border-bottom: 4px solid darken($bgColor, 15%);
+    border-radius: 3px;
+    font-size: $fontSize18;
+    font-weight: bold;
+    color: $white;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px; 
+
+    &:hover {
+        @include gradient(lighten($bgColor, 5%), $bgColor);
+    }
+    &:active {
+        @include gradient(darken($bgColor, 5%), $bgColor);
+    }
+}
+
+// 預設是等腰三角形，如要做正三角形，請將type預設變數改為0.8666666
+@mixin arrow($size, $color, $align, $type: 1) {
+  height: 0;
+  width: 0;
+  content: "";
+  position: absolute;
+  left: -$size;
+
+  // @if $align == top {
+  //   border-bottom: $size * $type solid $color;
+  //   border-left: $size / 2 solid transparent;
+  //   border-right: $size / 2 solid transparent;
+  // }
+  // @else if $align == right {
+  //   border-left: $size * $type solid $color;
+  //   border-top: $size / 2 solid transparent;
+  //   border-bottom: $size / 2 solid transparent;
+  // }
+  // @else if $align == bottom {
+  //   border-top: $size * $type solid $color;
+  //   border-left: $size / 2 solid transparent;
+  //   border-right: $size / 2 solid transparent;
+  // }
+  // @else if $align == left {
+  //   border-right: $size * $type solid $color;
+  //   border-top: $size / 2 solid transparent;
+  //   border-bottom: $size / 2 solid transparent;
+  // }
+  @if $align == top {
+    border-bottom: $size * $type solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @else if $align == right {
+    border-left: $size * $type solid $color;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == bottom {
+    border-top: $size * $type solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @else if $align == left {
+    border-right: $size * $type solid $color;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == right-top {
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == left-top {
+    border-left: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == right-bottom {
+    border-right: $size solid $color;
+    border-top: $size solid transparent;
+  }
+  @else if $align == left-bottom {
+    border-left: $size solid $color;
+    border-top: $size solid transparent;
+  }
+// 範例: .arrie-right-top{ @include arrow(30px,green,right-top); // 右上箭頭}
+}
+
+// 自動抓圖片寬度高度
+@mixin images($img) {
+    background: url("../images/#{$img}") no-repeat;
+    width: image-width("../images/#{$img}");
+    height: image-height("../images/#{$img}");
+// 範例: .logo{@include images('logo.png');}
+}
+
+
+// CSS3 Animation
+@mixin keyframes($name) {
+  @-o-keyframes $name { @content };
+  @-moz-keyframes $name { @content };
+  @-webkit-keyframes $name { @content }; 
+  @keyframes $name { @content };
+}
+@mixin animation-name($name...) {
+  -o-animation-name: $name;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+@mixin animation-duration($duration...) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-timing-function($timing...) {
+  -o-animation-timing-function: $timing;
+  -moz-animation-timing-function: $timing;
+  -webkit-animation-timing-function: $timing;
+  animation-timing-function: $timing;
+}
+@mixin animation-delay($delay...) {
+  -o-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
+@mixin animation-iteration-count($count...) {
+  -o-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  -webkit-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+@mixin animation-direction($direction...) {
+  -o-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  animation-direction: $direction;
+}
+@mixin animation-fill-mode($fill...) {
+  -o-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -webkit-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+@mixin animation-play-state($state...) {
+  -o-animation-play-state: $state;
+  -moz-animation-play-state: $state;
+  -webkit-animation-play-state: $state;
+  animation-play-state: $state;
+}
+@mixin animation($animation...) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+/* 範例:
+@include keyframes(bounce) {
+  0% {
+    transform: scale(1);
+  } 
+  100% {
+    transform: scale(2);
+  }
+}
+@include keyframes(fadeIn) {
+  0% {
+    opacity:0;
+  } 
+  100% {
+    opacity:1;
+  }
+}
+.spinner {
+  @include animation-name(bounce, fadeIn);
+  @include animation-duration(1s);
+  @include animation-iteration-count(infinite);
+  @include animation-direction(alternate);
+  background-color: blue;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  right: 25%;
+  bottom: 25%;
+}
+*/
+
+%title {
+  font-size: $fontSize20;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+%boderBottom {
+  border-bottom: 1px solid white;
+  margin-bottom: 1px;
+}
+%boderLeft {
+  border-left: 1px solid white;
+}
+%boderRight {
+  border-right: 1px solid $white20;
+}
+%boderTG {
+    border-top: 1px solid $white20;
+}
+%boderRG {
+    border-right: 1px solid $white20;
+}
+%boderBG {
+    border-bottom: 1px solid $white20;
+}
+%boderLG {
+    border-left: 1px solid $white20;
+}

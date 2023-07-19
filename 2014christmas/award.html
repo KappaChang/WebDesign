@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /><!-- 支援手機 -->
+<title>2014 幸福耶誕。襪藏驚喜</title>
+<meta name='keywords' content='古典樂,交響曲,協奏曲,耳機,抽獎,聖誕節,聖誕襪,驚喜,聖誕禮物'/>
+<meta name='description' content='歡樂的耶誕節即將來臨，我們將於 12/25 當天免費送出耶誕禮物喔！不管你是用 MUZIK ONLINE App 還是 Web，只要在耶誕節登入，我們將免費贈送多樣好禮。不用擔心會抽到銘謝惠顧，因為我們保證人人有獎！'/>
+<meta property='og:site_name' content='2014 幸福耶誕。襪藏驚喜'/>
+<meta property='og:title' content='2014 幸福耶誕。襪藏驚喜'/>
+<meta property='og:description' content='歡樂的耶誕節即將來臨，我們將於 12/25 當天免費送出耶誕禮物喔！不管你是用 MUZIK ONLINE App 還是 Web，只要在耶誕節登入，我們將免費贈送多樣好禮。不用擔心會抽到銘謝惠顧，因為我們保證人人有獎！'/>
+<meta property='og:type' content='website'/>
+<meta property='og:url' content='http://event2.muzik-online.com:8282/2014christmas/'/>
+<meta property='og:image' content='http://event2.muzik-online.com:8282/2014christmas/images/share.jpg'/>
+<link href="css/all-susy.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><!-- 呼叫 JQuery -->
+<link rel="shortcut icon" href="http://www.muzik-online.com/img/favicon.ico" type="image/x-icon">
+<meta property='fb:app_id' content='339999192774080'/>
+<meta property='fb:admins' content='817179921'/>
+<meta property='fb:admins' content='100000372048258'/>
+
+<!-- 讓IE8支援html5 tag -->
+<!--[if lt IE 9]>
+<script src="js/plug/html5shiv.js"></script>
+<![endif]-->
+<!-- 讓IE9已下支援 Media Query -->
+<!--[if lt IE 9]>
+<script src="js/plug/respond.min.js"></script>
+<![endif]-->
+<!--在 IE6-8 讓 JavaScript 工具模擬 CSS3 偽類和屬性選擇器 -->
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="js/plug/selectivizr.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+<![endif]-->
+
+<!-- livereload-js -->
+<!--
+<script>
+document.write('<script src="http://'
++ (location.host || 'localhost').split(':')[0]
++ ':35729/livereload.js?snipver=1"></'
++ 'script>')
+</script>
+-->
+
+<link rel="stylesheet" href="css/flipclock.css">
+<style>
+   .prize-form, .flip-clock-label, #STEPERROR {
+      display: none;
+   }
+
+   .step-group {
+      min-width: 320px;
+   }
+
+   .flip-clock-wrapper {
+      min-width: 220px;
+      margin-top: 0;
+      margin-left: 42px;
+      margin-bottom: 18px;
+   }
+
+   @media(max-width: 431px) {
+      .flip-clock-wrapper {
+         margin-left: 0;
+      }
+   }
+
+   .flip-clock-wrapper ul {
+      max-width: 60px;
+      width: 18%;
+   }
+
+   .step-group .done {
+      margin-bottom: 0;
+   }
+</style>
+
+</head>
+
+<body>
+   <div class="bg-music"></div>
+   <div class="bg-tree"></div>
+
+   <!-- #MAIN start-->
+   <div id="MAIN" >
+
+      <div id="STEP1">
+         <div class="step-group">
+            <div class="award-txt"></div>
+            <div class="award-image"></div>
+            <!-- <div class="btn-award" id="BtnGoStep2">點擊領取獎品</div> -->
+            <div class="btn-award">活動時間已截止</div>
+         </div>
+      </div>
+
+      <div id="STEP2" _height="auto">
+         <div class="step-group">
+            <h2>恭喜您獲得<br /><span class="prize-name"></span></h2>
+            <div class="prize-image"><img></div>
+            <form class="prize-form">
+               <ul class="table-award">
+                  <li>
+                     <div class="clock"></div>
+                  </li>
+                  <li class="tr">
+                     <span class="td">姓名</span>
+                     <span><input type="text" id="name" name="name"></span>
+                  </li>
+                  <li class="tr">
+                     <span class="td">信箱</span>
+                     <span><input type="text" id="email" name="email"></span>
+                  </li>
+                  <li class="tr">
+                     <span class="td">電話</span>
+                     <span><input type="text" id="phone" name="phone"></span>
+                  </li>
+                  <li class="tr">
+                     <span class="td">地址</span>
+                     <span><input type="text" id="address" name="address"></span>
+                  </li>
+                  <li class="note">請於五分鐘內填寫完並送出資料，否則獎品將予以回收。</li>
+                  <li class="note">獎品將隨地址寄出（限寄台灣），請務必填寫有效地址。</li>
+               </ul>
+               <div class="btn-award" id="BtnGoStep3">確認送出</div>
+            </form>
+            <div class="btn-award" id="BtnGoStep6">關閉</div>
+         </div>
+      </div>
+
+      <div id="STEP3" _height="auto">
+         <div class="step-group" none="ture">
+            <div class="award-txt"></div>
+            <div class="award-xmas"></div>
+            <h2 class="done">恭喜你完成抽獎！</h2>
+            <div class="btn-award" id="BtnGoStep4">關閉</div>
+         </div>
+      </div>
+
+      <div id="STEPERROR">
+         <div class="step-group">
+            <div class="award-txt"></div>
+            <div class="award-xmas"></div>
+            <h2>您已經抽過獎囉！</h2>
+            <div class="btn-award" id="BtnGoStep5">關閉</div>
+         </div>
+      </div>
+   </div>
+   <!-- MAIN end -->
+
+   <footer>
+      <div class="copyright">©2014 MUZIK Creative Digital Ltd.</div>
+   </footer>
+
+   <script src="js/plug/flipclock.min.js"></script>
+   <script type="text/javascript">
+      $(function() {
+         var getPrize = function(callback) {
+            $.post("api/draw.php", function(response) {
+               if(response.error) {
+                  $("#STEPERROR").show();
+                  $("#STEP1").hide();
+
+                  if(!parent.window.require) {
+                     $("#BtnGoStep5").hide();
+                  }
+               }
+               else {
+                  callback(response.data);
+               }
+            }, "json");
+         };
+
+         var sendForm = function(data, callback) {
+            $("input[name='name']").css("outline", "");
+            $("input[name='email']").css("outline", "");
+            $("input[name='phone']").css("outline", "");
+            $("input[name='address']").css("outline", "");
+
+            $.post("api/sign.php", data, function(response) {
+               if(response.error) {
+                  alert(response.message);
+
+                  if(response.message === "姓名未填寫！") {
+                     $("input[name='name']").css("outline", "1px solid red");
+                  }
+                  else if(response.message === "信箱未填寫！") {
+                     $("input[name='email']").css("outline", "1px solid red");
+                  }
+                  else if(response.message === "信箱格式錯誤") {
+                     $("input[name='email']").css("outline", "1px solid red");
+                  }
+                  else if(response.message === "電話未填寫！") {
+                     $("input[name='phone']").css("outline", "1px solid red");
+                  }
+                  else if(response.message === "地址未填寫！") {
+                     $("input[name='address']").css("outline", "1px solid red");
+                  }
+               }
+               else {
+                  callback();
+               }
+            }, "json");
+         };
+
+         var sendTimeout = function() {
+            $("#STEP2").hide();
+            $("#STEPERROR").show().find("h2").html("填寫時間已到！");
+
+            if(!parent.window.require) {
+               $("#BtnGoStep5").hide();
+            }
+         };
+
+         var closeWindow = function() {
+            if(parent.window.require) {
+               parent.window.require(["upgradeView"], function(upgradeView) {
+                  upgradeView.close();
+               });
+            }
+            else {
+               location.reload();
+            }
+         };
+
+         var tid;
+
+         $("#BtnGoStep2").click(function(event) {
+            getPrize(function(data) {
+               $(".prize-name").html(data.name);
+               $(".prize-image").children("img").attr("src", "images/prize-image"+ data.number +".jpg");
+
+               $("#STEP1").hide();
+               $("#STEP2").show();
+
+               if(data.number === "01" ||
+                  data.number === "02" ||
+                  data.number === "03" ||
+                  data.number === "04" ||
+                  data.number === "05" ||
+                  data.number === "06") {
+                  $(".prize-form").show();
+                  $("#BtnGoStep6").hide();
+
+                  $(".clock").FlipClock(300, {
+                     countdown: true,
+                     clockFace: "MinuteCounter"
+                  });
+
+                  tid = setTimeout(function() {
+                     sendTimeout();
+                  }, 305000);
+               }
+               else {
+                  if(!parent.window.require) {
+                     $("#BtnGoStep6").hide();
+                  }
+               }
+            });
+         });
+
+         $("#BtnGoStep3").click(function(event) {
+            clearTimeout(tid);
+
+            sendForm($(".prize-form").serialize(), function() {
+               $("#STEP2").hide();
+               $("#STEP3").show();
+
+               if(!parent.window.require) {
+                  $("#BtnGoStep4").hide();
+               }
+            });
+         });
+
+         $("#BtnGoStep4, #BtnGoStep5, #BtnGoStep6").click(function(event) {
+            closeWindow();
+         });
+      });
+   </script>
+</body>
+</html>

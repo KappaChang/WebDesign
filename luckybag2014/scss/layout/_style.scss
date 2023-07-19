@@ -1,0 +1,46 @@
+html, body {
+  color: $fontColor;
+  //background: $backGroundColor;
+  font-family: $fontStyle;
+  font-size: $fontBase;
+  line-height: $lineHeightBase;
+}
+/*LOGO h1 加字*/
+a {
+  color: $linkColor;
+}
+a:hover {
+  color: lighten($linkColor, 30%);
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+.icons-logo {
+    white-space: nowrap;
+    text-indent: 110%; /*把文字用縮排推到寬度以外*/
+    overflow: hidden;
+    margin: 20px 0;
+    position: absolute;
+    z-index: 999;
+}
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+.icons {
+  display: inline-block;
+}
+.bg-white {
+  background-color: $white;
+}
+.bg-black {
+  background-color: $black;
+  //min-height: 300px;
+}
+.bg-gray {
+  background: $white10;
+  min-height: 300px;
+}
+.red {
+  color: $red;
+}

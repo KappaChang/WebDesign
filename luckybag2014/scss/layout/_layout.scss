@@ -1,0 +1,759 @@
+/*KappaChang Layout*/
+
+//susy
+$total-columns  : 12; //畫 12 條
+$column-width   : 60px; // 每條 60px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 10px; // 左右 padding 10px
+
+$desktop: 960px 12; // min-width 960px draw 12 total-columns
+$pad: 768px 8 959px; //min-width 768px max-width 595px draw 8 total-columns
+//$desktop: 1025px 12; // min-width 960px draw 12 total-columns
+//$pad: 768px 8 1024px; //min-width 768px max-width 595px draw 8 total-columns
+$mobile: 4 767px; //max-width 767px draw 4 total-columns
+
+html, body {
+	background: #fffde4; // Old browsers
+	min-height: 100%;
+	//@include filter-gradient(#FFFFFF, #ed86b3, vertical); // IE6-9
+	//@include background-image(linear-gradient(top, #FFFFFF 0%,#ed86b3 100%));
+}
+#CONTAINER {
+	//max-width: 1440px;
+	margin: 0 auto;
+	position: relative;
+	@include border-box;
+}
+img.bg {
+	/* Set rules to fill background */
+	//min-height: 100%;
+	//min-width: 1024px;
+	/* Set up proportionate scaling */
+	width: 100%;
+	// height: auto !important;
+	// height: 100%;
+	// /* Set up positioning */
+	// position: top center;
+	// //position: relative;
+	// top: 0;
+	// left: 0;
+}
+.mobile-bg {
+	display: none;
+
+	@include at-breakpoint($mobile) {
+		display: block;
+	}
+	@include at-breakpoint($pad) {
+		display: none;
+	}
+	@include at-breakpoint($desktop) {
+		display: none;
+	}
+	
+}
+.pad-bg {
+	display: none;
+	
+	@include at-breakpoint($mobile) {
+		display: none;
+	}
+	@include at-breakpoint($pad) {
+		display: block;
+	}
+	@include at-breakpoint($desktop) {
+		display: none;
+	}
+}
+.desktop-bg {
+	display: block;
+	@include border-box;
+
+	@include at-breakpoint($mobile) {
+		display: none;
+	}
+	@include at-breakpoint($pad) {
+		display: none;
+	}
+}
+.bottom-block {
+	width: 80%;
+	margin: 50px auto;
+	
+	@include at-breakpoint($mobile) {
+		width: 90%;
+		margin: 60px auto;
+	}
+}
+.event-block {
+	padding: 40px 5%;
+	background-color: rgba(255, 207, 182, 0.8); // Old browsers
+	// @include filter-gradient(#ffffff, #FFDFED, vertical); // IE6-9
+	// @include background-image(linear-gradient(top, #FFF 0%, #FFF 30%, #FFDFED 100%));
+
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: $fontSize16;
+	
+	img {
+		width: 100%;
+	}
+}
+.event-title {
+	margin-top: -85px;
+	max-width: 466px;
+
+	@include at-breakpoint($mobile) {
+		margin-left: 0;
+		margin-top: -65px;
+	}
+}
+// .event-subtitle {
+// 	background: $black30;
+// 	color: $white;
+// 	border-radius: 3px;
+// 	font-size: $fontSize14;
+// 	padding: 2px 8px;
+// 	display: inline-block;
+// }
+.event-desc {
+	margin: 15px 0 35px;
+}
+.event-special-desc {
+	font-size: $fontSize20;
+	line-height: 26px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.event-image {
+	float: right;
+	margin: -55px -135px 0;
+
+	@include at-breakpoint($mobile) {
+		display: none;
+	}
+	@include at-breakpoint($pad) {
+		margin: -55px -95px 0;
+	}
+}
+// .event-table {
+// 	margin-bottom: 30px;
+// }
+// .event-table-group {
+// 	margin-bottom: 2px;
+// 	width: 100%;
+// 	display: inline-table;
+// }
+// .event-table-title {
+// 	background: #ef8200;
+// 	color: $white;
+// 	padding: 20px;
+// 	border-right: 2px solid rgba(255, 207, 182, 0.8);
+// 	display: table-cell;
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	width: 10%;
+// 	min-width: 55px;
+// }
+// .event-table-desc {
+// 	background: $white;
+// 	padding: 20px;
+// 	border-right: 2px solid rgba(255, 207, 182, 0.8);
+// 	height: 25px;
+// 	line-height: 16px;
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	display: table-cell;
+// 	width: 20%;
+// 	min-width: 55px;
+// }
+// .yellow {
+// 	background: #fffac6;
+// }
+
+
+.event-table {
+	width: 100%;
+	background-color: rgba(255, 207, 182, 0.8);
+	margin-bottom: 30px;
+	@extend %clearfix;
+	
+	.tr {
+		width: 100%;
+		border-bottom: 1px solid rgba(255, 207, 182, 0.8);
+		//float: left;
+		background: $white;
+		display: table;
+
+		&:nth-child(2n) {
+			background: #fffac6;
+		}
+	}
+	.td {
+		width: 50%;
+		padding: 15px 20px;
+		//float: left;
+		//margin-right: 1%;
+		border-right: 1px solid rgba(255, 207, 182, 0.8);
+		border-collapse: collapse; //予許邊框重疊
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+
+		&:last-child {
+			//margin-right: 0;
+			border-right: none;
+		}
+	}
+	.event-table-title {
+		background: #ef8200;
+		color: $white;
+		width: 49.5%;
+		margin-right: 1%;
+	}
+}
+
+.pre-button {
+	@include buttons($red);
+	border-radius: 1px;
+	font-weight: bold;
+	font-size: $fontSize24;
+	letter-spacing: 2px;
+	line-height: 28px;
+	padding: 12px;
+	//padding: 5px;
+	width: 70%;
+	margin: 0 auto;
+	
+	@include at-breakpoint($mobile) {
+		width: 100%;
+		@include border-box;
+	}
+	@include at-breakpoint($pad) {
+		width: 85%;
+	}
+}
+@media (min-width: 1281px) {
+	.pre-button {
+		width: 50%;
+	}
+}
+.expired-button {
+	@include buttons($white30);
+	border-radius: 1px;
+	font-weight: bold;
+	font-size: $fontSize24;
+	letter-spacing: 2px;
+	padding: 5px;
+}
+.notStart-button {
+	@include buttons($white30);
+	border-radius: 1px;
+	font-weight: bold;
+	font-size: $fontSize20;
+	padding: 10px 5px;	
+}
+.limited-button {
+	@include buttons($red);
+	border-radius: 1px;
+	font-weight: bold;
+	font-size: $fontSize20;
+	letter-spacing: 2px;
+	padding: 5px;
+}
+.note {
+	@extend %clearfix; 
+	
+	font-size: $fontSize14;
+	color: #C21D1D;;
+	margin: 30px 0;
+	line-height: 22px;
+
+	.note-title {
+		font-weight: bold;
+		margin-bottom: 3px;
+	}
+
+	ul li {
+		margin-left: 20px;
+		list-style-type: decimal;
+	}
+}
+.text-pre-button {
+	text-decoration: underline;
+	color: #436AE6;
+	cursor: pointer;
+
+	&:hover {
+		color: lighten(#436AE6, 10%);
+	}
+}
+footer {
+	line-height: 16px;
+	float: left;
+	margin-bottom: 30px;
+
+	
+	.sponsor-group {
+		position: relative;
+		float: left;
+		margin-right: 40px;
+	}
+	.sponsor-title {
+		width: 25px;
+		font-size: $fontSize11;
+		color: #aa5b29;
+		float: left;
+		margin: 10px 5px 0 0;
+		display: inline-block;
+	}
+	.sponsor-logo {
+		margin-right: 5px;
+	}
+	.copyright {
+		//clear: both;
+		float: left;
+		margin: 15px 0 0 0;
+		font-size: $fontSize12;
+		color: darken(#ba544f, 5%);
+	}
+
+}
+
+.share {
+	position: absolute;
+	right: 215px;
+	top: 1.5%;
+	z-index: 99;
+
+	@include at-breakpoint($mobile) {
+		right: 15px;
+	}
+	@include at-breakpoint($pad) {
+		right: 15px;
+	}
+
+	.fb-share, .google-plus-share, .twitter-share {
+		float: left;
+		margin-right: 10px;
+	}
+	.fb-share {
+		//width: 67px;
+		margin-top: -5px;
+	}
+	.google-plus-share {
+		width: 60px;
+	}
+	.twitter-share {
+		width: 70px;
+	}
+}
+
+
+// ##        #######   ######   #### ##    ##    ##     ##  #######  ########     ###    ##       
+// ##       ##     ## ##    ##   ##  ###   ##    ###   ### ##     ## ##     ##   ## ##   ##       
+// ##       ##     ## ##         ##  ####  ##    #### #### ##     ## ##     ##  ##   ##  ##       
+// ##       ##     ## ##   ####  ##  ## ## ##    ## ### ## ##     ## ##     ## ##     ## ##       
+// ##       ##     ## ##    ##   ##  ##  ####    ##     ## ##     ## ##     ## ######### ##       
+// ##       ##     ## ##    ##   ##  ##   ###    ##     ## ##     ## ##     ## ##     ## ##       
+// ########  #######   ######   #### ##    ##    ##     ##  #######  ########  ##     ## ######## 
+
+// @include at-breakpoint($mobile) {
+
+// 	.modal {
+// 		width: 90%;
+// 		margin-left: -45%;
+// 	}
+// }
+// @include at-breakpoint($pad) {
+
+// 	.modal {
+// 		width: 80%;
+// 		margin-left: -40%;
+// 	}
+// }
+.modal {
+	position: absolute;
+	width: 40%;
+	margin-left: -20%;
+	z-index: -999;
+
+	input {
+		border-radius: 1px;
+	}
+
+	@include at-breakpoint($mobile) {
+			width: 90%;
+			margin-left: -45%;
+	}
+	@include at-breakpoint($pad) {
+			width: 60%;
+			margin-left: -30%;
+	}
+}
+@media (min-width: 1281px) {
+	.modal {
+		width: 28%;
+		margin-left: -14%;
+	}
+}
+
+.modal.fade {
+	top: -50%;
+}
+.modal.fade.in {
+	top: 20%;
+	z-index: 9999;
+
+	@include at-breakpoint($mobile) {
+		top: 3%;
+	}
+	@include at-breakpoint($pad) {
+		top: 3%;
+	}
+}
+.lottery {
+	padding: 50px 40px;
+	width: 36%;
+	margin-left: -18%;
+	background-color: rgb(255,255,255); // Old browsers
+	@include filter-gradient(#ffffff, #d7e7ae, vertical); // IE6-9
+	@include background-image(linear-gradient(top, rgba(255,255,255,1) 0%,rgba(215,231,174,1) 100%));
+	@include border-box;
+
+	@include at-breakpoint($mobile) {
+		padding: 50px 20px;
+		width: 90%;
+		margin-left: -45%;
+	}
+
+	@include at-breakpoint($pad) {
+		padding: 50px 40px;
+		width: 80%;
+		margin-left: -40%;
+	}
+}
+@media (max-width: 1367px) and (min-width: 1282px) {
+	.lottery {
+		width: 52%;
+		margin-left: -26%;
+	}
+}
+@media (max-width: 1281px) and (min-width: 1192px) {
+	.lottery {
+		width: 56%;
+		margin-left: -28%;
+	}
+}
+@media (max-width: 1191px) and (min-width: 961px) {
+	.lottery {
+		width: 74%;
+		margin-left: -37%;
+	}
+}
+@media (min-width: 1339px) {
+	.lottery {
+		width: 50%;
+		margin-left: -25%;
+	}
+}
+@media (min-width: 1661px) {
+	.lottery {
+		width: 40%;
+		margin-left: -20%;
+	}
+}
+
+.lottery-title {
+	text-align: center;
+
+	img {
+		width: 100%;
+		max-width: 482px;
+	}
+}
+.lottery.modal.fade.in {
+	top: 5%;
+
+	@include at-breakpoint($mobile) {
+		top: 3%;
+	}
+	@include at-breakpoint($pad) {
+		top: 3%;
+	}
+}
+.lottery-close {
+	position: absolute;
+	cursor: pointer;
+	right: -20px;
+	top: -20px;
+
+	@include at-breakpoint($mobile) {
+		right: 0;
+		top: 0;
+	}
+	@include at-breakpoint($pad) {
+		right: 0;
+		top: 0;
+	}
+}
+.lottery-desc {
+	color: #e4007e;
+	font-size: $fontSize18;
+	margin: 20px 0;
+
+	@include at-breakpoint($mobile) {
+		font-size: $fontSize16;
+	}
+	@include at-breakpoint($pad) {
+		font-size: $fontSize16;
+	}
+
+	.colt-plus {
+		text-align: center;
+
+		img {
+			width: 100%;
+			max-width: 434px;
+		}
+	}
+
+	.highlight {
+		color: $red;
+		font-weight: bold;
+	}
+}
+.go-online-fb {
+}
+.go-online-info {
+	@include border-radius(2px);
+
+	font-size: $fontSize15;
+	line-height: 32px;
+	position: relative;
+	margin-left: 20px;
+	background: #9E7200;
+	color: $white;
+	padding: 3px 10px;
+
+	&:before {
+		@include arrow(12px, #9E7200, left, $type: 1);
+
+		margin-top: 3px;
+	}
+
+	// @include at-breakpoint($mobile) {
+	// 	display: none;
+	// }
+	// @include at-breakpoint($pad) {
+	// 	display: none;
+	// }
+
+}
+@media (max-width: 1023px) {
+	.go-online-info {
+		display: none;
+	}
+}
+.go-online-info-smallscreen {
+	font-size: $fontSize15;
+	line-height: 28px;
+	margin-left: 5px;
+	display: none;
+}
+@media (max-width: 1023px) {
+	.go-online-info-smallscreen {
+		display: inline;
+	}
+}
+.modal-login {
+	label {
+		text-align: center;
+	}
+}
+.fb-login-btn {
+	@include buttons($fbColor);
+	margin: 10px 0 30px;
+}
+.or {
+	background: url("../images/or.png") center top no-repeat;
+	margin: 25px 0;
+	//max-width: 370px;
+	width: 100%;
+	height: 16px;
+	text-align: center;
+}
+.form-title {
+	padding-right: 20px;
+	display: inline-block;
+}
+.w75 {
+	width: 75px;
+}
+.login-btn {
+	@include buttons($black10);
+	float: right;
+	padding: 8px 35px;
+}
+.cancel-btn{
+	@include buttons($white35);
+	margin-right: 5px;
+	float: right;
+	padding: 8px 35px;
+}
+.pay-button {
+	@include buttons($red);
+	border-radius: 1px;
+	font-weight: bold;
+	font-size: $fontSize24;
+	letter-spacing: 2px;
+	padding: 5px;
+	margin: 10px 0 30px;
+}
+.else {
+	font-size: $fontSize14;
+	color: $white35;
+	text-align: center;
+
+	.forget, .new-user, .have-account {
+		cursor: pointer;
+
+		&:hover {
+			color: #73ABFF;
+		}
+	}
+}
+
+
+// ########  ######## ########  #######  ##     ## ##    ## ########  
+// ##     ## ##       ##       ##     ## ##     ## ###   ## ##     ## 
+// ##     ## ##       ##       ##     ## ##     ## ####  ## ##     ## 
+// ########  ######   ######   ##     ## ##     ## ## ## ## ##     ## 
+// ##   ##   ##       ##       ##     ## ##     ## ##  #### ##     ## 
+// ##    ##  ##       ##       ##     ## ##     ## ##   ### ##     ## 
+// ##     ## ######## ##        #######   #######  ##    ## ########  
+
+.refund-bgColor {
+	background: #FAA6CB;
+	padding-bottom: 200px;
+}
+@media (max-width: 1441px) {
+		.refund-bgColor {
+			padding-bottom: 500px;
+		}
+	}
+	@media (max-width: 1180px) {
+		.refund-bgColor {
+			padding-bottom: 600px;
+		}
+	}
+.refund-content {
+	max-width: 1440px;
+}
+#HEADER {
+	background-color: #FAA6CB; // Old browsers
+	@include filter-gradient(#FFFFFF, #FAA6CB, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #FFFFFF 0%,#FAA6CB 100%));
+	width: 100%;
+	//height: 200%;
+	position: absolute;
+}
+#MAIN {
+	max-width: 1440px;
+	min-width: 1024px;
+	position: relative;
+}
+.right {
+	position: absolute;
+	right: 40px;
+	width: 35%;
+	min-height: 100%;
+	padding: 0 5% 0 3%;
+}
+.refund-block {
+	padding: 30px 20px;
+	background-color: rgb(255,255,255); // Old browsers
+	@include filter-gradient(#ffffff, #FFDFED, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #FFF 0%, #FFF 30%, #FFDFED 100%));
+
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: $fontSize16;
+	margin-top: 88%;
+	
+	img {
+		width: 100%;
+	}
+}
+.refund-title {
+	margin: -55px auto 0;
+	max-width: 435px;
+}
+.refund-desc {
+	margin: 5px 0 25px;
+}
+.refund-button {
+	@include buttons($orange);
+	border-radius: 1px;
+	font-weight: bold;
+	font-size: $fontSize24;
+	letter-spacing: 2px;
+	padding: 5px;
+	margin: 10px 0;
+}
+.refund-form-group {
+	clear: both;
+	float: left;
+	margin: 5px 0;
+
+	.form-title {
+		float: left;
+		line-height: 36px;
+		width: 80px;
+	}
+	.form-input {
+		//display: inline-block;
+		float: left;
+		box-sizing: border-box;
+		width: 275px;
+
+		input {
+			height: 40px;
+			padding: 5px 10px;
+			border-radius: 1px;
+			color: $black;
+			width: 100%;
+			box-sizing: border-box;
+		}
+	}
+	.form-note {
+		font-size: $fontSize14;
+		float: left;
+		display: inline-block;
+		margin: 6px 0 0 10px;
+		width: 55px;
+		line-height: 14px;
+	}
+	@media (max-width: 1441px) {
+		.form-note  {
+			padding-left: 100px;
+			margin: 0 0 20px 0;
+			width: auto;
+		}
+	}
+	@media (max-width: 1180px) {
+		.form-note  {
+			padding-left: 100px;
+			margin: 0 0 20px 0;
+			width: auto;
+		}
+	}
+}
+@-moz-document url-prefix() { 
+	.refund-form-group .form-note {
+		margin: 10px 0 0 30px;
+	}  
+}
+.refund-footer {
+	padding-left: 65px;
+}

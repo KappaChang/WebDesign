@@ -1,0 +1,683 @@
+/*KappaChang Layout*/
+@charset "UTF-8";
+
+//susy1
+$total-columns  : 12; //畫 12 條
+$column-width   : 70px; // 每條 61.5px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 20px; // 左右 padding 11px
+
+$desktop: 1024px 12; // min-width 980px draw 12 total-columns
+$pad: 640px 8 1023px; //min-width 768px max-width 979px draw 8 total-columns
+$mobile: 481px 4 639px; //min-width 481px max-width 767px draw 4 total-columns
+$small-mobile: 4 480px;  //max-width 480px draw 4 total-columns
+
+$eventColor: #63afb3;
+$eventYellow: #fbd418;
+$eventBlue: #472c6f;
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+// * {
+//     position: relative;
+//     box-sizing: border-box;
+// }
+.wrapper {
+	@include border-box-sizing;
+	background-image: url("../images/bg.png");
+	background-color: $eventColor;
+	font-family: 'Noto Sans TC', sans-serif;
+	overflow: hidden;
+}
+.grid {
+	@include container;
+	@include border-box-sizing;
+
+	@include at-breakpoint($small-mobile) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	@include at-breakpoint($mobile) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	@include at-breakpoint($pad) {
+		//@include susy-grid-background;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	@include at-breakpoint($desktop) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+.btn {
+	@include buttons;
+	border: 2px solid $eventYellow;
+	color: $eventYellow;
+	margin: 0 0 20px;
+	transition: all 0.3s;
+	display: inline-block;
+
+	&:hover {
+		background: $eventYellow;
+		color: $white;
+	}
+
+	@include at-breakpoint($small-mobile) {
+		width: 100%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+}
+.btn__left {
+	margin-right: 0;
+	
+	@include at-breakpoint($pad) {
+		margin-right: 20px;
+	}
+	@include at-breakpoint($desktop) {
+		margin-right: 20px;
+	}
+}
+.title {
+	color: $eventYellow;
+	font-size: 2em;
+	font-weight: 600;
+    line-height: 1.4em;
+    letter-spacing: 0.1em;
+    margin-bottom: 40px;
+    clear: both;
+    width: 100%;
+
+    @include at-breakpoint($small-mobile) {
+		font-size: 1.8em;
+	}
+}
+.sub-title {
+	color: $white;
+	font-size: 1.4em;
+	font-weight: 600;
+	line-height: 1.4em;
+	margin-bottom: 40px;
+	clear: both;
+    width: 100%;
+}
+.image {
+	width: 100%;
+}
+
+
+// ##     ## ####  ######  ##     ##    ###    ##       
+// ##     ##  ##  ##    ## ##     ##   ## ##   ##       
+// ##     ##  ##  ##       ##     ##  ##   ##  ##       
+// ##     ##  ##   ######  ##     ## ##     ## ##       
+//  ##   ##   ##        ## ##     ## ######### ##       
+//   ## ##    ##  ##    ## ##     ## ##     ## ##       
+//    ###    ####  ######   #######  ##     ## ######## 
+
+#visual {
+
+	position: relative;
+
+	@include at-breakpoint($small-mobile) {
+		padding: 60px 0 100px !important;
+	}
+
+	.title {
+		font-size: 2.6em;
+		letter-spacing: 0.2em;
+		line-height: 1.25em;
+		margin-bottom: 10px;
+
+		@include at-breakpoint($small-mobile) {
+			font-size: 1.6em !important;
+			letter-spacing: 0.1em;
+			line-height: 1.2em;
+		}
+		@include at-breakpoint($mobile) {
+			font-size: 1.6em !important;
+			letter-spacing: 0.1em;
+			line-height: 1.2em;
+		}
+		@include at-breakpoint($pad) {
+			font-size: 2.2em !important;
+			letter-spacing: 0.1em;
+			line-height: 1.2em;
+		}
+	}
+	.title__small {
+		font-size: 0.8em;
+		line-height: 1em;
+	}
+	.sub-title {
+		font-size: 1.2em;
+    	letter-spacing: 0.1em;
+    	line-height: 1.6em;
+
+		@include at-breakpoint($small-mobile) {
+			font-size: 0.8em !important;
+		}
+		@include at-breakpoint($mobile) {
+			font-size: 0.8em !important;
+		}
+		@include at-breakpoint($pad) {
+			font-size: 1em !important;
+		}
+	}
+	// .sub-title__en {
+	// 	font-size: 0.7em;
+	// 	letter-spacing: 0;
+
+	// 	@include at-breakpoint($small-mobile) {
+	// 		font-size: 0.65em;
+	// 		line-height: 0;
+	// 	}
+	// 	@include at-breakpoint($mobile) {
+	// 		font-size: 0.65em;
+	// 		line-height: 0;
+	// 	}
+	// }
+}
+.year {
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 90px;
+
+	@include at-breakpoint($small-mobile) {
+		max-width: 70px;
+		margin-bottom: 10px;
+	}
+	@include at-breakpoint($mobile) {
+		max-width: 70px;
+		margin-bottom: 10px;
+	}
+}
+.date {
+	margin: 10% 0 30px;
+	max-width: 400px;
+
+	@include at-breakpoint($small-mobile) {
+		max-width: 300px;
+	}
+	@include at-breakpoint($mobile) {
+		max-width: 340px;
+	}
+}
+/* 高度不夠特殊處理 */
+@media (max-height: 800px){
+	
+	#visual {
+		padding: 0 0 40px;
+
+		.title {
+			font-size: 2em;
+			letter-spacing: 0.1em;
+			line-height: 1.2em;
+		}
+		.sub-title {
+			font-size: 1.6em;
+			letter-spacing: 0.1em;
+		}
+		.sub-title__en {
+			font-size: 0.65em;
+		}
+		.year {
+			max-width: 70px;
+			margin-bottom: 10px;
+		}
+	}
+	
+}
+
+.parallax {
+	position: absolute;
+	
+	//section1
+	&.section1-bg01 {
+		top: 8%;
+		right: 8%;
+	}
+	&.section1-bg02 {
+		right: 7%;
+		bottom: 10%;
+	}
+	&.section1-bg03 {
+		right: 20%;
+		top: 35%;
+		
+		@include at-breakpoint($small-mobile) {
+			display: none;
+		}
+		@include at-breakpoint($mobile) {
+			display: none;
+		}
+		@include at-breakpoint($pad) {
+			display: none;
+		}	
+	}
+	&.section1-bg04 {
+		right: 25%;
+		bottom: 18%;
+		
+		@include at-breakpoint($small-mobile) {
+			display: none;
+		}
+		@include at-breakpoint($mobile) {
+			display: none;
+		}
+		@include at-breakpoint($pad) {
+			display: none;
+		}
+	}
+	&.section1-bg05 {
+		right: 15%;
+		bottom: 5%;
+		
+		@include at-breakpoint($small-mobile) {
+			display: none;
+		}
+		@include at-breakpoint($mobile) {
+			display: none;
+		}
+		@include at-breakpoint($pad) {
+			display: none;
+		}
+	}
+	//section2
+	&.section2-bg01 {
+		right: 5%;
+		top: 10%;
+	}
+	&.section2-bg02 {
+		left: 7%;
+		top: 35%;
+		width: 100%;
+		max-width: 200px;
+	}
+	&.section2-bg03 {
+		right: -20px;
+		bottom: 35%;
+	}
+	//section3
+	&.section3-bg01 {
+		right: 5%;
+		bottom: 5%;
+		
+		@include at-breakpoint($small-mobile) {
+			display: none;
+		}
+		@include at-breakpoint($mobile) {
+			display: none;
+		}
+		@include at-breakpoint($pad) {
+			display: none;
+		}
+	}
+	&.section3-bg02 {
+		left: 7%;
+		top: 35%;
+		width: 100%;
+		max-width: 200px;
+		
+		@include at-breakpoint($small-mobile) {
+			display: none;
+		}
+		@include at-breakpoint($mobile) {
+			display: none;
+		}
+		@include at-breakpoint($pad) {
+			display: none;
+		}
+	}
+	&.section3-bg03 {
+		right: 10%;
+		top: 20%;
+	}
+	//section4
+	&.section4-bg01 {
+		right: -5%;
+		bottom: 15%;
+	}
+	&.section4-bg02 {
+		left: -25%;
+		top: 25%;
+		width: 100%;
+		max-width: 200px;
+		
+		@include at-breakpoint($small-mobile) {
+			display: none;
+		}
+		@include at-breakpoint($mobile) {
+			display: none;
+		}
+		@include at-breakpoint($pad) {
+			display: none;
+		}
+	}
+	&.section4-bg03 {
+		right: -10%;
+		top: 20%;
+	}
+	&.section4-bg04 {
+		left: -50%;
+		bottom: 5%;
+		
+		@include at-breakpoint($small-mobile) {
+			display: none;
+		}
+		@include at-breakpoint($mobile) {
+			display: none;
+		}
+		@include at-breakpoint($pad) {
+			display: none;
+		}
+	}
+}
+
+
+// ########  #######  ########  ##     ## ##     ## 
+// ##       ##     ## ##     ## ##     ## ###   ### 
+// ##       ##     ## ##     ## ##     ## #### #### 
+// ######   ##     ## ########  ##     ## ## ### ## 
+// ##       ##     ## ##   ##   ##     ## ##     ## 
+// ##       ##     ## ##    ##  ##     ## ##     ## 
+// ##        #######  ##     ##  #######  ##     ## 
+
+#forum{
+	position: relative;
+	padding: 210px 0 120px;
+
+	.title {
+		line-height: 1em;
+	}
+}
+.forum-group {
+	@include border-box-sizing;
+	width: 50%;
+	float: left;
+	margin-bottom: 30px;
+	padding-right: 20px;
+	
+	@include at-breakpoint($small-mobile) {
+		width: 100%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+		//min-height: 345px;
+
+		// &:nth-child(5) {
+		// 	min-height: auto;
+		// }
+	}
+	@include at-breakpoint($pad) {
+		min-height: 480px;
+	}
+	@include at-breakpoint($desktop) {
+		//min-height: 345px;
+	}
+
+}
+@media (max-width: 710px) {
+	.forum-group {
+		min-width: 100%;
+		min-height: auto;
+	}
+}
+.forum-number {
+	margin-right: 20px;
+	//max-width: 74px;
+	width: 100%;
+	max-width: 85px;
+	
+	@include at-breakpoint($small-mobile) {
+		width: 100%;
+		max-width: 70px;
+		margin-bottom: 10px;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+		max-width: 74px;
+		margin-bottom: 10px;
+	}
+	@include at-breakpoint($desktop) {
+		float: left;
+		max-width: 62px;
+	}
+}
+.forum-txt {
+	margin-bottom: 20px;
+	color: $eventBlue;
+	float: left;
+
+	.forum-txt__bg {
+		background: $eventBlue;
+		color: $white;
+		padding: 0 10px;
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	.forum-txt__bold {
+		font-weight: 600;
+	}
+	.forum-txt__black {
+		color: #3b3b3a;
+	}
+}
+.forum-table {
+	display: table;
+
+	.forum-table__tr {
+		display: table-cell;
+		vertical-align: top;
+		min-width: 72px;
+	}
+	.forum-table__td {
+		width: 100%;
+		display: block;
+	}
+}
+
+
+// ##       ########  ######  ########  #######  ########  
+// ##       ##       ##    ##    ##    ##     ## ##     ## 
+// ##       ##       ##          ##    ##     ## ##     ## 
+// ##       ######   ##          ##    ##     ## ########  
+// ##       ##       ##          ##    ##     ## ##   ##   
+// ##       ##       ##    ##    ##    ##     ## ##    ##  
+// ######## ########  ######     ##     #######  ##     ## 
+
+#lector {
+	position: relative;
+	padding: 210px 0 60px;
+
+	@include at-breakpoint($pad) {
+		padding: 60px 0 60px;
+	}
+
+	.title {
+		//line-height: 1em;
+	}
+}
+.lector-group {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 30px;
+	max-width: 980px;
+	margin: auto;
+	color: $eventBlue;
+}
+.lector-list {
+	@include border-box-sizing;
+	width: 25%;
+	padding: 0 10px;
+	float: left;
+	text-align: center;
+	//margin-bottom: 20px;
+	line-height: 1.4em;
+	min-height: 265px;
+
+	@include at-breakpoint($small-mobile) {
+		width: 100%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 50%;
+	}
+	@include at-breakpoint($pad) {
+		width: 33.3%;
+	}
+
+	.lector-list__photo {
+		@include border-radius(100%);
+		width: 100%;
+		max-width: 150px;
+		margin: 0 auto 5px;
+		overflow: hidden;
+		line-height: 0;
+	}
+	.lector-list__bold {
+		font-weight: 600;
+	}
+}
+
+
+//  ######  ##        #######   ######      ###    ##    ## 
+// ##    ## ##       ##     ## ##    ##    ## ##   ###   ## 
+// ##       ##       ##     ## ##         ##   ##  ####  ## 
+//  ######  ##       ##     ## ##   #### ##     ## ## ## ## 
+//       ## ##       ##     ## ##    ##  ######### ##  #### 
+// ##    ## ##       ##     ## ##    ##  ##     ## ##   ### 
+//  ######  ########  #######   ######   ##     ## ##    ## 
+
+#slogan {
+	position: relative;
+	padding: 120px 0 210px;
+	max-width: 960px;
+	text-align: center;
+	margin: auto;
+	
+	.title {
+		font-size: 1.8em;
+
+		@include at-breakpoint($small-mobile) {
+			font-size: 1.4em;
+			margin-bottom: 20px;
+		}
+		@include at-breakpoint($mobile) {
+			font-size: 1.6em;
+			margin-bottom: 30px;
+		}
+		@include at-breakpoint($pad) {
+			font-size: 1.8em;
+			margin-bottom: 30px;
+		}
+	}
+	.sub-title {
+		font-weight: 100;
+		letter-spacing: 0.05em;
+
+		@include at-breakpoint($small-mobile) {
+			font-size: 1.2em;
+		}
+		@include at-breakpoint($mobile) {
+			font-size: 1.4em;
+		}
+		@include at-breakpoint($pad) {
+			font-size: 1.6em;
+		}
+	}
+	.more-info {
+		color: $white;
+		margin-top: 60px;
+	}
+	.more-info__bg {
+		background: $eventBlue;
+		padding: 0 10px;
+		display: inline-block;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+
+}
+@media (min-height: 800px){
+	#slogan {
+		padding: 0;
+	}
+}
+
+// ########  #######   #######  ######## ######## ########  
+// ##       ##     ## ##     ##    ##    ##       ##     ## 
+// ##       ##     ## ##     ##    ##    ##       ##     ## 
+// ######   ##     ## ##     ##    ##    ######   ########  
+// ##       ##     ## ##     ##    ##    ##       ##   ##   
+// ##       ##     ## ##     ##    ##    ##       ##    ##  
+// ##        #######   #######     ##    ######## ##     ## 
+
+.footer {
+	border-top: 1px solid $white;
+	color: $white;
+	max-width: 980px;
+	margin: auto;
+	padding: 40px 0 0;
+	text-align: center;
+
+	@include at-breakpoint($small-mobile) {
+		text-align: left;
+	}
+
+}
+.footer-list {
+	display: inline-block;
+	margin-right: 30px;
+	height: 100px;
+	line-height: 100px;
+	
+	.footer-list__label{
+		float: left;
+		margin-right: 15px;
+	}
+	.footer-list__logo{
+		//max-width: 120px;
+	}
+}
+.footer-list__special {
+	color: $white;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.copyright {
+	text-align: center;
+	color: #297277;
+	margin-bottom: 30px;
+	font-size: 14px;
+}
+
+
+
+.go-top {
+	background: $black30;
+	opacity: 0.8;
+	color: $white;
+	width: 45px;
+	height: 30px;
+	@include border-radius(30px);
+	text-align: center;
+	position: fixed;
+	padding-top: 15px;
+	bottom: 30px;
+	right: 30px;
+	z-index: 999;
+	cursor: pointer;
+	display: none;
+	font-size: $fontSize14;
+
+	&:hover {
+		background: lighten($black30, 10%);
+	}
+	.arrow-top {
+		@include arrow(6px, $white, top, $type: 1);
+		left: 16px;
+		top: 10px;
+	}
+}

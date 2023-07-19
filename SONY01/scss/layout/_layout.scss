@@ -1,0 +1,1117 @@
+/*KappaChang Layout*/
+
+//susy
+$total-columns  : 12; //畫 12 條
+$column-width   : 61.5px; // 每條 61.5px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 11px; // 左右 padding 11px
+
+$desktop: 980px 12; // min-width 980px draw 12 total-columns
+$pad: 768px 8 979px; //min-width 768px max-width 979px draw 8 total-columns
+$mobile: 4 767px; //max-width 767px draw 4 total-columns
+
+// ########     ###     ######   ######  
+// ##     ##   ## ##   ##    ## ##    ## 
+// ##     ##  ##   ##  ##       ##       
+// ########  ##     ##  ######  ##       
+// ##     ## #########       ## ##       
+// ##     ## ##     ## ##    ## ##    ## 
+// ########  ##     ##  ######   ######  
+
+header, #MAIN, footer {
+	width: 100%;
+}
+header {
+	@include opacity(90);
+	//@include background-image (linear-gradient(to bottom,  $black15 0%, $black5 100%)); 
+	background: $black;
+	height: 50px;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	
+	@include at-breakpoint($mobile) {
+		.grid-980 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+h2 {
+	@extend %title;
+	font-size: $fontSize28;
+	text-align: left;
+	margin-bottom: 20px;
+}
+h3 {
+	@extend %title;
+	font-size: $fontSize20;
+	margin-bottom: 5px;
+}
+h4 {
+	@extend %title;
+	font-size: $fontSize20;
+	margin-bottom: 5px;
+	line-height: $lineHeight14;
+}
+#MAIN {
+	background: url("../images/main-bg.png") repeat;
+}
+
+// ########  #######   #######  ######## ######## ########  
+// ##       ##     ## ##     ##    ##    ##       ##     ## 
+// ##       ##     ## ##     ##    ##    ##       ##     ## 
+// ######   ##     ## ##     ##    ##    ######   ########  
+// ##       ##     ## ##     ##    ##    ##       ##   ##   
+// ##       ##     ## ##     ##    ##    ##       ##    ##  
+// ##        #######   #######     ##    ######## ##     ## 
+
+footer {
+	@include opacity(80);
+
+	background: $black;
+	color: $white;
+	padding: 15px 0;
+	position: relative;
+	font-size: $fontSize13;
+
+
+	&:before {
+		@include opacity(80);
+	
+		content: "";
+		border-top: 5px solid $black;
+		width: 100%;
+		position: absolute;
+		top: -9px;
+	}
+	&.fixed-footer {
+		position: fixed;
+		bottom: 0;
+		
+		@include at-breakpoint($mobile) {
+			position: relative;
+		}
+
+	}
+	.footer-group {
+		float: left;
+		width: 100%;
+	}
+	.logo-group {
+		float: left;	
+		margin-top: 15px;
+
+		.footer-list {
+			margin-right: 0px;
+
+			@include at-breakpoint($mobile) {
+				clear: both;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.icons-logo-online, .icons-logo-sony {
+		white-space: nowrap;
+		text-indent: 110%; /*把文字用縮排推到寬度以外*/
+		overflow: hidden;
+		margin-top: -3px;
+	}
+	.follow-group {
+		float: right;
+		margin-top: 15px;
+	}
+	.menu-group {
+		float: left;	
+		margin-top: 15px;
+	}
+	.footer-list {
+		float: left;
+		margin-right: 5px;
+		line-height: 22px;
+
+		a {
+			color: $white;
+			//text-decoration: underline;
+		}
+		
+	}
+	.footer-list-logo {
+		float: left;
+		margin-right: 30px;
+	}
+	.footer-line {
+		color: $white20;
+	}
+	.follow-fb, .follow-google-plus, .follow-youtube {
+		//background: $white10;
+		border-radius: 2px;
+		//border: 2px solid $white50;
+		width: 25px;
+		height: 25px;
+		margin-top: -3px;
+		white-space: nowrap;
+		text-indent: 110%; /*把文字用縮排推到寬度以外*/
+		overflow: hidden;
+		cursor: pointer;
+
+		.icons-icon-fb, .icons-icon-google-plus, .icons-icon-youtube {
+			float: left;
+		}
+	}
+	.follow-fb {
+		background: #00408b;
+	}
+	.follow-google-plus {
+		background: #e73828;
+	}
+	.follow-youtube {
+		background: $white;
+	}
+}
+img {
+	width: 100%;
+	display: block;
+}
+.grid-980 {
+	position: relative;
+
+	@include container;
+
+	@include at-breakpoint($mobile) {
+		//@include susy-grid-background; 
+	}
+	@include at-breakpoint($pad) {
+		//@include susy-grid-background; 
+	}
+	@include at-breakpoint($desktop) {
+		//@include susy-grid-background; 
+	}
+}
+.logo {
+	display: inline-block;
+	margin: 3px 20px 0 0;
+	float: left;
+}
+
+// ##     ## ######## ##    ## ##     ## 
+// ###   ### ##       ###   ## ##     ## 
+// #### #### ##       ####  ## ##     ## 
+// ## ### ## ######   ## ## ## ##     ## 
+// ##     ## ##       ##  #### ##     ## 
+// ##     ## ##       ##   ### ##     ## 
+// ##     ## ######## ##    ##  #######  
+
+.menu {
+
+	li {
+		float: left;
+		
+		&:last-child {
+			//float:right;
+		}
+		&:hover {
+			background: $black30;
+		}
+		a {
+			float: left;
+			padding: 15px 20px;
+			color: $white;
+		}
+	}
+
+}
+.nav-web{
+	@include at-breakpoint($mobile) {
+		display: none;
+	}	
+}
+.login-group {
+	position: absolute;
+	top: 0;
+	right: 60px;
+	height: 50px;
+	line-height: 50px;
+	max-width: 150px;
+	overflow: hidden;
+
+
+	img {
+		width: 30px;
+		height: 30px;
+	}
+	.login-img {
+		display: block;
+		width: 30px;
+		height: 30px;
+		margin-top: 10px;
+		margin-right: 6px;
+		float: left;
+	}
+	// .login-name {
+	// 	margin-right: 10px;
+	// 	color: $white;
+	// 	font-size: $fontSize14;
+	// 	display: block;
+	// 	height: 50px;
+	// 	max-width: 100px;
+	// 	float: left;
+
+	// 	@include at-breakpoint($pad) {
+	// 		display: none;
+	// 	}
+	// 	@include at-breakpoint($mobile) {
+	// 		display: none;
+	// 	}
+	// }
+
+
+}
+.login, .logout {
+	padding: 0 15px;
+	height: 50px;
+	line-height: 50px;
+	color: $white;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	&:hover {
+		background: $black30;
+	}
+}
+
+// ##     ##  #######  ########  #### ##       ########    ##     ## ######## ##    ## ##     ## 
+// ###   ### ##     ## ##     ##  ##  ##       ##          ###   ### ##       ###   ## ##     ## 
+// #### #### ##     ## ##     ##  ##  ##       ##          #### #### ##       ####  ## ##     ## 
+// ## ### ## ##     ## ########   ##  ##       ######      ## ### ## ######   ## ## ## ##     ## 
+// ##     ## ##     ## ##     ##  ##  ##       ##          ##     ## ##       ##  #### ##     ## 
+// ##     ## ##     ## ##     ##  ##  ##       ##          ##     ## ##       ##   ### ##     ## 
+// ##     ##  #######  ########  #### ######## ########    ##     ## ######## ##    ##  #######  
+	
+#NavMobile {
+	display: none;
+	cursor: pointer;
+
+	@extend %clearfix;
+	@include at-breakpoint($mobile) {
+		display: block;
+		max-width: 767px;
+	}
+
+}
+.icons-icon-nav-mobile {
+	margin: 7px 0 0 10px;
+	padding-bottom: 8px;
+}
+#MobileMenuGroup {
+	display: none;
+
+	li {
+		height: 80px;
+		line-height: 80px;
+		width: 100%;
+		text-align: center;
+		background: $black;
+		border-bottom: 1px solid $black10;
+
+		&:first-child {
+			border-top: 1px solid $black10;
+		}
+	}
+
+	a, a:hover {
+		color: white;
+		display: block;
+	}
+}
+
+// ##     ##    ###    #### ##    ## 
+// ###   ###   ## ##    ##  ###   ## 
+// #### ####  ##   ##   ##  ####  ## 
+// ## ### ## ##     ##  ##  ## ## ## 
+// ##     ## #########  ##  ##  #### 
+// ##     ## ##     ##  ##  ##   ### 
+// ##     ## ##     ## #### ##    ## 
+.index-bg {
+	background: url("../images/bg.jpg") 60% 20%;		  
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size:cover;
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	/*直立螢幕 橫向說法: orientation:landscape */
+	@media screen and (orientation: portrait) {
+		display: none;
+	}
+}
+
+
+.index-bg-upright {
+	background: url("../images/bg-upright.jpg") 35% 0%;		  
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size:cover;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: none;
+
+	@media screen and (orientation: portrait) {
+		display: block;
+	}
+
+}
+.inner-image-bg {
+	width: 100%;
+	background: url("../images/inner-image-bg.png") repeat;
+}
+.inner-image {
+	max-width: 1440px;
+	margin: 50px auto 0;
+}
+
+.go-top {
+	background: $black30;
+	opacity: 0.8;
+	color: $white;
+	width: 45px;
+	height: 30px;
+	border-radius: 2px;
+	text-align: center;
+	position: fixed;
+	padding-top: 15px;
+	bottom: 30px;
+	right: 30px;
+	z-index: 999;
+	cursor: pointer;
+	display: none;
+
+	&:hover {
+		background: lighten($black30, 10%);
+	}
+	.arrow-top {
+		@include arrow(6px, $white, top, $type: 1);
+		left: 16px;
+		top: 10px;
+	}
+}
+.share {
+		float: right;
+		margin-top: 15px;
+		width: 232px;
+		overflow: hidden;
+
+
+		.fb-share, .google-plus-share, .twitter-share {
+			float: left;
+			margin-right: 10px;
+		}
+		.fb-share {
+			width: 80px;
+			margin-top: -1px;
+		}
+		.google-plus-share {
+			width: 60px;
+		}
+		.twitter-share {
+			width: 62px;
+		}
+	}
+
+//  ######  #### ##    ##  ######           ##     ## ########  
+// ##    ##  ##  ###   ## ##    ##          ##     ## ##     ## 
+// ##        ##  ####  ## ##                ##     ## ##     ## 
+//  ######   ##  ## ## ## ##   #### ####### ##     ## ########  
+//       ##  ##  ##  #### ##    ##          ##     ## ##        
+// ##    ##  ##  ##   ### ##    ##          ##     ## ##        
+//  ######  #### ##    ##  ######            #######  ##        
+
+.sing-up {
+	margin: 60px 0 120px;
+	min-height: 605px;
+
+	p {
+		margin-bottom: 30px;
+	}
+
+	@include at-breakpoint($pad) {
+		padding: 0 20px;
+	}
+	@include at-breakpoint($mobile) {
+		padding: 0 15px;
+	}
+}
+.sing-table-desc {
+	margin-bottom: 30px;
+	
+	li {
+		line-height: 1.65;
+		margin-bottom: 5px;
+	}
+	.sing-table-desc-label {
+		font-weight: bold;
+		color: $orange;
+	}
+}
+.sing-table-info {
+	margin-bottom: 30px;
+
+	li {
+		line-height: 1.65;
+		margin-bottom: 5px;
+	}
+	span {
+		display: table-cell;
+	}
+	.sing-table-info-label {
+		width: 80px;
+		font-weight: bold;
+	}
+	a, a:hover {
+		text-decoration: underline;
+		color: $fontColor;
+	}
+
+}
+.sing-precautions-group {
+		
+	li {
+		list-style: disc;
+		margin-left: 20px;
+		line-height: 1.65;
+	}
+}
+.red {
+	color: red;
+	margin-right: 3px;
+	font-weight: bold;
+}
+.orange {
+	color: $orange;
+}
+.center {
+	text-align: center;
+}
+.prize-group {
+	margin-bottom: 30px;
+}
+.prize {
+
+	text-align: center;
+
+	li {
+		margin-bottom: 20px;
+
+	 	span {
+	 		display: block;
+	 	}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		@include at-breakpoint($mobile) {
+			@include isolate-grid(4); // 4條除4 一排1張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+
+		@include at-breakpoint($pad) {
+			@include isolate-grid(4); // 8條除4 一排2張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+
+		@include at-breakpoint($desktop) {
+			// @include span-columns(3); //圖片三條寬
+			// @include nth-omega(4n); // 每排4個
+			@include isolate-grid(4); // 12條除4 一排3張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+	}
+
+	.prize-img {
+		//border: 1px solid #D5D5D5;
+		margin-bottom: 5px;
+	}
+	.prize-desc {
+		margin: 3px 0;
+	}
+	.strong {
+		color: $orange;
+		font-weight: bold;
+	}
+}
+.prize-title {
+	@extend %title;
+	
+	font-size: $fontSize20;
+	color: #ECA41F;
+}
+#SingUpForm {
+	display: none;
+}
+.sing-up-form {
+	border: 2px solid $white10;
+	margin: 20px 0;
+	padding: 20px;
+}
+.sing-up-form-title {
+	width: 80px;
+	display: inline-block;
+}
+.sing-up-form-input {
+	width: 60%;
+}
+input.sing-up-form-input.error {
+	background: #FFDADA;
+}
+.note {
+	color: $white40;
+	font-size: $fontSize14;
+	margin-top: 5px;
+	margin-left: 82px;
+}
+.sing-up-form-textarea {
+	width: 80%;
+	height: 200px;
+}
+.complete {
+	display: none;
+	text-align: center;
+}
+
+// ##     ## #### ########  
+// ##     ##  ##  ##     ## 
+// ##     ##  ##  ##     ## 
+// ##     ##  ##  ########  
+//  ##   ##   ##  ##        
+//   ## ##    ##  ##        
+//    ###    #### ##        
+
+.vip {
+	margin: 60px 0 120px;
+	min-height: 605px;
+	text-align: center;
+
+	p {
+		margin-bottom: 30px;
+	}
+
+	@include at-breakpoint($pad) {
+		padding: 0 20px;
+	}
+	@include at-breakpoint($mobile) {
+		padding: 0 15px;
+	}
+}
+
+// 自動排列圖片為區塊滿版
+.vip-columns {
+	//display: none;
+	margin: 30px 0;
+	
+	li {
+	
+		margin-bottom: 20px;
+		text-align: center;
+
+		@include at-breakpoint($mobile) {
+			@include isolate-grid(1); // 4條除1 一排4張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+		@include at-breakpoint($pad) {
+			@include isolate-grid(1); // 8條除1 一排8張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+		@include at-breakpoint($desktop) {
+			@include span-columns(1.11); //圖片三條寬
+			//@include nth-omega(8n); // 每排4個
+			//@include isolate-grid(1); // 12條除1 一排12張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+
+		&:nth-child(9n) {
+			margin-right: 0;
+		}
+	}
+
+	.vip-name {
+		display: block;
+		height: 28px;
+		padding: 5px;
+		overflow: hidden;
+		font-size: $fontSize14;
+		line-height: 1.2;
+		word-wrap: break-word;
+		word-break: normal;
+
+		a {
+			color: $fontColor;
+		}
+	}
+}
+
+// ######## ##     ## ########  ######## ########  #### ######## ##    ##  ######  ######## 
+// ##        ##   ##  ##     ## ##       ##     ##  ##  ##       ###   ## ##    ## ##       
+// ##         ## ##   ##     ## ##       ##     ##  ##  ##       ####  ## ##       ##       
+// ######      ###    ########  ######   ########   ##  ######   ## ## ## ##       ######   
+// ##         ## ##   ##        ##       ##   ##    ##  ##       ##  #### ##       ##       
+// ##        ##   ##  ##        ##       ##    ##   ##  ##       ##   ### ##    ## ##       
+// ######## ##     ## ##        ######## ##     ## #### ######## ##    ##  ######  ######## 
+
+.experience {
+	margin: 60px 0 120px;
+	min-height: 605px;
+
+	p {
+		margin-bottom: 30px;
+	}
+
+	@include at-breakpoint($pad) {
+		padding: 0 20px;
+	}
+	@include at-breakpoint($mobile) {
+		padding: 0 15px;
+	}
+}
+.experience-desc {
+	margin-bottom: 60px;
+	text-align: center;
+}
+#ExperienceForm {
+	display: none;
+	position: relative;
+}
+.experience-form {
+	border: 2px solid $white10;
+	margin: 20px 0;
+	padding: 20px;
+}
+.experience-edit {
+	width: 96%;
+	margin: 20px auto;
+	clear: both;
+
+	iframe {
+		overflow-y: hidden;
+	}
+}
+.experience-form-title {
+	width: 80px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+.experience-form-input {
+	width: 80%;
+	max-width: 710px;
+}
+.icons-icon-preview {
+	display: inline-block;
+	float: left;
+	margin: 0 3px;
+}
+.icons-icon-edit {
+	display: inline-block;
+	float: left;
+	margin: 0 3px;
+}
+.share-block {
+	width: 82%;
+	margin: 0 auto 60px;
+	overflow: hidden;
+	clear: both;
+
+	@include at-breakpoint($pad) {
+		width: 92%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+
+	.share-title {
+		font-size: $fontSize20;
+		font-weight: bold;
+	}
+	.share-name-group {
+		color: $white30;
+		font-size: $fontSize13;
+	}
+	// .share-avatar {
+	// 	float: left;
+	// 	margin-right: 5px;
+
+	// 	img {
+	// 		width: 25px;
+	// 		height: 25px;
+	// 		overflow: hidden;
+	// 	}
+	// }
+	a, a:hover {
+		color: $fontColor;
+		text-decoration: underline;
+	}
+	.share-name {
+		margin-right: 3px;
+
+		a {
+			color: $white30;
+			text-decoration: underline;
+		}
+	}
+	.share-desc {
+		width: 100%;
+		color: $black30;
+		margin: 15px 0;
+		max-height: 104px;
+		overflow: hidden;
+		clear: both;
+
+		p {
+			margin-bottom: 15px;
+			line-height: 26px;
+		}
+	}
+	.share-desc-inner {
+		max-height: 100%;
+		overflow: hidden;
+	}
+	.share-more {
+		color: $black30;
+		text-decoration: underline;
+		//font-size: $fontSize13;
+	}
+	.share {
+		float: left;
+		margin: 20px 0 10px;
+
+		.fb-share {
+			margin-top: -6px;
+		}
+	}
+
+	//定義
+	h1 {
+		font-size: $fontSize20;
+		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: $fontSize18;
+		margin-bottom: 10px;
+	}
+	h3 {
+		font-size: $fontSize16;
+		margin-bottom: 0;
+	}
+}
+
+
+// ##      ## #### ##    ## ##    ## ######## ########  
+// ##  ##  ##  ##  ###   ## ###   ## ##       ##     ## 
+// ##  ##  ##  ##  ####  ## ####  ## ##       ##     ## 
+// ##  ##  ##  ##  ## ## ## ## ## ## ######   ########  
+// ##  ##  ##  ##  ##  #### ##  #### ##       ##   ##   
+// ##  ##  ##  ##  ##   ### ##   ### ##       ##    ##  
+//  ###  ###  #### ##    ## ##    ## ######## ##     ## 
+
+.winner {
+	margin: 60px 0 120px;
+	min-height: 605px;
+	text-align: center;
+
+	@include at-breakpoint($pad) {
+		padding: 0 20px;
+	}
+	@include at-breakpoint($mobile) {
+		padding: 0 15px;
+	}
+	.winner-group {
+		text-align: left;
+	}
+	.winner-precautions-group {
+		margin: 150px 0 50px;
+		text-align: left;
+		
+		li {
+			list-style: disc;
+			margin-left: 20px;
+			line-height: 1.65;
+		}
+	}
+	.winner-przie-title {
+		color: $orange;
+		margin-top: 20px;
+	}
+
+	.winner-columns {
+	
+		li {
+		
+			margin-bottom: 20px;
+			text-align: center;
+
+			@include at-breakpoint($mobile) {
+				@include isolate-grid(2); // 4條除1 一排4張圖
+				@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+			}
+			@include at-breakpoint($pad) {
+				@include isolate-grid(2); // 8條除1 一排8張圖
+				@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+			}
+			@include at-breakpoint($desktop) {
+				//@include span-columns(1.11); //圖片三條寬
+				//@include nth-omega(8n); // 每排4個
+				@include isolate-grid(2.5); // 12條除1 一排12張圖
+				@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+			}
+
+			&:nth-child(9n) {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	.winner-img {
+		margin-top: 10px;
+	}
+
+	.winner-name {
+		margin-top: 5px;
+		display: block;
+
+		a {
+			color: $fontColor;
+		}
+	}
+}
+
+
+// ########  ##     ## ######## ########  #######  ##    ## 
+// ##     ## ##     ##    ##       ##    ##     ## ###   ## 
+// ##     ## ##     ##    ##       ##    ##     ## ####  ## 
+// ########  ##     ##    ##       ##    ##     ## ## ## ## 
+// ##     ## ##     ##    ##       ##    ##     ## ##  #### 
+// ##     ## ##     ##    ##       ##    ##     ## ##   ### 
+// ########   #######     ##       ##     #######  ##    ## 
+
+.btn-facebook {
+	@include buttons($fbColor);
+	width: 100%;
+	margin: 10px auto 40px;
+}
+.btn-sing-up {
+	@include buttons($black10);
+	width: 40%;
+	margin: 40px auto;
+
+	@include at-breakpoint($pad) {
+		width: 80%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+}
+.btn-have-sign {
+	@include buttons($white30);
+	width: 40%;
+	margin: 40px auto;
+
+	@include at-breakpoint($pad) {
+		width: 80%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+}
+.btn-send {
+	@include buttons($black10);
+	width: 40%;
+	margin: 10px auto 40px;
+
+	@include at-breakpoint($pad) {
+		width: 80%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+}
+.btn-experience {
+	@include buttons($black10);
+	width: 40%;
+	margin: 40px auto;
+
+	@include at-breakpoint($pad) {
+		width: 80%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+}
+.btn-preview {
+	@include buttons($white20);
+	position: absolute;
+	top: -5px;
+	right: 0;
+}
+.btn-edit {
+	@include buttons($white20);
+	float: right;
+	width: 100px;
+	margin-bottom: 20px;
+}
+.btn-back-experience {
+	@include buttons($black10);
+	width: 30%;
+	margin: 40px auto;
+
+	@include at-breakpoint($pad) {
+		width: 80%;
+	}
+	@include at-breakpoint($mobile) {
+		width: 100%;
+	}
+}
+.btn-go-sing-up {
+	@include buttons($black10);
+	width: 20%;
+	min-width: 170px;
+	position: absolute;
+	top: 58%;
+	right: 19%;
+
+	@media screen and (orientation: portrait) {
+		top: auto;
+		right: 10%;
+		width: 80%;
+		bottom: 10%;
+	}
+}
+
+
+// ##        #######   ######   #### ##    ## 
+// ##       ##     ## ##    ##   ##  ###   ## 
+// ##       ##     ## ##         ##  ####  ## 
+// ##       ##     ## ##   ####  ##  ## ## ## 
+// ##       ##     ## ##    ##   ##  ##  #### 
+// ##       ##     ## ##    ##   ##  ##   ### 
+// ########  #######   ######   #### ##    ## 
+
+.form-input {
+	width: 100%;
+}
+.or {
+	text-align: center;
+	position: relative;
+	margin-bottom: 20px;
+	font-size: $fontSize14;
+	color: $white40;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		border-bottom: 1px solid $white10;
+		top: 11px;
+		left: 0;
+		width: 28%;
+		z-index: -1;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		border-bottom: 1px solid $white10;
+		top: 11px;
+		right: 0;
+		width: 28%;
+		z-index: -1;
+	}
+
+	@media (min-width: 480px) and (max-width: 768px) {
+		&:before, &:after {
+			width: 35%;
+		}
+	}
+
+}
+.else {
+	color: $white40;
+	font-size: $fontSize14;
+	//margin-left: 40px;
+	margin-top: -10px;
+	text-align: center;
+
+	.forget:hover, .new-user:hover, .have-account:hover, {
+		cursor: pointer;
+		color: $black40;
+	}
+}
+.login-btn {
+	@include buttons($black10);
+	width: 100%;
+	margin: 10px auto 20px
+}
+
+// ########   #######   #######   ######  ######## ########     ###    ########  
+// ##     ## ##     ## ##     ## ##    ##    ##    ##     ##   ## ##   ##     ## 
+// ##     ## ##     ## ##     ## ##          ##    ##     ##  ##   ##  ##     ## 
+// ########  ##     ## ##     ##  ######     ##    ########  ##     ## ########  
+// ##     ## ##     ## ##     ##       ##    ##    ##   ##   ######### ##        
+// ##     ## ##     ## ##     ## ##    ##    ##    ##    ##  ##     ## ##        
+// ########   #######   #######   ######     ##    ##     ## ##     ## ##        
+.modal {
+	width: 380px;
+	margin-left: -160px;
+	position: fixed;
+
+	@media (max-width: 767px) {
+		width: auto;
+		margin: 0;
+		position: absolute;
+	}
+}
+.modal.fade {
+	display: none;
+}
+.modal.fade.in {
+	top: 10%;
+
+	@include at-breakpoint($desktop) {
+		top: 25%;
+	}
+}
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"], {
+	@include border-box;
+	@include border-box-sizing;
+	height: 40px;
+	padding: 5px 10px;
+
+}
+
+
+// ##       ####  ######   ##     ## ######## ########   #######  ##     ## 
+// ##        ##  ##    ##  ##     ##    ##    ##     ## ##     ##  ##   ##  
+// ##        ##  ##        ##     ##    ##    ##     ## ##     ##   ## ##   
+// ##        ##  ##   #### #########    ##    ########  ##     ##    ###    
+// ##        ##  ##    ##  ##     ##    ##    ##     ## ##     ##   ## ##   
+// ##        ##  ##    ##  ##     ##    ##    ##     ## ##     ##  ##   ##  
+// ######## ####  ######   ##     ##    ##    ########   #######  ##     ## 
+
+.lb-nav a.lb-prev, .lb-nav a.lb-next {
+	opacity: 1;
+}

@@ -1,0 +1,48 @@
+{% extends '_index.twig' %}
+{% block body %}
+    <!-- MAIN start -->
+    <div id="MAIN" _height="auto">
+        <div class="go-top" id="TOP"><span class="arrow-top"></span>TOP</div>
+        <div class="inner-image-bg">
+            <div class="inner-image">
+                <img src="{{ base_uri }}/images/inner-image03.png" >
+            </div>
+        </div>
+        <!-- grid-980 start -->
+        <div class="grid-980">
+            <!-- experience start -->
+            <div class="experience">
+                {% if editable == true %}
+                <a href="{{ base_uri }}/experience/{{ post['dummy'] }}/edit">
+                    <div class="btn-edit"><i class="icons-icon-edit"></i>編輯</div>
+                </a>
+                {% endif %}
+                <!-- share-block start -->
+                <div class="share-block clerfix">
+                    <div class="share-title">{{ post['title'] }}</div>
+                    <div class="share-name-group">
+                        <!-- <span class="share-avatar"><img src="images/00.jpg"></span> -->
+                        <span class="share-name">by <a href="" target="_blank">{{ post['name'] }}</a></span>
+                        <span class="share-date">{{ post['created_at'] }}</span>
+                    </div>
+                    <div class="share">
+                        <div class="fb-share">
+                            <div class="fb-share-button" data-href="" data-type="button_count"></div>
+                        </div>
+                        <div class="google-plus-share">
+                            <div class="g-plusone" data-size="medium" data-href="{{ base_uri }}/experience/{{ post['dummy'] }}"></div>
+                        </div>
+                        <div class="twitter-share">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="zh-tw" data-url="{{ site_url }}{{ base_uri }}/experience/{{ post['dummy'] }}" data-text="{{ post['title'] }}"></a>
+                        </div>
+                    </div>
+                    <div class="share-desc share-desc-inner">{{ post['content']|raw }}</div>
+                </div>
+                <!-- share-block end -->
+            </div>
+            <!-- experience end -->
+        </div>
+        <!-- grid-980 end -->
+    </div>
+    <!-- MAIN end -->
+{% endblock %}

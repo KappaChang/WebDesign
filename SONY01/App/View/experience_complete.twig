@@ -1,0 +1,129 @@
+{% extends '_index.twig' %}
+{% block body %}
+    <!-- MAIN start -->
+    <div id="MAIN" _height="auto">
+        <div class="go-top" id="TOP"><span class="arrow-top"></span>TOP</div>
+        <div class="inner-image-bg">
+            <div class="inner-image">
+                <img src="images/inner-image03.png" >
+            </div>
+        </div>
+        <!-- grid-980 start -->
+        <div class="grid-980">
+            <!-- experience start -->
+            {#
+            <div class="experience">
+                <h2 class="center">Sony素人部落客，體驗大獎等你拿！</h2>
+                <div class="experience-desc" id="ExperienceDesc">
+                    <p>精彩的體驗會結束了，該準備動動腦來想看看如何把大獎得到手！<br />不是啦！是要好好分享Sony的產品體驗心得啦！<br />只要在12/20-1/3之間分享心得就有機會獲得體驗大獎喔！！</p>
+                    {% if experience == true %}
+                    <div class="btn-experience ExperienceBtn">我要分享體驗會心得</div>
+                    {% endif %}
+
+                </div>
+                {% for i in experiences %}
+                <!-- share-block start -->
+                <div class="share-block">
+                    <div class="share-title">{{ i['title'] }}</div>
+                    <div class="share-name-group">
+                        <!-- <span class="share-avatar"><img src="images/00.jpg"></span> -->
+                        <span class="share-name">by <a href="" target="_blank">{{ i['name'] }}</a></span>
+                        <span class="share-date">2014-10-13</span>
+                    </div>
+                    <div class="share">
+                        <div class="fb-share">
+                            <div class="fb-share-button" data-href="" data-type="button_count"></div>
+                        </div>
+                        <div class="google-plus-share">
+                            <div class="g-plusone" data-size="medium"></div>
+                        </div>
+                        <div class="twitter-share">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="zh-tw"></a>
+                        </div>
+                    </div>
+                    <div class="share-desc">{{ i['content'] }}</div>
+                    <a href="read-more.html">閱讀更多</a>
+                </div>
+                <!-- share-block end -->
+                {% endfor %}
+                <div class="btn-experience ExperienceBtn">我要分享體驗會心得</div>
+                <div id="ExperienceForm">
+                    <h3>分享體驗會心得</h3>
+                    <a href="preview.html" id="PreviewHtml">
+                        <div class="btn-preview"><i class="icons-icon-preview"></i>預覽</div>
+                    </a>
+                    <form class="experience-form" method="POST">
+                        <label>
+                            <div class="experience-form-title"><span class="red">＊</span>標題</div>
+                            <input class="experience-form-input" type="text" name="title">
+                        </label>
+                        <div class="experience-edit">
+                            <textarea name="content" id="editor" rows="10" cols="80"></textarea>
+                        </div>
+                        <input class="btn-send" id="ExperienceSendBtn" type="submit" value="送出">
+                    </form>
+                </div>
+            #}
+                <div class="complete" id="ExperienceComplete">
+                    <h4 class="red">恭喜您分享成功！我們將於 11/11 日公布得獎名單！</h4>
+                    <div class="btn-back-experience" id="BackShareBlockBtn">看其他心得分享</div>
+                </div>
+            </div>
+            <!-- experience end -->
+        </div>
+        <!-- grid-980 end -->
+    </div>
+    <!-- MAIN end -->
+
+        <!-- FOOTER start -->
+    <footer>
+        <div class="grid-980">
+            <div class="footer-group">
+                <ul class="logo-group">
+                    <li class="footer-list">主辦單位：</li>
+                    <a href="https://www.muzik-online.com/tw/" target="_blank">
+                        <li class="footer-list-logo icons-logo-online">
+                        MUZIK ONLINE</li>
+                    </a>
+                    <li class="footer-list">協辦單位：</li>
+                    <a href="http://www.sony.com.tw/" target="_blank">
+                        <li class="footer-list-logo icons-logo-sony">SONY</li>
+                    </a>
+                </ul>
+                <div class="share">
+                    <div class="fb-share">
+                        <div class="fb-share-button" data-href="{{ base_uri }}/" data-type="button_count"></div>
+                    </div>
+                    <div class="google-plus-share">
+                        <div class="g-plusone" data-size="medium"></div>
+                    </div>
+                    <div class="twitter-share">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="zh-tw"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-group">
+                <ul class="follow-group">
+                    <li class="footer-list">Follow us</li>
+                    <li class="footer-list follow-fb">
+                        <a href="https://www.facebook.com/muzikonline.Taiwan" target="_blank"><i class="icons-icon-fb"></i></a>Facebook
+                    </li>
+                    <li class="footer-list follow-google-plus">
+                        <a href="https://plus.google.com/+Muzikonlinetw/videos" target="_blank"><i class="icons-icon-google-plus"></i></a>google+</li>
+                    <li class="footer-list follow-youtube">
+                        <a href="https://www.youtube.com/channel/UCUnKXJ1AcPH1Uk5hl4nUf-g" target="_blank"><i class="icons-icon-youtube"></i></a>Youtube
+                    </li>
+                </ul>
+                <ul class="menu-group">
+                    <li class="footer-list"><a href="https://www.muzik-online.com/tw/reason">MUZIK ONLINE 與古典樂</a></li>
+                    <li class="footer-list footer-line">|</li>
+                    <li class="footer-list">客服信箱：<a href="mailto:service@muzik-online.com">service@muzik-online.com</a></li>
+                    <li class="footer-list footer-line">|</li>
+                    <li class="footer-list">©2014 MUZIK Creative Digital Ltd.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER end -->
+    
+{% endblock %}

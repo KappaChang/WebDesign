@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /><!-- 支援手機 -->
+<title>MUZIK ONLINE - 體驗高解析音質 Sony大獎等你拿</title>
+<meta name='keywords' content='古典樂,交響曲,協奏曲,SONY,體驗會,耳機,抽獎'/>
+<meta name='description' content='{{ open_graph['description'] }}'/>
+<meta property='og:site_name' content='{{ open_graph['site_name'] }}'/>
+<meta property='og:title' content='{{ open_graph['title'] }}'/>
+<meta property='og:description' content='{{ open_graph['description'] }}'/>
+<meta property='og:type' content='website'/>
+{#
+<link rel="canonical" href="{{ open_graph['url'] }}" />
+<meta property='og:url' content="{{ open_graph['url'] }}"/>
+#}
+<meta property='og:image' content='{{ open_graph['image'] }}'/>
+<link href="{{ base_uri }}/css/all-susy.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script><!-- 呼叫 JQuery -->
+<script type="text/javascript" src="{{ base_uri }}/js/plug/bootstrap.js"></script>
+<!-- <script type="text/javascript" src="js/plug/readmore.js"></script> --><!--閱讀更多-->
+<script type="text/javascript" src="{{ base_uri }}/js/plug/full_height.mini.js"></script><!--強制高度100%-->
+<script type="text/javascript" src="{{ base_uri }}/js/plug/lightbox.min.js"></script><!--LightBOX -->
+<script type="text/javascript" src="{{ base_uri }}/js/login.js"></script><!--登入用-->
+<script type="text/javascript" src="{{ base_uri }}/js/other.js?v=2"></script>
+<!-- <script type="text/javascript" src="js/scroll.js"></script> --><!--滑到指定區塊js-->
+<link rel="shortcut icon" href="http://www.muzik-online.com/img/favicon.ico" type="image/x-icon">
+<meta property='fb:app_id' content='339999192774080'/>
+<meta property='fb:admins' content='817179921'/>
+<meta property='fb:admins' content='100000372048258'/>
+<!-- 讓IE8支援html5 tag -->
+<!--[if lt IE 9]>
+<script src="js/plug/html5shiv.js"></script>
+<![endif]-->
+<!--在 IE6-8 讓 JavaScript 工具模擬 CSS3 偽類和屬性選擇器 -->
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="js/plug/selectivizr.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+<![endif]-->
+
+<!-- google ga分析 開始 -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38245263-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- google ga分析 結束 -->
+
+
+
+<!-- livereload-js -->
+<!--
+<script>
+document.write('<script src="http://'
++ (location.host || 'localhost').split(':')[0]
++ ':35729/livereload.js?snipver=1"></'
++ 'script>')
+</script>
+-->
+
+</head>
+
+<body>
+    <header>
+        <div class="grid-980">
+            <nav class="nav-web">
+            <div class="logo"><a href="{{ base_uri }}/" class="icons icons-logo" alt="MUZIK ONLINE"><h1>MUZIK ONLINE</h1></a></div>
+                <ul class="menu">
+                    <li><a href="{{ base_uri }}/sing-up">參加活動</a></li>
+                    <li><a href="{{ base_uri }}/vip">體驗會VIP</a></li>
+                    <li><a href="{{ base_uri }}/experience">心得分享</a></li>
+                    <li><a href="{{ base_uri }}/winner">得獎名單</a></li>
+                </ul>
+            </nav>
+
+            <nav id="NavMobile">
+                <div class="icons-icon-nav-mobile"></div>
+                <ul id="MobileMenuGroup">
+                    <li><a href="{{ base_uri }}/">首頁</a></li>
+                    <li><a href="{{ base_uri }}/sing-up">參加活動</a></li>
+                    <li><a href="{{ base_uri }}/vip">體驗會VIP</a></li>
+                    <li><a href="{{ base_uri }}/experience">心得分享</a></li>
+                    <li><a href="{{ base_uri }}/winner">得獎名單</a></li>
+                </ul>
+            </nav>
+
+            {% if user['member_uuid'] != '' %}
+             <div class="login-group">
+                <span class="login-img"><img src="{{ user['head_photo'] }}"></span>
+		{#
+                <span class="login-name">{{ user['nickname'] }}</span>
+		#}
+            </div>
+            <a href="{{ base_uri }}/logout"><span class="logout">登出</span></a>
+            {% else %}
+            <a href="#myModal1" data-toggle="modal"><div class="login">登入</div></a>
+            {% endif %}
+
+    </div>
+    </header>
+
+    {% block body %}
+    <!-- MAIN start -->
+
+    <!-- MAIN end -->
+    {% endblock %}
+
+    <!-- FOOTER start -->
+    <footer class="{% if action is defined and action == 'index' %}fixed-footer{% endif %}">
+        <div class="grid-980">
+            <div class="footer-group">
+                <ul class="logo-group">
+                    <li class="footer-list">主辦單位：</li>
+                    <a href="https://www.muzik-online.com/tw/" target="_blank">
+                        <li class="footer-list-logo icons-logo-online">
+                        MUZIK ONLINE</li>
+                    </a>
+                    <li class="footer-list">協辦單位：</li>
+                    <a href="http://www.sony.com.tw/" target="_blank">
+                        <li class="footer-list-logo icons-logo-sony">SONY</li>
+                    </a>
+                </ul>
+                <div class="share">
+                    <div class="fb-share">
+                        <div class="fb-share-button" data-href="{{ base_uri }}/" data-type="button_count"></div>
+                    </div>
+                    <div class="google-plus-share">
+                        <div class="g-plusone" data-size="medium" data-href="{{ base_uri }}/"></div>
+                    </div>
+                    <div class="twitter-share">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="zh-tw" data-url="{{ site_url }}{{ base_uri }}/"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-group">
+                <ul class="follow-group">
+                    <li class="footer-list">Follow us</li>
+                    <li class="footer-list follow-fb">
+                        <a href="https://www.facebook.com/muzikonline.Taiwan" target="_blank"><i class="icons-icon-fb"></i></a>Facebook
+                    </li>
+                    <li class="footer-list follow-google-plus">
+                        <a href="https://plus.google.com/+Muzikonlinetw/videos" target="_blank"><i class="icons-icon-google-plus"></i></a>google+</li>
+                    <li class="footer-list follow-youtube">
+                        <a href="https://www.youtube.com/channel/UCUnKXJ1AcPH1Uk5hl4nUf-g" target="_blank"><i class="icons-icon-youtube"></i></a>Youtube
+                    </li>
+                </ul>
+                <ul class="menu-group">
+                    <li class="footer-list"><a href="https://www.muzik-online.com/tw/reason">MUZIK ONLINE 與古典樂</a></li>
+                    <li class="footer-list footer-line">|</li>
+                    <li class="footer-list">客服信箱：<a href="mailto:service@muzik-online.com">service@muzik-online.com</a></li>
+                    <li class="footer-list footer-line">|</li>
+                    <li class="footer-list">©2014 MUZIK Creative Digital Ltd.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER end -->
+
+
+    <!-- loginBtn strat -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-login">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="close" data-dismiss="modal" aria-hidden="true">&times;</div>
+                        <h4 class="modal-title">登入</h4>
+                    </div>
+                    <div class="modal-body" id="login-table">
+                        <div class="btn-facebook fb-login-btn">使用 Facebook 登入</div>
+                        <div class="or">或使用 E-mail 登入</div>
+                        <label for="account">
+                            <!-- <span class="form-title">帳號</span> -->
+                            <input class="form-input" type="text" name="account" id="account" placeholder="E-mail" />
+                        </label>
+                        <label for="password">
+                            <!-- <span class="form-title">密碼</span> -->
+                            <input class="form-input" type="password" name="password" id="password" placeholder="密碼" />
+                        </label>
+                        <div class="login-btn" id='login'>登入</div>
+                        <div class="else">
+                            <span class="forget forgetBtn">忘記密碼</span>
+                            <span>/</span>
+                            <span class="new-user newUserBtn">註冊新帳號</span>
+                        </div>
+                    </div>
+<!--                     <div class="modal-footer">
+                        <div class="cancel-btn" data-dismiss="modal">取消</div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- loginBtn end -->
+
+    <!-- forgetBtn strat -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+             <div class="modal-forget">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="close" data-dismiss="modal" aria-hidden="true">&times;</div>
+                  <h4 class="modal-title">忘記密碼</h4>
+                </div>
+                <div class="modal-body" id="forgor-table">
+                    <label for="account">
+                        <input class="form-input" type="text" name="account" id="account" placeholder="E-mail" />
+                    </label>
+                    <label for="password">
+                        <input class="form-input" type="password" name="password" id="password" placeholder="密碼" />
+                    </label>
+                    <label for="password">
+                        <input class="form-input" type="password" name="password_confirm" id="password_confirm"  placeholder="確認新密碼" />
+                    </label>
+                    <div class="login-btn" id="forgot">寄送</div>
+                    <div class="else">
+                        <span class="have-account haveAccountBtn">已有帳號</span>
+                        <span>/</span>
+                        <span class="new-user newUserBtn">註冊新帳號</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- forgetBtn end -->
+
+    <!-- newUserBtn strat -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-new">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="close" data-dismiss="modal" aria-hidden="true">&times;</div>
+                  <h4 class="modal-title">註冊新帳號</h4>
+                </div>
+                <div class="modal-body" id="register-table">
+                    <div class="btn-facebook fb-login-btn">使用 Facebook 註冊</div>
+                     <div class="or">或使用 E-mail 登入</div>
+                    <label for="account">
+                        <input class="form-input" type="text" name="account" id="account" placeholder="E-mail" />
+                    </label>
+                    <label for="password">
+                        <input class="form-input" type="password" name="password" id="password" placeholder="密碼" />
+                    </label>
+                    <label for="password">
+                        <input class="form-input" type="password" name="password_confirm" id="password_confirm" placeholder="確認密碼" />
+                    </label>
+                    <div class="login-btn" id="register">註冊</div>
+                    <div class="else">
+                        <span class="forget forgetBtn">忘記密碼</span>
+                        <span>/</span>
+                        <span class="have-account haveAccountBtn">已有帳號</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- newUserBtn end -->
+
+    <!--
+    滑到指定區塊套件
+    <script type="text/javascript" src="js/plug/skrollr.min.js"></script>
+    <script type="text/javascript">
+        var s = skrollr.init();
+    </script>
+    -->
+
+<div id="fb-root"></div>
+
+<!--
+-->
+<script src="{{ base_uri }}/js/fb_action.js"></script>
+<div></div>
+
+</body>
+</html>

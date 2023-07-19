@@ -1,0 +1,77 @@
+{% extends '_index.twig' %}
+{% block body %}
+    <!-- MAIN start -->
+    <div id="MAIN" _height="auto">
+        <div class="go-top" id="TOP"><span class="arrow-top"></span>TOP</div>
+        <div class="inner-image-bg">
+            <div class="inner-image">
+                <img src="images/inner-image04.png">
+            </div>
+        </div>
+        <!-- grid-980 start -->
+        <div class="grid-980">
+            <!-- winner start -->
+            <div class="winner">
+                <!-- <h2>得獎名單</h2> -->
+                {% if announced is not defined or announced == false %}
+                <h4>我們將於 2015年1月9日（五）公佈得獎名單。</h4>
+                {% else %}
+                <div class="winner-group">
+                    <h4 class="red">恭喜以下得獎者</h4>
+                    <div class="winner-przie-title">第一名：恭喜獲得 Sony MDR-Z7 耳機一支</div>
+                    <ul class="winner-columns clearfix" >
+                        <li class="winner-img">
+                            <span class="winner-img"><img src="https://graph.facebook.com/100002102085164/picture?width=200&amp;height=200"></span>
+                            <span class="winner-name"><a href="">Charlie Wu</a></span>
+                        </li>
+                    </ul>
+                    <div class="winner-przie-title">第二名：恭喜獲得 Sony XBA-A2 耳機一支</div>
+                    <ul class="winner-columns clearfix" >
+                        <li class="winner-img">
+                            <span class="winner-img"><img src="https://graph.facebook.com/100001906044181/picture?width=200&amp;height=200"></span>
+                            <span class="winner-name"><a href="">Kevin Kung</a></span>
+                        </li>
+                    </ul>
+                    <div class="winner-przie-title">第三名：恭喜獲得 Sony MDR-10RC 耳機Z7 耳機一支</div>
+                    <ul class="winner-columns clearfix" >
+                        <li class="winner-img">
+                            <span class="winner-img"><img src="https://graph.facebook.com/100000586086079/picture?width=200&amp;height=200"></span>
+                            <span class="winner-name"><a href="">黃煜智</a></span>
+                        </li>
+                    </ul>
+                    <div class="winner-przie-title">第四名：恭喜獲得 美麗華影城 Royal Club 皇家廳電影票 2 張</div>
+                    <ul class="winner-columns clearfix" >
+                        <li class="winner-img">
+                            <span class="winner-img"><img src="https://graph.facebook.com/100000417437459/picture?width=200&amp;height=200"></span>
+                            <span class="winner-name"><a href="">Alex Wu</a></span>
+                        </li>
+                    </ul>
+                    <div class="winner-przie-title">第五名：恭喜獲得 華納威秀電影票 2 張</div>
+                    <ul class="winner-columns clearfix" >
+                        <li class="winner-img">
+                            <span class="winner-img"><img src="https://www.muzik-online.com/files/member/thumbs/default.png"></span>
+                            <span class="winner-name"><a href="">sunmai</a></span>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+
+                <div class="winner-precautions-group">
+                    <h3>活動注意事項</h3>
+                    <ul>
+                        <li>本活動贈品由台灣索尼股份有限公司提供。</li>
+                        <li>依財政部國稅局各類所得扣繳率標準 (民國 98年01月16日 修正)規定：競技競賽機會中獎獎金或給付超過新臺幣 1,000 元，須列單申報該管稽徵機關。故舉凡中獎金額或獎項年度累計總額超過 NT$1,000 元整，主辦單位將依稅法規定於年度開立扣繳憑單予活動中獎者，屆時中獎人可憑扣繳憑單之扣繳稅額抵減個人綜合所得稅。另，中獎金額或獎項價值超過 NT$20,000，依法應扣繳 10% 稅金(非中華民國境內居住之個人，依法扣繳 20% 稅金)；得獎者需依法繳納稅額，若未繳交稅金視同放棄得獎資格。</li>
+                        <li>中獎者不得要求指定獎項更改或折換成現金。</li>
+                        <li>參加者不得以任何非法、欺騙等舞弊方法取得中獎資格。</li>
+                        <li>參加者於參加本活動之同時亦即表示您接受本活動之活動辦法與注意事項之規範。</li>
+                        <li>本主辦單位保有隨時修改及終止本活動與贈品之權利。</li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- winner end -->
+        </div>
+        <!-- grid-980 end -->
+    </div>
+    <!-- MAIN end -->
+{% endblock %}

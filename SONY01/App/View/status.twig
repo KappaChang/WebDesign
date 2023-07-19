@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        <meta charset="utf-8">
+        <title>SONY01報名狀態</title>
+        <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">MUZIK ONLINE - 體驗高解析音質 Sony大獎等你拿</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>活動報名情況</h2>
+    </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <table class="table table-hover table-bordered table-striped">
+                    <caption></caption>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>姓名</th>
+                            <th>原因</th>
+                            <th>報名時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in sing_up %}
+                        <tr>
+                            <td>{{ loop.revindex }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.dummy }}</td>
+                            <td>{{ user.created_at }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

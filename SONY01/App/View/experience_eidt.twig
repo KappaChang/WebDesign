@@ -1,0 +1,42 @@
+{% extends '_index.twig' %}
+{% block body %}
+    <!-- MAIN start -->
+    <div id="MAIN" _height="auto">
+        <div class="go-top" id="TOP"><span class="arrow-top"></span>TOP</div>
+        <div class="inner-image-bg">
+            <div class="inner-image">
+                <img src="{{ base_uri }}/images/inner-image03.png" >
+            </div>
+        </div>
+        <!-- grid-980 start -->
+        <div class="grid-980">
+            <!-- experience start -->
+            <div class="experience">
+
+                <h3>修改體驗會心得</h3>
+                <a href="{{ base_uri }}/preview.html" id="PreviewHtml">
+                    <div class="btn-preview"><i class="icons-icon-preview"></i>預覽</div>
+                </a>
+                <form class="experience-form" method="POST">
+                    <label>
+                        <div class="experience-form-title"><span class="red">＊</span>標題</div>
+                        <input class="experience-form-input experience-form-input-title" type="text" name="title" value="{{ experience.title }}">
+                    </label>
+                    <div class="experience-edit">
+                        <textarea name="" id="editor" rows="10" cols="80">{{ experience.content|raw  }}</textarea>
+                    </div>
+                    <div class="btn-send" id="ExperienceSendBtn">修改</div>
+                </form>
+
+            </div>
+            <!-- experience end -->
+        </div>
+        <!-- grid-980 end -->
+    </div>
+    <!-- MAIN end -->
+    <script type="text/javascript" src="{{ base_uri }}/ckeditor/ckeditor.js"></script>
+    <script>CKEDITOR.replace('editor', {filebrowserImageUploadUrl : 'upload'});</script>
+
+{% endblock %}
+
+

@@ -1,0 +1,33 @@
+{% extends '_index.twig' %}
+{% block body %}
+    <!-- MAIN start -->
+    <div id="MAIN" _height="auto">
+        <div class="go-top" id="TOP"><span class="arrow-top"></span>TOP</div>
+        <div class="inner-image-bg">
+            <div class="inner-image">
+                <img src="images/inner-image02.png">
+            </div>
+        </div>
+        <!-- grid-980 start -->
+        <div class="grid-980">
+            <!-- vip start -->
+            <div class="vip">
+                <h2>體驗會VIP</h2>
+                <h4>我們將於2014年12月17日（三）公佈體驗會VIP名單</h4>
+                <div class="vip-columns">
+                    <ul>
+                        {% for i in vip %}
+                        <li>
+                           <span><img src="{{ i['head_photo'] }}"></span>
+                            <span class="vip-name">{{ i['nickname'] }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- vip end -->
+        </div>
+        <!-- grid-980 end -->
+    </div>
+    <!-- MAIN end -->
+{% endblock %}

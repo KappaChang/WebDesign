@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*KappaChang Reset*/
+/*html {
+    color: #000;
+    background: #FFF;
+}*/
+/*將有內距外距的元素歸零，避免不同瀏覽器內外距不同而錯位*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+/*將影像及欄位集的邊框歸零*/
+img, fieldset {
+        border: 0;
+}
+/*將註解的邊框及大小寫重置*/
+abbr, acronym {
+        border: 0;
+        font-variant: normal;
+}
+:focus {
+    outline: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+        font-size: 100%;
+        font-weight: normal;
+}
+
+/*部份瀏覽器在表單元素的字型樣式跟內文會不一樣，故設為繼承保持一致*/
+input, button, textarea, select, optgroup, option {
+        font-family: inherit;
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+}
+/*@purpose To enable resizing for IE */
+/*branch For IE6-Win, IE7-Win */
+input, button, textarea, select {
+	*font-size: 100%;
+}
+/*將這些瀏覽器可能會有字型外觀樣式的元素重置字型樣式及粗細*/
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+        font-style: normal;
+        font-weight: normal;
+}
+body{
+	line-height: 1;
+}
+/*將清單樣式清除*/
+ol, ul, li {
+        list-style: none;
+}
+/*將表格的邊框設定為結合，第二行是為了特定瀏覽器*/
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+/*重置表格註解及標題儲存格的對齊*/
+caption, th {
+        text-align: left;
+}
+/*重置上標、下標的樣式*/
+sup, sub {
+        font-size: 100%;
+        vertical-align: baseline;
+}
+/*將連結、底線重置*/
+a, ins, :link, :visited {
+        text-decoration: none;
+}
+/*保留刪除線樣式*/
+del {
+    text-decoration: line-through;
+}
+/*將引用重置，避免樣式不同及引號*/
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+}
+/*HTML5 tag*/
+header, nav, main, article, section, aside, footer, details, figcaption,figure, hgroup { 
+    display:block;
+}

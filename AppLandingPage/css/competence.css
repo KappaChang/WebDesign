@@ -1,0 +1,127 @@
+body {
+	font-family: "微軟正黑體","Arial";
+	font-size: 1.125em;
+	line-height: 22px;
+	//letter-spacing: 1px;
+	color: #221814;
+	background: #E6E6E6;
+	word-wrap: break-word;
+}
+button {
+	width: 100%;
+	color: #FFF;
+	font-weight: bold;
+	padding: 10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+button:hover, button:active {
+	background: black;
+}
+.btn-black {
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #474747 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(0%,#474747), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#474747 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #1e5799 0%,#474747 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #1e5799 0%,#474747 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #1e5799 0%,#474747 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+.btn-black a {
+	color: #FFF;
+}
+#HEADER {
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	color: #FFF;
+	background: #494949; /* Old browsers */
+	background: -moz-linear-gradient(top,  #494949 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#494949), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #494949 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #494949 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #494949 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #494949 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+#FOOTER {
+	width: 100%;
+	text-align: center;
+	margin-top: 40px;
+	padding: 10px 0;
+	font-size: 0.813em;
+	color: #BFBFBF;
+}
+#CONTAINER {
+	padding: 0 2%;
+}
+#MAIN {
+	max-width: 920px;
+	margin: 0 auto;
+	background: #FFF;
+	border: 1px solid #E7E7E7;
+	padding: 20px 2% 0;
+}
+.title {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #000;
+	line-height: 1.6em;
+	border-bottom: 3px solid #000;
+	margin-bottom: 20px;
+}
+.competence {
+	margin: 20px 0;
+}
+.competence .bg-gray {
+	background: #E4E4E4;
+}
+.competence .note {
+	color: #000;
+	font-size: 0.875em;
+	font-weight: bold;
+}
+.competence .table {
+	max-width: 960px;
+}
+.competence .large-font {
+	font-size: 1.375em;
+	font-weight: bold;
+	padding: 10px 0;
+	color: red;
+}
+.competence .tr {
+	width: 100%;
+	display: inline-table;
+	border-bottom: 1px solid #FFF;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.competence .td {
+	display: table-cell;
+	width: 32%;
+	padding: 10px 5px;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #FFF;
+	text-align: center;
+	vertical-align: middle;
+	border-collapse: collapse; //予許邊框重疊
+}
+.competence .td:first-child {
+	background: #8D8D8D;
+	color: #FFF;
+}
+.competence .tr:first-child .td:first-child {
+	background: #FFF;
+}
+.icon-check {
+	background: url('../images/icon-check.png') no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+	margin: 0 auto;
+}
+/*請使用 hd, bd, ft 命名原則*/

@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"       xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+<title>MUZIK ONLINE 《悲慘世界》 網路留言贈原著</title>
+<meta name="description" content="喜歡《悲慘世界》電影版的朋友們，快來MUZIK ONLINE告訴大家「你最喜歡哪一位角色和最喜歡哪一首音樂」，只要在2月8號到22號完成留言，你就有機會獲得《悲慘世界》原著小說乙套！"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="all" />
+<meta name="author" content="MUZIK ONLINE" />
+<meta name="rating" content="general" />
+<meta property="og:title" content="MUZIK ONLINE &#x300a;&#x60b2;&#x6158;&#x4e16;&#x754c;&#x300b; &#x7db2;&#x8def;&#x7559;&#x8a00;&#x8d08;&#x539f;&#x8457;" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://event.muzik-online.com/LesMiserables/index.html" />
+<meta property="og:image" content="http://event.muzik-online.com/LesMiserables/images/fb_share_image.jpg" />
+<meta property="og:site_name" content="MUZIK ONLINE &#x300a;&#x60b2;&#x6158;&#x4e16;&#x754c;&#x300b; &#x7db2;&#x8def;&#x7559;&#x8a00;&#x8d08;&#x539f;&#x8457;" />
+<meta property="og:description" content="喜歡《悲慘世界》電影版的朋友們，快來MUZIK ONLINE告訴大家「你最喜歡哪一位角色和最喜歡哪一首音樂」，只要在2月8號到22號完成留言，你就有機會獲得《悲慘世界》原著小說乙套！"/>
+<meta property="fb:admins" content="100000372048258"/>
+<meta property="fb:app_id" content="339999192774080">
+<meta property="fb:app_id" content="110219165816685">
+
+
+
+<link href="css/layout4.css?a=20130131-1" rel="stylesheet" type="text/css" /> <!-- 網頁版型css -->
+<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/ui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+<script src="js/jquery.blockUI.js" type="text/javascript"></script> <!-- 呼叫 blockUI -->
+<script src="js/pop.js?a=20130131-1" type="text/javascript"></script> <!-- 呼叫 pop -->
+<link href="css/colorbox.css?a=20130125-1" rel="stylesheet" type="text/css" /> <!-- 燈箱css -->
+<link href="http://boedesign.com/demos/gritter/css/jquery.gritter.css" rel="stylesheet" type="text/css" /> <!-- 燈箱css -->
+<script src="js/jquery-colorbox.js" type="text/javascript"></script> <!-- 呼叫 燈箱js -->
+<script src="js/fb_action.js" type="text/javascript"></script>
+<script>
+    var result = false;
+
+
+            $(document).ready(function(){
+
+                //Examples of how to assign the ColorBox event to elements
+                $(".group1").colorbox({rel:'group1', maxHeight:"75%", maxWidth:"75%"});
+                $(".group2").colorbox({rel:'group2', maxHeight:"75%", maxWidth:"75%"});
+                $(".group3").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+                $(".group4").colorbox({rel:'group4', slideshow:true});
+                //Example of preserving a JavaScript event for inline calls.
+                $("#click").click(function(){
+                    $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+                    return false;
+                });
+
+            // active
+            $('li a').click(function(){
+                $('li a').removeClass('active');
+                $(this).addClass('active');
+                });
+
+            jQuery.ajax({
+              url: 'ajax_comment.php',
+              type: 'POST',
+              dataType: 'json',
+              data: {action:'load'},
+              complete: function(xhr, textStatus) {
+                //called when complete
+                // console.log(textStatus);
+              },
+              success: function(data, textStatus, xhr) {
+                // test = data;
+                //called when successful
+                console.log(data);
+                for (var i = data.length - 1; i >= 0; i--) {
+                    // console.log(data[i].nickname);
+                    $('#comments').prepend($('<li><i class="arrow"></i><div class="message_text"><div class="main"><div class="avatar"><img src="https://graph.facebook.com/'+data[i].fbid+'/picture?width=50&amp;height=50"></div><div class="header"><div class="name"><a href="https://www.facebook.com/'+data[i].fbid+'" target="_blank">' + data[i].nickname + '</a></div><div class="time">'+data[i].datetime+'</div></div><div class="text">'+data[i].comment+'</div></div></div></li>').fadeIn('fast'));
+                };
+
+
+
+
+
+
+              },
+              error: function(xhr, textStatus, errorThrown) {
+                //called when there is an error
+                // console.log(textStatus);
+              }
+            });
+
+            // FB.XFBML.parse();
+
+
+            });
+</script>
+<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.mousewheel.min.js"></script><!-- mousewheel plugin -->
+<script src="js/jquery.mCustomScrollbar.js"></script><!-- custom scrollbars plugin -->
+
+
+<script>
+
+        (function($){
+            $(document).ready(function(){
+                $(".mCustomScrollbar").mCustomScrollbar({
+                    scrollInertia:0,
+                    scrollButtons:{
+                        enable:true
+                    },
+                    callbacks:{
+                        onScrollStart:function(){ OnScrollStart(); },
+                        onScroll:function(){ OnScroll(); },
+                        onTotalScroll:function(){ OnTotalScroll(); },
+                        onTotalScrollBack:function(){ OnTotalScrollBack(); },
+                        onTotalScrollOffset:30,
+                        whileScrolling:function(){ WhileScrolling(); }
+                    }
+                });
+                function OnScrollStart(){
+                    $(".output .onScrollStart").stop(true,true).text("").css("display","inline-block").text("Scroll started").fadeOut(500,"easeInCirc");
+                }
+                function OnScroll(){
+                    $(".output .onScroll").stop(true,true).text("").css("display","inline-block").text("Scrolled...").fadeOut(500,"easeInCirc");
+                }
+                function OnTotalScroll(){
+                    $(".output .onTotalScroll").stop(true,true).text("").css("display","inline-block").text("Scroll end reached").fadeOut(500,"easeInCirc");
+                }
+                function OnTotalScrollBack(){
+                    $(".output .onTotalScrollBack").stop(true,true).text("").css("display","inline-block").text("Scroll begin reached").fadeOut(500,"easeInCirc");
+                }
+                function WhileScrolling(){
+                    $(".output .whileScrolling").stop(true,true).css("display","inline-block").text("Scrolling").fadeOut(500,"easeInCirc");
+                }
+
+                $(".output a").click(function(e){
+                    e.preventDefault();
+                    var $this=$(this),
+                        rel=$this.attr("rel"),
+                        target=$this.parent().find("."+rel);
+                    target.add($this).toggleClass("hidden");
+                });
+            });
+        })(jQuery);
+</script>
+
+
+</head>
+<body>
+
+<!-- wrapper start -->
+<div id="wrapper">
+    <h1><a href="http://www.muzik-online.com" class="logo" title="MUZIK ONLINE"></a>MUZIK ONLINE 《悲慘世界》 網路留言贈原著</h1>
+
+    <div class="index_right">
+
+        <div class="all">
+            <div class="title2"></div>
+            <div class="information">
+                <div class="book"></div>
+                <div class="rr">
+                    <div class="pic01"></div>
+                    <div class="action">
+                        <a href="javascript:;"><div class="go_event" id="message_btn"></div></a>
+                        <a href="javascript:;"><div class="share" onclick="FacebookShare();"></div></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="nav">
+        <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="#" id="introduction_btn">電影介紹</a></li>
+            <li><a href="#" id="method_btn">活動辦法</a></li>
+            <li><a href="#" id="message_btn">我要留言</a></li>
+            <li><a href="#" id="winners_btn">得獎名單</a></li>
+        </ul>
+    </div>
+</div>
+<!-- wrapper end -->
+
+<!-- 電影介紹 開始 -->
+
+<div id="introduction">
+    <div class="close"></div>
+    <!-- for_scrollbar Start -->
+    <div class="for_scrollbar mCustomScrollbar">
+        <div class="title">電影介紹</div>
+        <div class="group">
+            <h2>預告片</h2>
+            <div><iframe width="560" height="315" src="http://www.youtube.com/embed/GBlZ9XWdVg0" frameborder="0" allowfullscreen></iframe></div>
+        </div>
+        <div class="group">
+            <h2>電影介紹</h2>
+            <p>經典歌舞劇三十周年，隆重登上大銀幕！《王者之聲：開戰時刻》金獎導演湯姆霍伯執導，改編法國文豪雨果經典名著。休傑克曼、安海瑟薇領銜主演，重現法國大革命大時代之下小人物破滅的夢想與得不到的愛情、在生命熱情與犧牲之間的贖罪之路，呈現無盡的心靈試煉。</p>
+        </div>
+        <div class="group">
+            <h2>角色介紹</h2>
+            <div class="actor">
+                <div class="picture left">
+                    <a class="group1 cboxElement" href="images/01.jpg" title="休傑克曼">
+                        <img src="images/01.jpg" class="height" />
+                    </a>
+                </div>
+                <h3>休傑克曼<span>飾尚萬強</span></h3>
+                <p>休傑克曼以舞台劇起家，曾獲得舞台劇的最高榮譽東尼獎與艾美獎。休傑克曼在【悲慘世界】中飾演尚萬強，榮獲本屆金球獎音樂與喜劇類最佳男主角！</p>
+                <p>
+        休傑克曼本來就是音樂劇《悲慘世界》的粉絲，體型壯碩的休傑克曼為了尚萬強這個角色盡心盡力，挑戰體能極限，為了拍攝尚萬強入獄的場景，他不但拼命減重，還留起大鬍子，而且拍攝前三十六小時，就禁止自己喝水，努力營造一種枯瘦的感覺。</p>
+        </div>
+
+        <div class="actor">
+                <div class="picture right">
+                    <a class="group1 cboxElement" href="images/02.jpg" title="安海瑟威">
+                        <img src="images/02.jpg" class="height" />
+                    </a>
+                </div>
+                <h3>安海瑟威<span>飾芳婷</span></h3>
+                <p>安海瑟威從小聆聽《悲慘世界》，也很喜歡這部音樂劇。安海瑟威試鏡三小時，一個月後，才知道她獲得劇中最悲慘的角色：芳婷。芳婷被工廠開除，只好淪為妓女，她的墮落令人心碎。</p>
+                <p>安海瑟威為了這個角色的付出，在生理與心理上的付出完全不亞於休傑克曼。她為了芳婷賣掉頭髮那一幕，剪去她秀麗的長髮。此外，她本來就很苗條了，還為此減了好幾公斤，讓觀眾相信芳婷的健康狀況變差。</p>
+        </div>
+
+        <div class="actor">
+                <div class="picture left">
+                    <a class="group1 cboxElement" href="images/03.jpg" title="羅素克洛">
+                        <img src="images/03.jpg" class="width"/>
+                    </a>
+                </div>
+                <h3>羅素克洛<span>飾賈維</span></h3>
+                <p>羅素克洛一如其他多數演員，是等到製作團隊接洽他後，才真正看過音樂劇。但他馬上就發現這部戲的魅力所在。</p>
+                <p>導演湯姆霍伯說：「我不曉得羅素克洛這麼會唱歌，也不知道他的演藝事業從音樂劇院開始，也很想拍攝音樂劇。沒想到我們如此幸運，可以邀請全球最偉大的電影明星，以及擁有音樂背景的優秀演員。」羅素克洛詮釋這位傳奇人物時，盡量展現他多年追捕尚萬強的動機，以及最後為法律秩序而死的決心。</p>
+        </div>
+
+        <div class="actor">
+                <div class="picture right">
+                    <a class="group1 cboxElement" href="images/04.jpg" title="亞曼達席菲德">
+                        <img src="images/04.jpg" class="width"/>
+                    </a>
+                </div>
+                <h3>亞曼達席菲德<span>飾珂賽特</span></h3>
+                <p>亞曼達席菲德有著一副好歌喉，她也是《媽媽咪呀》裡面的蘇菲。亞曼達席菲德第一次接觸到《悲慘世界》，是她七歲的時候，這齣音樂劇正好到費城巡迴公演。再來就是十五歲的時候，她在學校的獨唱會飾演珂賽特一角。</p>
+                <p>亞曼達席菲德說：「珂賽特在整個故事裡，象徵光明、希望與真愛。我有責任演出珂賽特光明的一面，不然這個故事太悲慘了。珂賽特是很可愛的角色。她富有生命力與可能性」</p>
+        </div>
+
+        <div class="actor">
+                <div class="picture left">
+                    <a class="group1 cboxElement" href="images/05.jpg" title="艾迪瑞德曼">
+                        <img src="images/05.jpg" class="width"/>
+                    </a>
+                </div>
+                <h3>艾迪瑞德曼<span>飾馬里歐</span></h3>
+                <p>艾迪瑞德曼早就和湯姆霍伯合作過，為了爭取試鏡的機會，他演唱馬里歐的曲目「Empty Chairs and Empty Tables」，湯姆霍伯也坦承，他很期待聽到前合作對象的歌聲：「我格外期待那一張試唱帶，艾迪瑞德曼是我心目中的人選，我沒想他歌喉這麼好，真的是喜出望外」。</p>
+                <p>
+    艾迪瑞德曼早就看過音樂劇《悲慘世界》，他拿下馬里歐這個角色，內心超級緊張，馬里歐是參與政治運動的學生，關心法國社會不公，當他準備革命的時候，卻愛上了珂賽特。</p>
+        </div>
+
+        <div class="actor">
+                <div class="picture right">
+                    <a class="group1 cboxElement" href="images/06.jpg" title="亞倫泰特">
+                        <img src="images/06.jpg" class="width"/>
+                    </a>
+                </div>
+                <h3>亞倫泰特<span>飾安佐拉</span></h3>
+                <p>熱情的革命學生安佐拉，則由美國演員亞倫泰特飾演，他也是百老匯的明日之星。</p>
+        </div>
+
+        <div class="actor">
+                <div class="picture left">
+                    <a class="group1 cboxElement" href="images/07.jpg" title="薩曼莎巴克斯">
+                        <img src="images/07.jpg" class="width" style="position:absolute;top:-55%;"/>
+                    </a>
+                </div>
+                <h3>薩曼莎巴克斯<span>飾愛波寧</span></h3>
+                <p>薩曼莎巴克斯是音樂劇演員，在倫敦劇院飾演過愛波寧一角，麥金塔斯還特地拔擢她演出【悲慘世界】25週年紀念音樂會。製片看到她在皇后劇院的演出，就發現她演出愛波寧不朽的精神。</p>
+                <p>早在她參加電視選秀節目時，麥金塔斯就相中她的才華，她打進決賽，爭奪麥金塔斯《孤星淚》的南茜一角。薩曼莎巴克斯最後贏得【孤星淚】英國巡迴演出的南茜一角，目前還在演出。為了電影【悲慘世界】的拍攝，她特地請了假。就在曼徹斯特表演結束時，麥金塔斯宣佈她獲得電影【悲慘世界】愛波寧一角，她馬上發表推特，上面寫著：「我最開心的一刻」</p>
+        </div>
+
+        <div class="actor">
+                <div class="picture right">
+                    <a class="group1 cboxElement" href="images/08.jpg" title="海倫娜寶漢卡特">
+                        <img src="images/08.jpg" class="width"/>
+                    </a>
+                </div>
+                <h3>海倫娜寶漢卡特<span>飾德納第夫人</span></h3>
+                <p>酒店老闆兼專業小偷的德納第夫人由海倫娜寶漢卡特飾演。</p>
+                <p>導演湯姆霍伯和海倫娜寶漢卡特算是再度重逢，她在《王者之聲》飾演伊莉莎白女王，因此入圍奧斯卡。海倫娜寶漢卡特以及薩夏拜倫柯恩搞笑功力十足，加上歌喉一流，簡直是錦上添花呀。</p>
+        </div>
+    </div>
+    <!-- for_scrollbar End -->
+
+
+</div>
+
+<!-- 電影介紹 結束 -->
+
+
+
+</div>
+<!-- 活動辦法 開始 -->
+<div id="method">
+    <div class="close"></div>
+    <!-- for_scrollbar Start -->
+    <div class="for_scrollbar mCustomScrollbar">
+        <div class="title">活動辦法</div>
+        <h2>MUZIK ONLINE《悲慘世界》網路留言贈原著</h2>
+        <div class="group">
+            <h3>活動流程</h3>
+            <div><img src="images/step.png?a=20130125-1" alt="步驟"/></div>
+        </div>
+        <div class="group">
+            <h3>參加辦法</h3>
+            <ul>
+                <li>活動時間：2013/2/8到2/22</li>
+                <li>抽獎日期：2013/2/25</li>
+                <li>得獎公布日期：2013/2/25</li>
+            </ul>
+        </div>
+        <div class="group">
+            <h3>活動獎品</h3>
+            <div class="picture"><a class="group2 cboxElement" href="images/book.jpg?a=20130126-1" title="悲慘世界小說"><img src="images/book.jpg?a=20130126-1" class="width" alt="悲慘世界小說"></a></div>
+            <p>悲慘世界原著小說(經典全譯本三冊)</p>
+        </div>
+        <div class="group">
+            <h3>注意事項</h3>
+            <ul>
+                <li>本活動獎項寄送地區僅限台灣本島地區。外島及海外地區恕無法配送。</li>
+                <li>中獎者不得要求指定獎項更改或折換成現金。</li>
+                <li>參加者不得以任何非法、欺騙等舞弊方法取得中獎資格。</li>
+                <li>參加者於參加本活動之同時亦即表示您接受本活動之活動辦法與注意事項之規範。</li>
+                <li>本主辦單位保有隨時修改及終止本活動與贈品之權利。</li>
+            </ul>
+        </div>
+    </div>
+    <!-- for_scrollbar Eng -->
+</div>
+<!-- 活動辦法 結束 -->
+
+<!-- 活動留言 開始 -->
+<div id="message">
+    <div class="close"></div>
+    <!-- for_scrollbar Start -->
+    <div class="for_scrollbar mCustomScrollbar">
+        <div class="title">我要留言</div>
+        <h2>MUZIK ONLINE《悲慘世界》網路留言贈原著</h2>
+        <p>喜歡《悲慘世界》電影版的朋友們，快來MUZIK ONLINE告訴大家「你最喜歡哪一位角色和最喜歡哪一首音樂」，只要在2月8號到22號完成留言，你就有機會獲得《悲慘世界》原著小說乙套！</p>
+
+        <!-- steps start -->
+        <div class="steps">
+
+            <!-- step1 start -->
+            <div class="step1">
+                <p><img src="images/number1.png" alt="第一步驟" /></p>
+                <h4>請先登入授權，才能參加留言贈書活動</h4>
+                <p><a href="javascript:;" onclick="fb_login()" id="login_with_fb"><img src="images/fb_login.png" alt="使用Facebook帳號登入"/></a></p>
+                <div id="fb-root"></div>
+                <script src="http://connect.facebook.net/zh_TW/all.js"></script>
+
+            </div>
+            <!-- step1 End -->
+
+            <!-- step2 start -->
+            <div class="step2">
+                <p><img src="images/number2.png" alt="第一步驟" /></p>
+                <h4>請按讚加入粉絲團</h4>
+                <div class="fb-like-box" data-href="http://www.facebook.com/muzikonline.Taiwan" data-width="250" data-show-faces="false" data-colorscheme="dark" data-stream="false" data-header="false"></div>
+            </div>
+            <!-- step2 End -->
+
+            <!-- step3 start -->
+            <div class="step3">
+                <p><img src="images/number3.png" alt="第一步驟" /></p>
+                <h4>請填下面的空格，組成你的留言!</h4>
+                <p>我最喜歡《悲慘世界》電影版的
+                    <select name="" id="role">
+                        <option value="">請選擇角色名稱</option>
+                        <option value="尚萬強／休傑克曼飾">尚萬強／休傑克曼飾</option>
+                        <option value="芳婷／安海瑟薇飾">芳婷／安海瑟薇飾</option>
+                        <option value="賈維／羅素克洛飾">賈維／羅素克洛飾</option>
+                        <option value="珂賽特／亞曼達席菲德飾">珂賽特／亞曼達席菲德飾</option>
+                        <option value="馬里歐／艾迪瑞德曼飾">馬里歐／艾迪瑞德曼飾</option>
+                        <option value="安佐拉／亞倫泰特飾">安佐拉／亞倫泰特飾</option>
+                        <option value="愛波寧／薩曼莎巴克斯飾">愛波寧／薩曼莎巴克斯飾</option>
+                        <option value="德納第夫人／海倫娜波漢卡特飾">德納第夫人／海倫娜波漢卡特飾</option>
+                        <option value="德納第先生／薩夏拜倫柯恩飾">德納第先生／薩夏拜倫柯恩飾</option>
+                    </select> <br />和電影版中的
+                    <select name="" id="music">
+                        <option value="">請選擇音樂名稱</option>
+                        <option value="I Dreamed A Dream">I Dreamed A Dream</option>
+                        <option value="Who am I?">Who am I?</option>
+                        <option value="Castle On A Cloud">Castle On A Cloud</option>
+                        <option value="Master Of The House">Master Of The House</option>
+                        <option value="Can You Hear the People Sing">Can You Hear the People Sing</option>
+                        <option value="On My Own">On My Own</option>
+                    </select>
+                    這首音樂。<img style="position: relative;top: 15px;cursor: pointer;" src="images/sent.png" alt="送出" onclick="comment()"/></p>
+            </div>
+            <!-- step3 End -->
+
+            <!-- step4 start -->
+            <div class="step4">
+                <p><img src="images/number4.png" alt="第一步驟" /></p>
+                <h4>恭喜您完成活動，請耐心等待抽獎。<br />我們將於 2013年2月25日公布得獎名單。</h4>
+                <div class="quick_links">
+                    <p><a href="http://www.muzik-online.com" target="_blank"><img src="images/go_back_muzikonline.png" alt="回 MUZIK ONLINE 聽音樂"/></a><a href="#" onclick="FacebookShare();"><img src="images/fb_share.png" alt="分享活動" /></a></p>
+                </div>
+            </div>
+            <!-- step4 End -->
+
+        </div>
+        <!-- steps End -->
+
+            <!-- group Start -->
+            <div class="group">
+                <ul id="comments">
+                </ul>
+            </div>
+            <!-- group End -->
+
+    </div>
+    <!-- for_scrollbar End -->
+
+</div>
+<!-- 活動留言 結束 -->
+
+
+
+<!-- 得獎名單 開始 -->
+<div id="winners">
+    <div class="close"></div>
+    <div class="title">得獎名單</div>
+    <h2>MUZIK ONLINE《悲慘世界》網路留言贈原著 得獎名單</h2>
+        <h4>我們將於 2013年2月25日公布得獎名單。</h4>
+</div>
+<!-- 得獎名單 結束 -->
+
+<div id="footer">&copy; 2013 MUZIK Creative Digital Ltd.</div>
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

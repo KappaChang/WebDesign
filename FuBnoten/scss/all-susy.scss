@@ -1,0 +1,27 @@
+//plug 套件
+@import "compass";
+@import "compass/css3";
+//@import "plug/bootstrap";
+@import "plug/susy";
+// @import "plug/animate";
+// @import "plug/lightbox";
+// @import "plug/ceaser-easing";
+// @import "plug/jquery.mCustomScrollbar";
+
+
+//base 基本設定
+@import "base/reset";
+@import "base/clearfix";
+@import "base/setting";
+
+//版行設定
+@import "layout/layout";
+@import "layout/style";
+
+//圖片
+@import "compass/utilities/sprites";
+$icons-sprite-dimensions: true;
+$icons-spacing: 10px; //圖片間距 10px
+$icons-layout: horizontal; // horizontal 橫式排列, vertical 直的排列
+@import "icons/*.png";
+@include all-icons-sprites; //all-後面接著"icons"是資料夾名稱

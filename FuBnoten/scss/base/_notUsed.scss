@@ -1,0 +1,34 @@
+//自動隨寬度排列 li 去除每排最後一個 li 的 margin-right
+@mixin grid($columnsNumber, $columnsGutter) {
+  width: ($gridWidth - $columnsGutter*($columnsNumber - 1) ) / $columnsNumber;
+  margin-right: $columnsGutter;
+  -webkit-box-sizing: border-box;  
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  &:nth-child(#{$columnsNumber}n){
+    margin-right: 0  
+  }
+}
+// 以下是範例
+$gridWidth: 940px;
+.products {
+    width: $gridWidth;
+    margin: 0 auto;
+
+    li {
+        float: left;
+        @include grid(3, 30px);
+    }
+}
+
+/*
+//html
+<ul class="products">
+    <li><img src="images/ga1.jpg"></li>
+    <li><img src="images/ga2.jpg"></li>
+    <li><img src="images/ga3.jpg"></li>
+    <li><img src="images/ga4.jpg"></li>
+    <li><img src="images/ga5.jpg"></li>
+</ul>
+*/

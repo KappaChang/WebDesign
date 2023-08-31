@@ -14,7 +14,7 @@
 <meta property='og:type' content='website'/>
 <meta property='og:url' content='http://event.muzik-online.com/GidonKremer/'/>
 <meta property='og:image' content='http://event.muzik-online.com/GidonKremer/images/default.jpg'/>
-<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script><!-- 呼叫 JQuery -->
+<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script><!-- 呼叫 JQuery -->
 <link href="css/all-susy.css" rel="stylesheet">
 <!--卷軸-->
 <script type="text/javascript" src="js/scroll.js"></script>
@@ -50,12 +50,120 @@
 
 
 <!-- livereload-js -->
-<script>
+<!-- <script>
 document.write('<script src="http://'
 + (location.host || 'localhost').split(':')[0]
 + ':35729/livereload.js?snipver=1"></'
 + 'script>')
-</script>
+</script> -->
+
+<style>
+	img {
+		width: 100%;
+	}
+	h2 {
+		max-width: 486px;
+	}
+	.visual-images {
+		background-size: contain;
+    	width: 100%;
+    	max-width: 805px;
+	}
+	.visual-images-mobile {
+		/* height: 879px;
+		margin: 0 auto;
+		background: url(../images/visual-image-mobile.png) no-repeat;
+		position: relative;
+		background-size: contain; */
+    	width: 100%;
+    	max-width: 948px;
+		display: none;
+	}
+	.block02-watchcry {
+		width: 100%;
+		max-width: 596px;
+		height: 100%;
+	}
+	.animation {
+		position: relative;
+	}
+	.img-block03-1 {
+		width: 100%;
+		max-width: 307px;
+	}
+	.img-block03-2 {
+		width: 100%;
+		max-width: 378px;
+	}
+	.img-block03-3 {
+		width: 100%;
+		max-width: 394px;
+	}
+	.pic {
+		width: 100%;
+		max-width: 150px;
+	}
+	.pic:last-child {
+		margin-right: 0;
+	}
+	.custom-rwd {
+		display: none;
+	}
+	.block04-kremer {
+		width: 100%;
+		max-width: 504px;
+	}
+	.block04-publish {
+		width: 100%;
+		max-width: 213px;
+	}
+	@media (max-width: 952px) {
+		.block02 {
+			padding-bottom: 40px;
+		}
+		.block03-1-group {
+			width: 100%;
+			float: left;
+			margin-top: 40px;
+		}
+		.block03-2-group {
+			width: 100%;
+			float: left;
+			margin-top: 40px;
+		}
+		.block03-3-group {
+			width: 100%;
+			float: left;
+			margin-top: 40px;
+		}
+		.block03-1-group .pic-group-01 {
+			margin-left: 0;
+		}
+		.img-block03-1 {
+			display: none;
+		}
+		.custom-rwd {
+			display: block;
+		}
+	}
+	@media (max-width: 767px) {
+		.visual-images {
+			display: none;
+		}
+		.visual-images-mobile {
+			display: block;
+		}
+		.bg-paper {
+			display: none;
+		}
+		.block01 {
+			padding-top: 80px;
+		}
+		.block02 {
+			padding-top: 40px;
+		}
+	}
+</style>
 
 </head>
 
@@ -67,11 +175,11 @@ document.write('<script src="http://'
 				<li><a href="#" class="NAV02"><i class="icons-icon-music"></i>獨家設計</a></li>
 				<li><a href="#" class="NAV03"><i class="icons-icon-music"></i>講座資訊</a></li>
 			</ul>
-			<a href="http://www.books.com.tw/products/0010651117" target="_blank"><div class="go-shopping"><i class="icons-icon-shopping"></i>立刻購買</div></a>
+			<a href="https://www.books.com.tw/products/0010651117" target="_blank"><div class="go-shopping"><i class="icons-icon-shopping"></i>立刻購買</div></a>
 		</nav>
 		<nav id="NavMobile">
 			<div class="icons-icon-nav-mobile"></div>
-			<a href="http://www.books.com.tw/products/0010651117" target="_blank"><div class="go-shopping"><i class="icons-icon-shopping"></i>立刻購買</div></a>
+			<a href="https://www.books.com.tw/products/0010651117" target="_blank"><div class="go-shopping"><i class="icons-icon-shopping"></i>立刻購買</div></a>
 			<ul id="MobileMenuGroup">
 				<li class="NAV01"><a href="#"><i class="icons-icon-music"></i>內文節錄</a></li>
 				<li class="NAV02"><a href="#"><i class="icons-icon-music"></i>獨家設計</a></li>
@@ -92,12 +200,15 @@ document.write('<script src="http://'
 			</div>
 			<div class="bg-paper"></div>
 			<a name="BLOCK02" id="BLOCK02"></a>
+			<div class="visual-images-mobile">
+				<img src="images/visual-image-mobile.png" alt="">
+			</div>
 		</div>
 
 		<div class="block02" >
 			<div class="grid-980">
 				<h2><img src="images/title01.png" alt="內文節錄" title="內文節錄"></h2>
-				<div class="block02-watchcry"><img class="animation" src="images/block02-watchcry.jpg" data-150="opacity:0;top:10%" data-700="opacity:1;top:20%"></div>
+				<div class="block02-watchcry animation" data-150="opacity:0;top:10%" data-700="opacity:1;top:20%"><img src="images/block02-watchcry.jpg"></div>
 				<div class="desc">當代重要小提琴家基頓．克萊曼，在給年輕女鋼琴家的十封信中，闡述了他數十年音樂生涯的閱歷與心得，更以獨特犀利的觀點言詞、批判當今商業主宰藝術等亂象，展露出一代名家對音樂家與藝術最真實的定義。本書同時收錄了以各種光怪陸離幽默嘲諷樂壇現況的「惡夢交響樂」、音樂家應該時時警惕自身的「詮釋者十誡」，以及克萊曼為中文版加筆撰寫，給華文讀者的獨家序言。</div>
 			</div>
 		<a name="BLOCK03" id="BLOCK03"></a>
@@ -107,25 +218,26 @@ document.write('<script src="http://'
 			<div class="grid-980">
 				<h2><img src="images/title02.png" alt="獨家設計" title="獨家設計"></h2>
 				<div class="block03-1-group">
-					<div><img src="images/block03-1.jpg"></div>
+					<div class="img-block03-1"><img src="images/block03-1.jpg"></div>
 					<div class="pic-group-01">
 						<span class="pic"><a href="images/01.jpg" data-lightbox="example-set"><img src="images/01-small.jpg" width="150" height="120"></a></span>
 						<span class="pic"><a href="images/02.jpg" data-lightbox="example-set"><img src="images/02-small.jpg" width="150" height="120"></a></span>
 					</div>
+					<div class="img-block03-1 custom-rwd"><img src="images/block03-1.jpg"></div>
 				</div>
 				<div class="block03-2-group">
 					<div class="pic-group-02">
 						<span class="pic"><a href="images/03.jpg" data-lightbox="example-set"><img src="images/03-small.jpg" width="150" height="120"></a></span>
 						<span class="pic"><a href="images/04.jpg" data-lightbox="example-set"><img src="images/04-small.jpg" width="150" height="120"></a></span>
 					</div>
-					<div><img src="images/block03-2.jpg"></div>
+					<div class="img-block03-2"><img src="images/block03-2.jpg"></div>
 				</div>
 				<div class="block03-3-group">
 					<div class="pic-group-03">
 						<span class="pic"><a href="images/05.jpg" data-lightbox="example-set"><img src="images/05-small.jpg" width="150" height="120"></a></span>
 						<span class="pic"><a href="images/06.jpg" data-lightbox="example-set"><img src="images/06-small.jpg" width="150" height="120"></a></span>
 					</div>
-					<div><img src="images/block03-3.jpg"></div>
+					<div class="img-block03-3"><img src="images/block03-3.jpg"></div>
 				</div>
 			</div>
 		<a name="BLOCK04" id="BLOCK04"></a>
@@ -142,7 +254,7 @@ document.write('<script src="http://'
 					<li>11/23（日）3:00pm　<a href="https://www.google.com.tw/maps/place/110%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E8%8F%B8%E5%BB%A0%E8%B7%AF88%E8%99%9F/@25.044545,121.5614574,17z/data=!3m1!4b1!4m2!3m1!1s0x3442abbf139899e7:0xec1658d6abb310e2" target="_blank" title="110 台北市信義區菸廠路88號3F">台北，松菸誠品 3F Forum<i class="icons-icon-map"></i></a></li>
 				</ul>
 				<div class="block04-publish"><img src="images/block04-publish.png" alt="有樂出版‧典藏價 250元 2014年 10月 敢言上市"></div>
-				<a href="http://www.books.com.tw/products/0010651117" target="_blank"><div class="btn-shopping"><i class="icons-icon-shopping"></i>立刻購買</div></a>
+				<a href="https://www.books.com.tw/products/0010651117" target="_blank"><div class="btn-shopping"><i class="icons-icon-shopping"></i>立刻購買</div></a>
 			</div>
 		</div>
 

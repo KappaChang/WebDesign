@@ -1,0 +1,33 @@
+<div class="grid-960">
+    <div class="group">
+        <h2 class="page-title center">已成功參加活動</h2>
+    </div>
+    <div class="group">
+        <h3 class="list-title">參加【耶誕典藏家】活動者，已參加人數 {{ data.collect|length }} 人</h3>
+        <p class="sign-up-hurry">快邀請你的朋友來收藏你的頁面唷！！</p>
+        <div class="sign-up clearfix">
+            <ul>
+                {% for collect in data.collect %}
+                <li>
+                    <span class="sign-up-img"><img src="{{ collect.head_photo }}" title="{{ collect.nickname }}" alt="{{ collect.nickanme }}"></span>
+                    <span class="sign-up-name"><a href="{{ collect.href }}" title="{{ collect.nickname }}" target="_blank">{{ collect.nickname }}</a></span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="group">
+        <h3 class="list-title">參加【Microsoft 耶誕專區】活動者，已參加人數 {{ data.microsoft|length }} 人</h3>
+        <div class="sign-up clearfix">
+            <ul>
+                {% for microsoft in data.microsoft %}
+                <li>
+                    <span class="sign-up-img"><img src="{{ microsoft.head_photo }}" title="{{ microsoft.nickname }}" alt="{{ microsoft.nickanme }}"></span>
+                    <span class="sign-up-name"><a href="{{ microsoft.href }}" title="{{ microsoft.nickname }}" target="_blank">{{ microsoft.nickname }}</a></span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+

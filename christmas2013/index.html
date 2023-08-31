@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="http://event.muzik-online.com/christmas2013/" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="古典樂,交響曲,協奏曲,聖誕節,活動,耶誕,跨年" />
+<meta name="description" content="今年耶誕節準備好與 MUZIK ONLINE 一起同樂了嗎？我們準備多項精緻的禮物想與大家分享歡樂。只需動動你的手指，即可參加 MUZIK ONLINE 耶誕贈獎活動唷！" />
+<meta property="og:site_name" content="享受典藏 耶誕跨年古典樂 | MUZIK ONLINE" />
+<meta property="og:title" content="享受典藏 耶誕跨年古典樂 | MUZIK ONLINE" />
+<meta property="og:description" content="今年耶誕節準備好與 MUZIK ONLINE 一起同樂了嗎？我們準備多項精緻的禮物想與大家分享歡樂。只需動動你的手指，即可參加 MUZIK ONLINE 耶誕贈獎活動唷！" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://event.muzik-online.com/christmas2013/" />
+<meta property="og:image" content="http://event.muzik-online.com/christmas2013/images/fb-share-500.jpg"/>
+<link href="http://event.muzik-online.com/christmas2013/images/fb-share-500.jpg" rel="image_src" type="image/jpeg">
+<meta property="og:locale" content="zh_TW" />
+<title>享受典藏 耶誕跨年古典樂 | MUZIK ONLINE</title>
+<link rel="shortcut icon" href="http://www.muzik-online.com/img/favicon.ico" type="image/x-icon">
+<link href="css/all-susy.css" rel="stylesheet">
+<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script><!-- 呼叫 JQuery -->
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/twig.min.js" type="text/javascript"></script>
+<script src="js/all.js" type="text/javascript"></script>
+<script src="js/nav.js" type="text/javascript"></script>
+<meta property="fb:app_id" content="339999192774080" />
+
+<!-- 讓IE8支援html5 tag -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<!--在 IE6-8 讓 JavaScript 工具模擬 CSS3 偽類和屬性選擇器 -->
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="js/selectivizr.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+<![endif]-->
+
+
+<!-- livereload-js -->
+<!--
+<script>
+document.write('<script src="http://'
++ (location.host || 'localhost').split(':')[0]
++ ':35729/livereload.js?snipver=1"></'
++ 'script>')
+</script>
+-->
+
+<script>
+    //fb-share
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=339999192774080";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    //google-plus
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+
+    //twitter
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38245263-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+
+<body>
+    <header>
+        <div class="grid-960">
+            <a href="#" class="icons icons-logo" alt="MUZIK ONLINE"><h1>MUZIK ONLINE</h1></a>
+            <div class="share">
+                <div class="fb-share">
+                    <div class="fb-share-button" data-href="http://event.muzik-online.com/christmas2013/" data-type="button_count"></div>
+                    <!-- <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial"></div> -->
+                </div>
+                <div class="google-plus-share">
+                    <div class="g-plusone" data-size="medium"></div>
+                </div>
+                <div class="twitter-share">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="zh-tw"></a>
+                </div>
+            </div>
+            <div class="visual"><img src="images/visual.jpg"></div>
+        </div>
+        <div class="visual-snow"></div>
+    </header>
+    <canvas id="canvas"></canvas>
+    <script>(function() {
+        var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
+        function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+        window.requestAnimationFrame = requestAnimationFrame;
+    })();
+
+
+    var flakes = [],
+        canvas = document.getElementById("canvas"),
+        ctx = canvas.getContext("2d"),
+        flakeCount = 200,
+        mX = -100,
+        mY = -100
+
+        canvas.width = window.innerWidth;
+        canvas.height = 382;
+
+    function snow() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (var i = 0; i < flakeCount; i++) {
+            var flake = flakes[i],
+                x = mX,
+                y = mY,
+                minDist = 150,
+                x2 = flake.x,
+                y2 = flake.y;
+
+            var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
+                dx = x2 - x,
+                dy = y2 - y;
+
+            if (dist < minDist) {
+                var force = minDist / (dist * dist),
+                    xcomp = (x - x2) / dist,
+                    ycomp = (y - y2) / dist,
+                    deltaV = force / 2;
+
+                flake.velX -= deltaV * xcomp;
+                flake.velY -= deltaV * ycomp;
+
+            } else {
+                flake.velX *= .98;
+                if (flake.velY <= flake.speed) {
+                    flake.velY = flake.speed
+                }
+                flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
+            }
+
+            ctx.fillStyle = "rgba(255,255,255," + flake.opacity + ")";
+            flake.y += flake.velY;
+            flake.x += flake.velX;
+
+            if (flake.y >= canvas.height || flake.y <= 0) {
+                reset(flake);
+            }
+
+
+            if (flake.x >= canvas.width || flake.x <= 0) {
+                reset(flake);
+            }
+
+            ctx.beginPath();
+            ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        requestAnimationFrame(snow);
+    };
+
+    function reset(flake) {
+        flake.x = Math.floor(Math.random() * canvas.width);
+        flake.y = 0;
+        flake.size = (Math.random() * 3) + 2;
+        flake.speed = (Math.random() * 1) + 0.5;
+        flake.velY = flake.speed;
+        flake.velX = 0;
+        flake.opacity = (Math.random() * 0.5) + 0.3;
+    }
+
+    function init() {
+        for (var i = 0; i < flakeCount; i++) {
+            var x = Math.floor(Math.random() * canvas.width),
+                y = Math.floor(Math.random() * canvas.height),
+                size = (Math.random() * 3) + 2,
+                speed = (Math.random() * 1) + 0.5,
+                opacity = (Math.random() * 0.5) + 0.3;
+
+            flakes.push({
+                speed: speed,
+                velY: speed,
+                velX: 0,
+                x: x,
+                y: y,
+                size: size,
+                stepSize: (Math.random()) / 30,
+                step: 0,
+                opacity: opacity
+            });
+        }
+
+        snow();
+    };
+
+    canvas.addEventListener("mousemove", function(e) {
+        mX = e.clientX,
+        mY = e.clientY
+    });
+
+    window.addEventListener("resize",function(){
+        canvas.width = window.innerWidth;
+        canvas.height = 382;
+    })
+
+    init();//@ sourceURL=pen.js
+    </script>
+    <nav>
+        <div class="grid-960 nav">
+            <ul id="navMenu">
+                <li><a href="" data-temp-name="index">活動首頁</a></li>
+                <!-- <li><a href="" data-temp-name="dj">名人響叮噹</a></li> -->
+                <li><a href="" data-temp-name="collect">耶誕典藏家</a></li>
+                <li><a href="" data-temp-name="microsoft">Microsoft 耶誕專區</a></li>
+                <li><a href="" data-temp-name="sign-up">已參加活動者</a></li>
+                <!-- <li><a href="" data-temp-name="classical">耶誕古典樂</a></li>
+                <li><a href="" data-temp-name="qa">Q&A</a></li> -->
+                <li><a href="" data-temp-name="winner">得獎名單</a></li>
+            </ul>
+            <!--
+            <a href="#myModal1" data-toggle="modal">
+                <div class="login">登入</div>
+            </a>
+            <div class="logout">
+                <span class="user-image"><img src="images/default30.png"></span>
+                <span class="user-name">張小婷張小婷張小婷張小婷張小婷張小婷張小婷張小婷張小婷張小婷張小婷張小婷</span>
+                <span id="logout" class="user-logout"><a href="#">登出</a></span>
+            </div>
+            -->
+        </div>
+    </nav>
+
+    <div id="MAIN">
+
+    </div>
+
+    <footer class="bg-black">
+        <div class="grid-960 clearfix">
+                <ul class="sponsors">
+                    <li>贊助商</li>
+                    <li class="icons icons-logo-microsoft">
+                        <a href="http://www.microsoft.com/zh-tw/default.aspx" target="_blank" title="Microsoft"></a>
+                    </li>
+                    <li class="icons icons-logo-MUZIK">
+                        <a href="http://www.nokia.com/tw-zh/" target="_blank" title="MUZIK 謬斯客"></a>
+                    </li>
+                </ul>
+            <div class="copyright"><a href="https://www.muzik-online.com/service" target="_blank">MUZIK ONLINE 客服中心</a> ｜ ©2013 MUZIK Creative Digital Ltd.</div>
+        </div>
+    </footer>
+
+    <!-- loginBtn strat -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-login">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">登入</h4>
+                    </div>
+                    <div class="modal-body" id="login-table">
+                        <button class="fb-login-btn">使用 Facebook 登入</button>
+                        <div class="or"></div>
+                        <label for="account">
+                            <span class="form-title">帳號</span>
+                            <input type="text" name="account" id="account" />
+                        </label>
+                        <label for="password">
+                            <span class="form-title">密碼</span>
+                            <input type="password" name="password" id="password" />
+                        </label>
+                        <div class="else">
+                            <span class="forget forgetBtn">忘記密碼</span>
+                            <span>/</span>
+                            <span class="new-user newUserBtn">註冊新帳號</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="cancel-btn" data-dismiss="modal">取消</button>
+                        <button type="button" class="login-btn" id='login'>登入</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- loginBtn end -->
+
+    <!-- forgetBtn strat -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+             <div class="modal-forget">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">忘記密碼</h4>
+                </div>
+                <div class="modal-body" id="forgor-table">
+                    <label for="account">
+                        <span class="form-title w75">帳號</span>
+                        <input type="text" name="account" id="account" />
+                    </label>
+                    <label for="password">
+                        <span class="form-title w75">新密碼</span>
+                        <input type="password" name="password" id="password" />
+                    </label>
+                    <label for="password">
+                        <span class="form-title w75">確認新密碼</span>
+                        <input type="password" name="password_confirm" id="password_confirm" />
+                    </label>
+                    <div class="else">
+                        <span class="have-account haveAccountBtn">已有帳號</span>
+                        <span>/</span>
+                        <span class="new-user newUserBtn">註冊新帳號</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="cancel-btn" data-dismiss="modal">取消</button>
+                  <button type="button" class="login-btn" id="forgot">寄送</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- forgetBtn end -->
+
+    <!-- newUserBtn strat -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-new">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">註冊新帳號</h4>
+                </div>
+                <div class="modal-body" id="register-table">
+                    <button class="fb-login-btn">使用 Facebook 註冊</button>
+                    <div class="or2"></div>
+                    <label for="account">
+                        <span class="form-title w75">帳號</span>
+                        <input type="text" name="account" id="account" />
+                    </label>
+                    <label for="password">
+                        <span class="form-title w75">密碼</span>
+                        <input type="password" name="password" id="password" />
+                    </label>
+                    <label for="password">
+                        <span class="form-title w75">確認密碼</span>
+                        <input type="password" name="password_confirm" id="password_confirm" />
+                    </label>
+                    <div class="else">
+                        <span class="forget forgetBtn">忘記密碼</span>
+                        <span>/</span>
+                        <span class="have-account haveAccountBtn">已有帳號</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="cancel-btn" data-dismiss="modal">取消</button>
+                  <button type="button" class="login-btn" id="register">註冊</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- newUserBtn end -->
+
+
+
+
+<div id="fb-root"></div>
+<script src="js/fb_action.js"></script>
+</body>
+</html>

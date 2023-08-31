@@ -1,0 +1,729 @@
+/*KappaChang Layout*/
+
+//susy
+$total-columns  : 12; //畫 12 條
+$column-width   : 60px; // 每條 60px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 10px; // 左右 padding 10px
+
+$desktop: 960px 12; // min-width 960px draw 12 total-columns
+$pad: 768px 8 959px; //min-width 768px max-width 595px draw 8 total-columns
+$mobile: 4 767px; //max-width 767px draw 4 total-columns
+
+header, nav, #MAIN, footer {
+	width: 100%;
+}
+header {
+	height: 382px;
+	position: relative;
+	background-color: #750100; // Old browsers
+	@include filter-gradient(#750100, #ffffff, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #750100 0%,#d2445c 45%,#ffffff 100%));
+	background: linear-gradient(to bottom, #750100 0%,#d2445c 46%,#ffffff 100%); /* W3C */
+
+	.visual {
+		position: absolute;
+		top: 0;
+		z-index: 1;
+
+		//@include images('visual.png');
+	}
+	.visual-snow {
+		width: 100%;
+		height: 92px;
+		position: absolute;
+		bottom: 0;
+		z-index: 0;
+		background-color: $white; // Old browsers
+		background: linear-gradient(to bottom, $white 0%, $white10 100%); /* W3C */
+		@include filter-gradient($white, $white10, vertical); // IE6-9
+		@include  background-image(linear-gradient(top, $white 0%, $white10 100%)); 
+	}
+	.share {
+		position: absolute;
+		right: 0;
+		top: 20px;
+		z-index: 99;
+
+		.fb-share, .google-plus-share, .twitter-share {
+			float: left;
+			margin-right: 10px;
+		}
+		.fb-share {
+			//width: 67px;
+			margin-top: -8px;
+		}
+		.google-plus-share {
+			width: 60px;
+		}
+		.twitter-share {
+			width: 70px;
+		}
+	}
+}
+
+// ##    ##    ###    ##     ## 
+// ###   ##   ## ##   ##     ## 
+// ####  ##  ##   ##  ##     ## 
+// ## ## ## ##     ## ##     ## 
+// ##  #### #########  ##   ##  
+// ##   ### ##     ##   ## ##   
+// ##    ## ##     ##    ###    
+
+nav {
+	background-color: $red;
+	z-index: 999;
+
+	@include box-shadow (0 1px 0 $white20);
+
+	ul {
+		width: 685px;
+		float: left;
+	}
+
+	ul li a {
+		float: left;
+		//margin-right: 20px;
+		padding: 0 20px;
+		//width: 150px;
+		color: $white;
+		font-weight: bold;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+
+		&:hover {
+			color: $white;
+			background: lighten($red, 10%); 
+		}
+		&:focus {
+			color: $white;
+		}
+	}
+	.login {
+		float: right;
+		color: $white;
+		font-size: $fontSize14;
+		height: 40px;
+		line-height: 40px;
+		max-width: 200px;
+		padding: 0 10px;
+		overflow: hidden;
+
+		a {
+			color: $white;
+		}
+
+		&:hover {
+			background: lighten($red, 10%); 
+		}
+	}
+	.logout {
+		float: right;
+		color: $white;
+		font-size: $fontSize14;
+		height: 40px;
+		line-height: 40px;
+		max-width: 200px;
+		overflow: hidden;
+		
+		.user-image {
+			float: left;
+
+			img {
+				width: 30px;
+				height: 30px;
+				padding-top: 5px;
+				margin-right: 10px;
+			}
+		}
+		.user-name {
+			float: left;
+			margin-right: 10px;
+			max-width: 100px;
+			height: 40px;
+			overflow: hidden;
+		}
+		.user-logout {
+			float: left;
+			padding: 0 10px;
+			background: lighten($red, 10%);
+
+			a {
+				color: $white;
+			}
+
+			&:hover {
+				background: lighten($red, 20%);
+			}
+		}
+	}
+	.active {
+		color: $black;
+		@include background-image (linear-gradient(to bottom,  $white 0%, $white15 100%)); 
+		
+		&:focus {
+			color: $black;
+		}
+	}
+}
+
+// ##     ##    ###    #### ##    ## 
+// ###   ###   ## ##    ##  ###   ## 
+// #### ####  ##   ##   ##  ####  ## 
+// ## ### ## ##     ##  ##  ## ## ## 
+// ##     ## #########  ##  ##  #### 
+// ##     ## ##     ##  ##  ##   ### 
+// ##     ## ##     ## #### ##    ## 
+
+#MAIN {
+	padding: 30px 0;
+	min-height: 500px;
+
+	.group {
+		margin-bottom: 25px;
+	}
+	.sub-nav {
+		margin: 10px 0 0;
+		width: 100%;
+		display: inline-block;
+		color: $white20;
+
+		li {
+			float: left;
+			margin-right: 20px;
+		}
+	}
+	.page-title {
+		@extend %title;
+
+		font-size: 28px;
+		margin-top: 10px; 
+	}
+	.title {
+		@extend %title;
+	}
+	.desc {
+		max-width: 700px;
+	}
+	.list {
+		border: 1px solid $white10;
+		margin-bottom: 20px;
+	}
+	.list-title {
+		@extend %title;
+		
+		font-size: $fontSize16;
+		background: #e3d7dd;
+		padding: 0 10px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.list-desc {
+		padding: 20px 0 20px 20px;
+		float: left;
+		line-height: 1.6;
+
+		// @include at-breakpoint($mobile) {
+		// 	width: 100%;
+		// 	padding: 20px 0;
+		// }
+		// @include at-breakpoint($pad) {
+		// 	width: 100%;
+		// 	padding: 20px 0;
+		// }
+		@include at-breakpoint($desktop) {
+			width: 78%;
+		}
+	}
+	.list-btn {
+		padding: 20px;
+		float: left;
+	}
+	.center {
+		@extend %title;
+
+		text-align: center;
+		font-size: 28px;
+		line-height: $lineHeight12;
+		margin: 10px 0 40px 0;
+	}
+	.detail {
+		@extend %btn;
+		@extend %btn-warning;
+
+		font-size: $fontSize18;
+		font-weight: bold;
+		width: 140px;
+		height: 75px;
+	}
+	$btnOrangeBackground:              #FFBF37 !default;
+	$btnOrangeBackgroundHighlight:     #DB6A00 !default;
+
+	.sign-up-btn-style {
+		@extend %btn;
+		//@extend %btn-warning;
+		@include buttonBackground($btnOrangeBackground, $btnOrangeBackgroundHighlight);
+
+		font-size: $fontSize18;
+		line-height: $lineHeight12;
+		font-weight: bold;
+		width: 200px;
+		height: 100px;
+		text-shadow: none;
+
+	}
+	.sign-up-btn-style2 {
+		@extend %btn;
+		//@extend %btn-warning;
+		@include buttonBackground($btnOrangeBackground, $btnOrangeBackgroundHighlight);
+
+		font-size: $fontSize18;
+		line-height: $lineHeight12;
+		font-weight: bold;
+		width: 450px;
+		height: 55px;
+		text-shadow: none;
+	}
+	.sign-up-btn {
+		float: right;
+		position: absolute;
+		right: 20px;
+	}
+	.sub-title {
+		@extend %title;
+		font-size: $fontSize18;
+		margin-bottom: 10px;
+	}
+	.step-image-desc {
+		margin: -10px 0 5px 0;
+	}
+	.app-group {
+
+		li {
+			float: left;
+			margin: 20px 20px 40px 0;
+			width: 167px;
+			font-size: $fontSize14;
+			text-align: center;
+			color: $white40;
+		}
+		.app-bold {
+			display: block;
+			font-weight: bold;
+			color: $black;
+		}
+		.app-qrcode {
+			display: block;
+
+			&:hover {
+				img {opacity: 1;}
+			}
+		}
+		.app-btn {
+			display: block;
+			margin: 10px 0;
+
+			&:hover {
+				img {opacity: 0.85;}
+			}
+		}
+	}
+	.sign-up {
+
+		//width: 70%;
+		margin: 20px auto;
+		min-height: 300px;
+	
+		li {
+
+			margin: 0 10px 25px 0;
+
+			img {
+			  width: 100%;
+			  height: auto;
+			}
+
+			@include at-breakpoint($mobile) {
+				@include isolate-grid(2); // 4條除2 一排2張圖
+				@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+			}
+			@include at-breakpoint($pad) {
+				@include isolate-grid(2); // 8條除2 一排4張圖
+				@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+			}
+			@include at-breakpoint($desktop) {
+				// @include span-columns(3); //圖片三條寬
+				// @include nth-omega(4n); // 每排4個
+				@include isolate-grid(1); // 12條除1 一排12張圖
+				@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+			}
+		}
+		.sign-up-img {
+			display: block;
+			// width: 140px;
+			// height: 140px;
+		}
+		.sign-up-name {
+			
+			display: block;
+			text-align: center;
+			height: 30px;
+			padding: 5px;
+			overflow: hidden;
+			font-size: $fontSize12;
+			line-height: $lineHeight12;
+			word-wrap: break-word;
+			word-break: normal;
+		}
+	}
+	.sign-up-hurry {
+		font-size: $fontSize24;
+		color: $red;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+
+}
+
+// ########  #######   #######  ######## ######## ########  
+// ##       ##     ## ##     ##    ##    ##       ##     ## 
+// ##       ##     ## ##     ##    ##    ##       ##     ## 
+// ######   ##     ## ##     ##    ##    ######   ########  
+// ##       ##     ## ##     ##    ##    ##       ##   ##   
+// ##       ##     ## ##     ##    ##    ##       ##    ##  
+// ##        #######   #######     ##    ######## ##     ## 
+
+footer {
+	font-size: $fontSize13;
+	color: $white50;
+
+	.sponsors {
+		float: left;
+		margin: 20px 10px 20px 0;
+
+		li {
+			float: left;
+			height: 50px;
+			line-height: 50px;
+			margin-right: 20px;
+			display: inline-block;
+		}
+	}
+	.copyright {
+		float: right;
+		margin-top: 30px;
+		color: $black30;
+	}
+}
+
+//  ######   ########  #### ########           #######   #######    #####   
+// ##    ##  ##     ##  ##  ##     ##         ##     ## ##     ##  ##   ##  
+// ##        ##     ##  ##  ##     ##         ##     ## ##        ##     ## 
+// ##   #### ########   ##  ##     ## #######  ######## ########  ##     ## 
+// ##    ##  ##   ##    ##  ##     ##                ## ##     ## ##     ## 
+// ##    ##  ##    ##   ##  ##     ##         ##     ## ##     ##  ##   ##  
+//  ######   ##     ## #### ########           #######   #######    #####   
+
+.grid-960 {
+	position: relative;
+	@include container;
+	
+	// @include at-breakpoint($mobile) {
+	// 	@include container;
+	// 	@include susy-grid-background; 
+	// }
+	// @include at-breakpoint($pad) {
+	// 	@include container;
+	// 	@include susy-grid-background; 
+	// }
+	@include at-breakpoint($desktop) {
+		@include container;
+		//@include susy-grid-background; 
+	}
+}
+
+//登入註冊
+// ##        #######   ######   #### ##    ## 
+// ##       ##     ## ##    ##   ##  ###   ## 
+// ##       ##     ## ##         ##  ####  ## 
+// ##       ##     ## ##   ####  ##  ## ## ## 
+// ##       ##     ## ##    ##   ##  ##  #### 
+// ##       ##     ## ##    ##   ##  ##   ### 
+// ########  #######   ######   #### ##    ## 
+
+.modal {
+	width: 400px;
+	margin-left: -200px;
+	z-index: -999;
+}
+.modal.fade {
+	top: -50%;
+}
+.modal.fade.in {
+	top: 30%;
+	z-index: 9999;
+}
+.modal-login {
+	label {
+		padding-left: 35px;
+	}
+}
+.fb-login-btn {
+	@extend %btn;
+	@extend %btn-primary;
+	@extend %btn-block;
+	@extend %btn-large;
+	margin: 10px 0;
+}
+.or {
+	@include images('or.png');
+	margin: 25px 0;
+}
+.or2 {
+	@include images('or2.png');
+	margin: 25px 0;
+}
+.form-title {
+	padding-right: 20px;
+	display: inline-block;
+}
+.w75 {
+	width: 75px;
+}
+.login-btn {
+	@extend %btn;
+	@extend %btn-inverse;
+}
+.cancel-btn{
+	@extend %btn;
+	@extend %btn-default;
+}
+.else {
+	font-size: $fontSize14;
+	color: $white35;
+	padding-left: 85px;
+
+	.forget, .new-user, .have-account {
+		cursor: pointer;
+
+		&:hover {
+			color: #73ABFF;
+		}
+	}
+}
+.modal-new, .modal-forget {
+	.else {
+		padding-left: 95px;
+	}
+}
+
+//index
+// #### ##    ## ########  ######## ##     ## 
+//  ##  ###   ## ##     ## ##        ##   ##  
+//  ##  ####  ## ##     ## ##         ## ##   
+//  ##  ## ## ## ##     ## ######      ###    
+//  ##  ##  #### ##     ## ##         ## ##   
+//  ##  ##   ### ##     ## ##        ##   ##  
+// #### ##    ## ########  ######## ##     ## 
+.w70-percent {
+	max-width: 700px;
+	//text-align: center;
+	margin: 0 auto;
+}
+
+.prize {
+
+	text-align: center;
+
+	li {
+
+	 	span {
+	 		display: block;
+	 	}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		@include at-breakpoint($mobile) {
+			@include isolate-grid(4); // 4條除4 一排1張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+
+		@include at-breakpoint($pad) {
+			@include isolate-grid(4); // 8條除4 一排2張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+
+		@include at-breakpoint($desktop) {
+			// @include span-columns(3); //圖片三條寬
+			// @include nth-omega(4n); // 每排4個
+			@include isolate-grid(4); // 12條除4 一排3張圖
+			@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+		}
+	}
+
+	.prize-desc {
+		margin: 3px 0;
+	}
+	.prize-img {
+		border: 1px solid #D5D5D5;
+		margin-bottom: 5px;
+	}
+}
+.prize-title {
+	@extend %title;
+	
+	font-size: $fontSize20;
+	color: #ECA41F;
+}
+.prize-note {
+	color: $white50;
+	font-size: $fontSize14;
+	margin: 10px 0 60px 0;
+}
+.prize-mircosoft {
+	background: $white;
+}
+
+	
+
+
+//名人DJ
+// ########        ## 
+// ##     ##       ## 
+// ##     ##       ## 
+// ##     ##       ## 
+// ##     ## ##    ## 
+// ##     ## ##    ## 
+// ########   ######  
+
+// 自動排列圖片為區塊滿版
+.dj-group ul li {
+	margin: 20px 15px 40px 0;
+	border: 1px solid $white20;
+	width: 140px;
+	float: left;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	// @include at-breakpoint($mobile) {
+	// 	@include isolate-grid(4); // 4條除4 一排1張圖
+	// 	@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+	// }
+	// @include at-breakpoint($pad) {
+	// 	@include isolate-grid(4); // 8條除4 一排2張圖
+	// 	@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+	// }
+	@include at-breakpoint($desktop) {
+		// @include span-columns(3); //圖片三條寬
+		// @include nth-omega(4n); // 每排4個
+		@include isolate-grid(2); // 12條除2 一排6張圖
+		@include transition(all 0.8s ceaser($easeOutBack)); // 動畫效果
+	}
+	.dj-name {
+		@extend %title;
+
+		font-size: $fontSize18;
+		line-height: $lineHeight12;	
+		height: 68px;
+		overflow: hidden;
+		padding: 5px 10px;
+		display: inline-block;
+	}
+	.dj-button {
+		text-align: center;
+		background: $red;
+		display: block;
+		padding: 5px 0;
+		color: $white;
+
+		&:hover {
+			background: lighten($red, 10%);
+		}
+	}
+
+}
+
+.qa {
+	border: 5px solid #975693;
+	width: 70%;
+	margin: 40px auto;
+	@include border-radius(2px);
+	@include box-shadow( 0 1px 1px 1px #A5B7B7);
+
+	.qa-title {
+		text-align:center;
+		font-weight: bold;
+		font-size: $fontSize18;
+		background-color: #975693;
+		color: $white;
+		padding: 5px 0 10px 0;
+	}
+	.qa-qusetion {
+		padding: 3px 15px 5px 5px;
+		margin: 5px 15px;
+		font-weight: bold;
+		font-size: $fontSize18;
+		line-height: 35px;
+		color: $black;
+		border-bottom: 1px solid $white20;
+	}
+	.q {
+		font-family: Georgia,serif;
+		font-size: $fontSize24;
+		margin-right: 5px;
+	}
+	.qa-answer {
+		padding: 5px 15px 15px 15px;
+		line-height: $lineHeight14;
+	}
+}
+// winner
+// ##      ## #### ##    ## ##    ## ######## ########  
+// ##  ##  ##  ##  ###   ## ###   ## ##       ##     ## 
+// ##  ##  ##  ##  ####  ## ####  ## ##       ##     ## 
+// ##  ##  ##  ##  ## ## ## ## ## ## ######   ########  
+// ##  ##  ##  ##  ##  #### ##  #### ##       ##   ##   
+// ##  ##  ##  ##  ##   ### ##   ### ##       ##    ##  
+//  ###  ###  #### ##    ## ##    ## ######## ##     ## 
+
+.announce {
+	@extend %title;
+	font-size: $fontSize22;
+	color: red;
+}
+.precautions-title {
+	font-weight: bold;
+	color: $black;
+}
+.precautions {
+	padding-left: 30px;
+
+	li {
+		list-style: disc;
+		line-height: $lineHeight16;
+	}
+}
+// js 下雪
+//       ##  ######      ######  ##    ##  #######  ##      ## 
+//       ## ##    ##    ##    ## ###   ## ##     ## ##  ##  ## 
+//       ## ##          ##       ####  ## ##     ## ##  ##  ## 
+//       ##  ######      ######  ## ## ## ##     ## ##  ##  ## 
+// ##    ##       ##          ## ##  #### ##     ## ##  ##  ## 
+// ##    ## ##    ##    ##    ## ##   ### ##     ## ##  ##  ## 
+//  ######   ######      ######  ##    ##  #######   ###  ###  
+
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+}

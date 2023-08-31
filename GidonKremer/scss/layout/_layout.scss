@@ -1,0 +1,360 @@
+/*KappaChang Layout*/
+
+//susy
+$total-columns  : 12; //畫 12 條
+$column-width   : 61.5px; // 每條 61.5px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 11px; // 左右 padding 11px
+
+$desktop: 980px 12; // min-width 980px draw 12 total-columns
+$pad: 768px 8 979px; //min-width 768px max-width 979px draw 8 total-columns
+$mobile: 4 767px; //max-width 767px draw 4 total-columns
+
+header, #MAIN, footer {
+	width: 100%;
+}
+header {
+	@include opacity(90);
+	//@include background-image (linear-gradient(to bottom,  $black15 0%, $black5 100%)); 
+	background: $black;
+	height: 60px;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+}
+footer {
+	color: $white40;
+	font-size: $fontSize14;
+	margin: 40px 0 60px;
+
+	li {
+		float: left;
+		margin-right: 30px;
+		height: 35px;
+		line-height: 35px;	
+	}
+
+	.txt {
+		margin-right: 5px;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+	.logo-group {
+		margin: 0 auto 30px;
+		width: 485px;
+		@extend %clearfix;
+	}
+	.footer-group {
+		display: block;
+		text-align: center;
+		margin: 5px 0;
+		@extend %clearfix;
+	}
+}
+// img {
+// 	width: 100%;
+// }
+.grid-980 {
+	position: relative;
+	z-index: 4;
+
+	@include container;
+
+	@include at-breakpoint($mobile) {
+		//@include susy-grid-background; 
+	}
+	@include at-breakpoint($pad) {
+		//@include susy-grid-background; 
+	}
+	@include at-breakpoint($desktop) {
+		//@include susy-grid-background; 
+	}
+}
+
+// ##     ## ######## ##    ## ##     ## 
+// ###   ### ##       ###   ## ##     ## 
+// #### #### ##       ####  ## ##     ## 
+// ## ### ## ######   ## ## ## ##     ## 
+// ##     ## ##       ##  #### ##     ## 
+// ##     ## ##       ##   ### ##     ## 
+// ##     ## ######## ##    ##  #######  
+
+.menu {
+	margin: 0 auto;
+
+	li {
+		@extend %title;
+		
+		float: left;
+		margin-top: 15px;
+		width: 20%;
+		text-align: center;
+	
+		// &:last-child {
+		// 	@include buttons($yellow);
+			
+		// 	float: right;
+		// 	border-radius: 1px;
+		// 	margin-top: 10px;
+		// 	width: 150px;
+		// }
+	}
+
+	a, a:hover {
+		color: $white;
+		text-decoration: none;
+	}
+
+	@include at-breakpoint($mobile) {
+		display: none;
+	}
+}
+.go-shopping {
+	@include buttons($yellow);
+			
+	float: right;
+	border-radius: 1px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 150px;
+	font-size: $fontSize20;
+	font-weight: bold;
+	padding: 3px 0;
+}
+
+
+// ####  ######   #######  ##    ## 
+//  ##  ##    ## ##     ## ###   ## 
+//  ##  ##       ##     ## ####  ## 
+//  ##  ##       ##     ## ## ## ## 
+//  ##  ##       ##     ## ##  #### 
+//  ##  ##    ## ##     ## ##   ### 
+// ####  ######   #######  ##    ## 
+
+.icons-icon-music {
+	display: inline-block;
+	margin-right: 8px;
+}
+.icons-icon-shopping {
+	display: inline-block;
+	margin-right: 2px;
+}
+.icons-icon-map {
+	display: inline-block;
+	margin-left: 5px;
+}
+.icons-logo-online, .icons-logo-arts {
+	display: inline-block;
+	vertical-align : middle;
+}
+
+// ########  ##        #######   ######  ##    ## 
+// ##     ## ##       ##     ## ##    ## ##   ##  
+// ##     ## ##       ##     ## ##       ##  ##   
+// ########  ##       ##     ## ##       #####    
+// ##     ## ##       ##     ## ##       ##  ##   
+// ##     ## ##       ##     ## ##    ## ##   ##  
+// ########  ########  #######   ######  ##    ## 
+
+.block01, .block02, .block03, .block04 {
+	width: 100%;
+	@extend %clearfix;
+	@include border-box;
+}
+.block01 {
+	padding: 120px 0 40px;
+	position: relative;
+}
+.block02, .block03, .block04 {
+	padding: 100px 0;
+
+	.grid-980 {
+		padding: 0 66px;
+		@include border-box;
+	}
+}
+.block03 {
+	padding: 40px 0 100px;
+}
+.block04 {
+	background: $white10;
+	padding: 10px 0;
+
+	.grid-980 {
+		padding: 60px 66px;
+		border: 2px solid $white;
+	}
+}
+.visual-images {
+	width: 805px;
+	height: 795px;
+	margin: 0 auto;
+	background: url("../images/visual-image.png") no-repeat;
+	position: relative;
+}
+.date {
+	width: 393px;
+	height: 46px;
+	position: absolute;
+	right: 25px;
+	top: 360px;
+	@include animate(fadeInDown, 1s, .5s);
+}
+.bg-paper {
+	width: 100%;
+	height: 245px;
+	background: url("../images/bg-paper.png") repeat;
+	position: absolute;
+	bottom: 0;
+}
+.block02-watchcry {
+	width: 578px;
+	height: 185px;
+	margin: 60px auto 40px;
+	//@include animate(fadeInDown, 1s, .5s);
+}
+.desc {
+	font-size: $fontSize18;
+	color: $black5;
+	text-align: justify;
+	text-justify:inter-ideograph;
+	line-height: 30px;
+
+	li {
+		line-height: 32px;
+		color: $black;
+	}
+	a {
+		text-decoration: underline;
+	}
+	a:hover {
+		color: #B44B05;
+		text-decoration: underline;
+	}
+}
+.block03-1-group {
+	float: right;
+	margin: 30px 35px 0 0;
+	width: 50%;
+
+	.pic-group-01 {
+		margin-left: 50px;
+	}
+}
+.block03-2-group {
+	float: left;
+	margin-top: -80px;
+	width: 50%;
+}
+.block03-3-group {
+	float: right;
+	margin-top: 100px;
+	width: 50%;
+}
+.pic {
+	border: 1px solid $white15;
+	width: 150px;
+	height: 120px;
+	display: block;
+	margin: 10px 20px 10px 0;
+	padding: 3px;
+	float: left;
+
+	img:hover {
+		@include opacity(50);
+	}
+
+}
+.block04-kremer {
+	margin: 50px 0 20px;
+}
+.lectures {
+	@extend %title;
+	color: $black;
+}
+.block04-publish {
+	margin: 60px 0 40px;
+}
+.btn-shopping {
+	@include buttons($yellow);
+	@extend %title;
+	
+	border-radius: 1px;
+	width: 80%;
+	margin: 0 auto;
+}
+.animation {
+	z-index: 10;
+	position: absolute;
+}
+.go-top {
+	background: $black30;
+	opacity: 0.8;
+	color: $white;
+	width: 45px;
+	height: 30px;
+	border-radius: 2px;
+	text-align: center;
+	position: fixed;
+	padding-top: 15px;
+	bottom: 30px;
+	right: 30px;
+	z-index: 999;
+	cursor: pointer;
+	display: none;
+
+	&:hover {
+		background: lighten($black30, 10%);
+	}
+	.arrow-top {
+		@include arrow(6px, $white, top, $type: 1);
+		left: 16px;
+		top: 10px;
+	}
+}
+
+
+// ##     ##  #######  ########  #### ##       ########    ##     ##  ######  ######## 
+// ###   ### ##     ## ##     ##  ##  ##       ##          ##     ## ##    ## ##       
+// #### #### ##     ## ##     ##  ##  ##       ##          ##     ## ##       ##       
+// ## ### ## ##     ## ########   ##  ##       ######      ##     ##  ######  ######   
+// ##     ## ##     ## ##     ##  ##  ##       ##          ##     ##       ## ##       
+// ##     ## ##     ## ##     ##  ##  ##       ##          ##     ## ##    ## ##       
+// ##     ##  #######  ########  #### ######## ########     #######   ######  ######## 
+	
+#NavMobile {
+	display: none;
+	cursor: pointer;
+
+	@include at-breakpoint($mobile) {
+		display: block; 
+	}
+
+}
+.icons-icon-nav-mobile {
+	margin: 10px 0 0 5px;
+	padding-bottom: 13px;
+}
+#MobileMenuGroup {
+	display: none;
+
+	li {
+		height: 50px;
+		line-height: 50px;
+		width: 100%;
+		text-align: center;
+		background: $black;
+		border-bottom: 1px solid $black5;
+
+		&:first-child {
+			border-top: 1px solid $black5;
+		}
+	}
+
+	a, a:hover {
+		color: white;
+	}
+}

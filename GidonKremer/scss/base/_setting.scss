@@ -1,0 +1,197 @@
+//default
+$fontStyle: "微軟正黑體", "LiHei Pro" ,"sans-serif";
+$fontBase: 16px;
+$backGroundColor: #FFF;
+$fontColor: black;
+$lineHeightBase: 1.6;
+$linkColor: #06F;
+
+//font
+$fontSize24: $fontBase * 1.65;
+$fontSize24: $fontBase * 1.5;
+$fontSize23: $fontBase * 1.438;
+$fontSize22: $fontBase * 1.375;
+$fontSize21: $fontBase * 1.313;
+$fontSize20: $fontBase * 1.25;
+$fontSize19: $fontBase * 1.188;
+$fontSize18: $fontBase * 1.125;
+$fontSize17: $fontBase * 1.063;
+$fontSize16: $fontBase * 1;
+$fontSize15: $fontBase * 0.938;
+$fontSize14: $fontBase * 0.875;
+$fontSize13: $fontBase * 0.813;
+$fontSize12: $fontBase * 0.75;
+$fontSize11: $fontBase * 0.688;
+
+// line-height
+$lineHeight12: $lineHeightBase * 0.75em;  //12px
+$lineHeight14: $lineHeightBase * 0.875em; //14px
+$lineHeight16: $lineHeightBase * 1;     //16px
+$lineHeight18: $lineHeightBase * 1.125; //18px
+$lineHeight20: $lineHeightBase * 1.25em;  //20px
+$lineHeight22: $lineHeightBase * 1.375em;  //22px
+$lineHeight24: $lineHeightBase * 1.5em;  //24px
+
+// color
+$black: black;
+$black5: lighten($black, 5%);
+$black10: lighten($black, 10%);
+$black15: lighten($black, 15%);
+$black20: lighten($black, 20%);
+$black25: lighten($black, 25%);
+$black30: lighten($black, 30%);
+$black35: lighten($black, 35%);
+$black40: lighten($black, 40%);
+$black45: lighten($black, 45%);
+$black50: lighten($black, 50%);
+
+$white: white;
+$white5: darken($white, 5%);
+$white10: darken($white, 10%);
+$white15: darken($white, 15%);
+$white20: darken($white, 20%);
+$white25: darken($white, 25%);
+$white30: darken($white, 30%);
+$white35: darken($white, 35%);
+$white40: darken($white, 40%);
+$white45: darken($white, 45%);
+$white50: darken($white, 50%);
+
+$gold: #fbc80e;
+$orange: #ef8200;
+$purple: #920683;
+$red: #FF0000;
+$fbColor: #2038E5;
+$yellow: #FFC40D;
+
+@mixin border-box {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@mixin gradient($bgColor1, $bgColor2) {
+    background-color: $bgColor1;
+
+    @include background-image(linear-gradient($bgColor1, $bgColor2));
+}
+@mixin buttons($bgColor) {
+    @include gradient($bgColor, darken($bgColor, 5%));
+    
+    border-top: 1px solid lighten($bgColor, 15%);
+    border-bottom: 1px solid darken($bgColor, 15%);
+    border-radius: 3px;
+    color: $white;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px; 
+
+    &:hover {
+        @include gradient(lighten($bgColor, 5%), $bgColor);
+    }
+    &:active {
+        @include gradient(darken($bgColor, 5%), $bgColor);
+    }
+}
+
+// 預設是等腰三角形，如要做正三角形，請將type預設變數改為0.8666666
+@mixin arrow($size, $color, $align, $type: 1) {
+  height: 0;
+  width: 0;
+  content: "";
+  position: absolute;
+  left: -$size;
+
+  // @if $align == top {
+  //   border-bottom: $size * $type solid $color;
+  //   border-left: $size / 2 solid transparent;
+  //   border-right: $size / 2 solid transparent;
+  // }
+  // @else if $align == right {
+  //   border-left: $size * $type solid $color;
+  //   border-top: $size / 2 solid transparent;
+  //   border-bottom: $size / 2 solid transparent;
+  // }
+  // @else if $align == bottom {
+  //   border-top: $size * $type solid $color;
+  //   border-left: $size / 2 solid transparent;
+  //   border-right: $size / 2 solid transparent;
+  // }
+  // @else if $align == left {
+  //   border-right: $size * $type solid $color;
+  //   border-top: $size / 2 solid transparent;
+  //   border-bottom: $size / 2 solid transparent;
+  // }
+  @if $align == top {
+    border-bottom: $size * $type solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @else if $align == right {
+    border-left: $size * $type solid $color;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == bottom {
+    border-top: $size * $type solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @else if $align == left {
+    border-right: $size * $type solid $color;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == right-top {
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == left-top {
+    border-left: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @else if $align == right-bottom {
+    border-right: $size solid $color;
+    border-top: $size solid transparent;
+  }
+  @else if $align == left-bottom {
+    border-left: $size solid $color;
+    border-top: $size solid transparent;
+  }
+// 範例: 
+}
+
+// 自動抓圖片寬度高度
+@mixin images($img) {
+    background: url("../images/#{$img}");
+    width: image-width("../images/#{$img}");
+    height: image-height("../images/#{$img}");
+// 範例: .logo{@include images('logo.png');}
+}
+
+%title {
+  font-size: $fontSize20;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+%boderBottom {
+  border-bottom: 1px solid white;
+  margin-bottom: 1px;
+}
+%boderLeft {
+  border-left: 1px solid white;
+}
+%boderRight {
+  border-right: 1px solid $white20;
+}
+%boderTG {
+    border-top: 1px solid $white20;
+}
+%boderRG {
+    border-right: 1px solid $white20;
+}
+%boderBG {
+    border-bottom: 1px solid $white20;
+}
+%boderLG {
+    border-left: 1px solid $white20;
+}

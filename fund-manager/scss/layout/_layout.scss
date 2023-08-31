@@ -1,0 +1,502 @@
+/*KappaChang Layout*/
+@charset "UTF-8";
+
+//susy
+$total-columns  : 12; //畫 12 條
+$column-width   : 61.5px; // 每條 61.5px
+$gutter-width   : 20px; // 縫隙每條 20px
+$grid-padding   : 11px; // 左右 padding 11px
+
+$desktop: 980px 12; // min-width 980px draw 12 total-columns
+$pad: 768px 8 979px; //min-width 768px max-width 979px draw 8 total-columns
+$mobile: 481px 4 767px; //min-width 481px max-width 767px draw 4 total-columns
+$small-mobile: 4 480px;  //max-width 480px draw 4 total-columns
+
+$eventColorRed: #ba5040;
+$eventColorBlue: #467b9f;
+
+html, body {
+	height: 100%;
+}
+header, #MAIN, footer {
+	width: 100%;
+}
+img {
+	width: 100%;
+}
+
+// ########  #######   #######  ######## ######## ########
+// ##       ##     ## ##     ##    ##    ##       ##     ##
+// ##       ##     ## ##     ##    ##    ##       ##     ##
+// ######   ##     ## ##     ##    ##    ######   ########
+// ##       ##     ## ##     ##    ##    ##       ##   ##
+// ##       ##     ## ##     ##    ##    ##       ##    ##
+// ##        #######   #######     ##    ######## ##     ##
+
+footer {
+	@include border-box-sizing;
+	color: $white40;
+	font-size: $fontSize14;
+	padding: 40px 0;
+	position: relative;
+	z-index: 1;
+	background: $black;
+
+	//@include text-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+
+	li {
+		float: left;
+		margin-right: 30px;
+		height: 35px;
+		line-height: 35px;
+		margin-bottom: 10px;
+	}
+
+	.txt {
+		margin-right: 5px;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+	.logo-group {
+		margin: 0 auto;
+		max-width: 485px;
+		@extend %clearfix;
+
+		a {
+			float: right;
+		}
+	}
+	.footer-group {
+		display: block;
+		text-align: center;
+		margin: 5px 0;
+		@extend %clearfix;
+
+	}
+}
+.grid {
+	position: relative;
+	height: 100%;
+	z-index: 2;
+
+	@include container;
+	@include border-box-sizing;
+
+	@include at-breakpoint($small-mobile) {
+		//@include susy-grid-background;
+		padding: 0 20px;
+	}
+	@include at-breakpoint($mobile) {
+		//@include susy-grid-background;
+		padding: 0 60px;
+	}
+	@include at-breakpoint($pad) {
+		//@include susy-grid-background;
+		padding: 0 60px;
+	}
+	@include at-breakpoint($desktop) {
+		//@include susy-grid-background;
+		padding: 0 30px;
+	}
+}
+
+// ##     ## ####  ######  ##     ##    ###    ##
+// ##     ##  ##  ##    ## ##     ##   ## ##   ##
+// ##     ##  ##  ##       ##     ##  ##   ##  ##
+// ##     ##  ##   ######  ##     ## ##     ## ##
+//  ##   ##   ##        ## ##     ## ######### ##
+//   ## ##    ##  ##    ## ##     ## ##     ## ##
+//    ###    ####  ######   #######  ##     ## ########
+
+.visual {
+	width: 100%;
+	max-width: 1080px;
+	padding: 60px 0;
+	margin: auto;
+	display: block;
+
+	@include at-breakpoint($small-mobile) {
+		display: none;
+	}
+}
+.visual-s {
+	width: 100%;
+	max-width: 600px;
+	padding: 30px 0;
+	margin: auto;
+	display: none;
+
+	@include at-breakpoint($small-mobile) {
+		display: block;
+	}
+}
+
+
+// ##     ##    ###    #### ##    ##
+// ###   ###   ## ##    ##  ###   ##
+// #### ####  ##   ##   ##  ####  ##
+// ## ### ## ##     ##  ##  ## ## ##
+// ##     ## #########  ##  ##  ####
+// ##     ## ##     ##  ##  ##   ###
+// ##     ## ##     ## #### ##    ##
+
+#MAIN {
+	@include border-box-sizing;
+	color: $black20;
+	font-size: $fontSize18;
+}
+#introduction {
+	@include border-box-sizing;
+	background: #fad4c1;
+	width: 100%;
+	padding: 60px 0;
+	overflow: hidden;
+
+	.title {
+		background: url("../images/title-introduction.png") no-repeat;
+		width: 100%;
+		height: 32px;
+		max-width: 172px;
+		margin: 0 auto 20px;
+	}
+	.subtitle {
+	// color: $black;
+	// font-size: $fontSize20;
+	// font-family: "新細明體";
+		text-align: center;
+		max-width: 160px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.subtitle-desc {
+		color: lighten($black, 40%);
+		text-align: center;
+	}
+	.five-theme {
+		padding: 0 4% 0 8%;
+		margin: 20px 0 40px;
+		font-size: $fontSize20;
+		line-height: $lineHeight12;
+		color: $eventColorBlue;
+
+		
+		.li {
+			display: inline-block;
+			width: 98%;
+			padding: 0 1%;
+			text-align: center;
+			vertical-align: top;
+	    	margin-bottom: 8px;
+			
+			@include at-breakpoint($mobile) {
+				width: 98%;
+			}
+			@include at-breakpoint($pad) {
+				width: 46%;
+				text-align: left;
+			}
+			@include at-breakpoint($desktop) {
+				width: 30%;
+				text-align: left;
+			}
+
+		}
+		.icons-star {
+			margin-top: 5px;
+		}
+	}
+}
+.content-group {
+	margin-bottom: 20px;
+}
+.title {
+	color: $eventColorRed;
+	text-align: center;
+	font-size: $fontSize32;
+	font-family: "新細明體";
+	font-weight: bold;
+	margin-bottom: 20px;
+	white-space: nowrap;
+    text-indent: 110%; /*把文字用縮排推到寬度以外*/
+    overflow: hidden;
+}
+.desc {
+	color: $black;
+	font-size: $fontSize18;
+	line-height: $lineHeight18;
+	margin-bottom: 20px;
+}
+#info {
+	@include border-box-sizing;
+	position: relative;
+	width: 100%;
+	padding: 60px 0 100px;
+	overflow: hidden;
+
+	.title {
+		background: url("../images/title-info.png") no-repeat;
+		width: 100%;
+		height: 32px;
+		max-width: 104px;
+		margin: 0 auto 20px;
+	}
+	.subtitle {
+		font-size: $fontSize24;
+		font-weight: bold;
+		color: $black;
+	}
+}
+#feature {
+	@include border-box-sizing;
+	position: relative;
+	width: 100%;
+	padding: 60px 0 150px;
+	overflow: hidden;
+	
+	.title {
+		background: url("../images/title-feature.png") no-repeat;
+		width: 100%;
+		height: 32px;
+		max-width: 172px;
+		margin: 0 auto 20px;
+	}
+	.pic {
+		width: 100%;
+		max-width: 380px;
+		max-height: 257px;
+		border: 1px solid $white20;
+		padding: 3px;
+		display: block;
+		margin: 20px auto;
+		background: $white;
+
+		@include at-breakpoint($desktop) {
+			display: inline-block;
+			margin: 20px;
+		}
+	}
+
+}
+#event {
+	@include border-box-sizing;
+	position: relative;
+	width: 100%;
+	background: url("../images/event-bg.png") repeat;
+	padding: 100px 0 20px;
+	overflow: hidden;
+	color: $white;
+
+	.title {
+		background: url("../images/title-event.png") no-repeat;
+		width: 100%;
+		height: 32px;
+		max-width: 172px;
+		margin: 0 auto 20px;
+	}
+	.subtitle {
+		font-size: $fontSize24;
+		font-weight: bold;
+		color: $white;
+	}
+	.desc {
+		color: $white;
+	}
+	.link {
+		color: #f6ac3b;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.link-w {
+		color: $white;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.foucs {
+		margin-top: 40px;
+	}
+	.list-style {
+		list-style: disc;
+		margin-left: 25px;
+	}
+}
+
+.a001 {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	display: block;
+	
+	@include at-breakpoint($small-mobile) {
+		display: none;
+	}
+	// @include at-breakpoint($mobile) {
+	// 	display: none;
+	// }
+}
+.a002 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: block;
+
+	@include at-breakpoint($small-mobile) {
+		display: none;
+	}
+	// @include at-breakpoint($mobile) {
+	// 	display: none;
+	// }
+}
+.a003 {
+	position: absolute;
+	top: 0;
+	right: 20%;
+	z-index: -1;
+	display: none;
+
+	@include at-breakpoint($desktop) {
+		display: block;
+	}
+}
+.a004 {
+	position: absolute;
+	bottom: 0;
+	background: url("../images/a004.png") repeat-x;
+	width: 100%;
+	height: 71px;
+	z-index: -1;
+}
+.a005 {
+	position: absolute;
+	bottom: -45px;
+	right: 150px;
+	z-index: -1;
+}
+.a006 {
+	position: absolute;
+	bottom: -45px;
+	right: -20px;
+	z-index: -1;
+}
+.a007 {
+	position: absolute;
+	bottom: -10px;
+    left: 10%;
+	z-index: -1;
+}
+
+.a008 {
+	position: absolute;
+	bottom: -10px;
+    right: 20%;
+    display: none;
+
+	@include at-breakpoint($desktop) {
+		display: block;
+	}
+}
+.go-top {
+	background: $black30;
+	opacity: 0.8;
+	color: $white;
+	width: 45px;
+	height: 30px;
+	border-radius: 2px;
+	text-align: center;
+	position: fixed;
+	padding-top: 15px;
+	bottom: 30px;
+	right: 30px;
+	z-index: 999;
+	cursor: pointer;
+	display: none;
+
+	&:hover {
+		background: lighten($black30, 10%);
+	}
+	.arrow-top {
+		@include arrow(6px, $white, top, $type: 1);
+		left: 16px;
+		top: 10px;
+	}
+}
+
+
+// ########  ##     ## ######## ########  #######  ##    ##
+// ##     ## ##     ##    ##       ##    ##     ## ###   ##
+// ##     ## ##     ##    ##       ##    ##     ## ####  ##
+// ########  ##     ##    ##       ##    ##     ## ## ## ##
+// ##     ## ##     ##    ##       ##    ##     ## ##  ####
+// ##     ## ##     ##    ##       ##    ##     ## ##   ###
+// ########   #######     ##       ##     #######  ##    ##
+
+.btn-event {
+	@include buttons($eventColorRed);
+	@include border-radius(2px);
+    
+    width: 100%;
+	max-width: 160px;
+	margin-right: 10px;
+	display: inline-block;
+    position: relative;
+    //box-shadow: 5px 5px darken($eventColorRed, 10%);
+	
+    @include at-breakpoint($small-mobile) {
+		max-width: 100%;
+		margin-top: 20px;
+	}
+	@include at-breakpoint($mobile) {
+		max-width: 100%;
+		margin-top: 20px;
+	}
+}
+.btn-go {
+    @include buttons(#012a68);
+	@include border-radius(2px);
+	
+	width: 100%;
+	max-width: 100px;
+	margin: 10px 10px 30px 0;
+	display: inline-block;
+	
+    position: relative;
+    padding: 5px;
+
+    @include at-breakpoint($small-mobile) {
+		max-width: 100%;
+		
+	}
+	@include at-breakpoint($mobile) {
+		max-width: 100%;
+		
+	}
+}
+.btn-notgo {
+    @include buttons(#717171);
+	@include border-radius(2px);
+	cursor: default;
+	
+	width: 100%;
+	max-width: 100px;
+	margin: 10px 10px 30px 0;
+	display: inline-block;
+	
+    position: relative;
+    padding: 5px;
+
+    @include at-breakpoint($small-mobile) {
+		max-width: 100%;
+		
+	}
+	@include at-breakpoint($mobile) {
+		max-width: 100%;
+		
+	}
+}
